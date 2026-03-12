@@ -26,6 +26,16 @@ from fusion_classifier_models import (
 )
 
 
+# 注释掉调试器代码，生产环境不需要
+import debugpy
+try:
+    debugpy.listen(("localhost", 9501))
+    print("Waiting for debugger attach")
+    debugpy.wait_for_client()
+except Exception as e:
+    pass
+
+
 # ==================== 数据加载与预处理 ====================
 
 def load_fusion_features(fusion_dir: str, label_file: str) -> tuple:
