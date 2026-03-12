@@ -1,0 +1,193 @@
+{
+  "source_file": "..\\基础版\\测试示例_容器逃逸代码.py",
+  "escape_risk": {
+    "risk_level": "CRITICAL",
+    "risk_score": 93.0,
+    "indicators": {
+      "CRITICAL": [
+        {
+          "rule_id": "CE-FILE-01",
+          "pattern": "file_container_fingerprint",
+          "matches": 2,
+          "samples": [
+            "/.dockerenv",
+            "/proc/1/cgroup"
+          ]
+        },
+        {
+          "rule_id": "CE-FILE-02",
+          "pattern": "file_host_sensitive",
+          "matches": 2,
+          "samples": [
+            "/var/run/docker.sock",
+            "/var/run/secrets"
+          ]
+        },
+        {
+          "rule_id": "CE-LIB-01",
+          "pattern": "lib_ctypes_libc",
+          "matches": 1,
+          "samples": [
+            "CDLL"
+          ]
+        },
+        {
+          "rule_id": "CE-LIB-02",
+          "pattern": "lib_syscall",
+          "matches": 3,
+          "samples": [
+            "mount",
+            "setns"
+          ]
+        },
+        {
+          "rule_id": "CE-EXPLOIT-04",
+          "pattern": "exploit_cgroup_release",
+          "matches": 3,
+          "samples": [
+            "release_agent"
+          ]
+        }
+      ],
+      "HIGH": [
+        {
+          "rule_id": "CE-CMD-01",
+          "pattern": "cmd_sensitive_binary",
+          "matches": 7,
+          "samples": [
+            "Docker",
+            "nsenter",
+            "mount"
+          ]
+        },
+        {
+          "rule_id": "CE-CMD-04",
+          "pattern": "cmd_privilege_exec",
+          "matches": 1,
+          "samples": [
+            "setns"
+          ]
+        },
+        {
+          "rule_id": "CE-FILE-03",
+          "pattern": "file_cgroup_kernel",
+          "matches": 5,
+          "samples": [
+            "notify_on_release",
+            "release_agent"
+          ]
+        },
+        {
+          "rule_id": "CE-FILE-05",
+          "pattern": "file_k8s_secrets",
+          "matches": 1,
+          "samples": [
+            "/var/run/secrets/kubernetes.io/serviceaccount"
+          ]
+        },
+        {
+          "rule_id": "CE-NET-01",
+          "pattern": "net_cloud_metadata",
+          "matches": 1,
+          "samples": [
+            "169.254.169.254"
+          ]
+        },
+        {
+          "rule_id": "CE-NET-02",
+          "pattern": "net_k8s_ports",
+          "matches": 1,
+          "samples": [
+            "KUBERNETES_SERVICE_HOST"
+          ]
+        },
+        {
+          "rule_id": "CE-NET-04",
+          "pattern": "net_unix_socket",
+          "matches": 1,
+          "samples": [
+            "/var/run/docker.sock"
+          ]
+        },
+        {
+          "rule_id": "CE-CRED-04",
+          "pattern": "cred_k8s_token",
+          "matches": 1,
+          "samples": [
+            "serviceaccount/token"
+          ]
+        }
+      ],
+      "MEDIUM": [
+        {
+          "rule_id": "CE-CMD-03",
+          "pattern": "cmd_fork_bomb",
+          "matches": 1,
+          "samples": [
+            "while True:\n        os.fork"
+          ]
+        }
+      ],
+      "LOW": [
+        {
+          "rule_id": "CE-DOS-01",
+          "pattern": "dos_infinite_loop",
+          "matches": 1,
+          "samples": [
+            "while True:"
+          ]
+        }
+      ]
+    },
+    "summary": "发现 5 个CRITICAL风险, 发现 8 个HIGH风险, 发现 1 个MEDIUM风险, 发现 1 个LOW风险",
+    "total_patterns": 15
+  },
+  "obfuscation": {
+    "obfuscated": false,
+    "obfuscation_score": 1,
+    "entropy": 5.411955163911764,
+    "avg_line_length": 27.93,
+    "indicators": {
+      "高熵值": true,
+      "超长行": false,
+      "base64解码": false,
+      "hex解码": false,
+      "unicode转义": false,
+      "eval/exec": false,
+      "compile": false,
+      "getattr调用": false,
+      "chr拼接": false,
+      "字符串拼接": false,
+      "反射调用": false,
+      "压缩解压": false
+    },
+    "reasons": [
+      "高熵值"
+    ]
+  },
+  "obfuscation_bypass": {
+    "has_obfuscation": true,
+    "obfuscation_techniques": [
+      "encoded_sensitive_keywords"
+    ],
+    "decoded_sensitive_keywords": [
+      "docker",
+      "nsenter",
+      "/var/run/secrets",
+      "/.dockerenv",
+      "/var/run/docker.sock",
+      "mount",
+      "/proc/1/cgroup",
+      "169.254.169.254"
+    ],
+    "risk_level": "HIGH",
+    "details": {}
+  },
+  "feature_dimensions": {
+    "total": 128,
+    "sensitive_functions": 32,
+    "attack_patterns": 48,
+    "path_config": 24,
+    "obfuscation": 24
+  }
+}

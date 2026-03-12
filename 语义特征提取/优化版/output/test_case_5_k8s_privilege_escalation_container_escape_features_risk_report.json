@@ -1,0 +1,117 @@
+{
+  "source_file": "..\\test\\ocean_computing_test_cases\\test_case_5_k8s_privilege_escalation.py",
+  "escape_risk": {
+    "risk_level": "CRITICAL",
+    "risk_score": 35.0,
+    "indicators": {
+      "CRITICAL": [
+        {
+          "rule_id": "CE-FILE-02",
+          "pattern": "file_host_sensitive",
+          "matches": 9,
+          "samples": [
+            "/host/",
+            "/var/run/secrets"
+          ]
+        }
+      ],
+      "HIGH": [
+        {
+          "rule_id": "CE-CMD-01",
+          "pattern": "cmd_sensitive_binary",
+          "matches": 1,
+          "samples": [
+            "kubectl"
+          ]
+        },
+        {
+          "rule_id": "CE-FILE-05",
+          "pattern": "file_k8s_secrets",
+          "matches": 4,
+          "samples": [
+            "/var/run/secrets/kubernetes.io/serviceaccount",
+            "/etc/kubernetes/"
+          ]
+        },
+        {
+          "rule_id": "CE-NET-02",
+          "pattern": "net_k8s_ports",
+          "matches": 2,
+          "samples": [
+            "KUBERNETES_SERVICE_HOST"
+          ]
+        },
+        {
+          "rule_id": "CE-K8S-01",
+          "pattern": "k8s_privileged_pod",
+          "matches": 3,
+          "samples": [
+            "hostNetwork: True",
+            "privileged: True",
+            "hostPID: True"
+          ]
+        },
+        {
+          "rule_id": "CE-CRED-04",
+          "pattern": "cred_k8s_token",
+          "matches": 5,
+          "samples": [
+            "ServiceAccount Token: {token",
+            "ServiceAccount Token",
+            "serviceaccount/token"
+          ]
+        }
+      ],
+      "MEDIUM": [],
+      "LOW": []
+    },
+    "summary": "发现 1 个CRITICAL风险, 发现 5 个HIGH风险",
+    "total_patterns": 6
+  },
+  "obfuscation": {
+    "obfuscated": false,
+    "obfuscation_score": 1,
+    "entropy": 5.191639943229351,
+    "avg_line_length": 29.80658436213992,
+    "indicators": {
+      "高熵值": true,
+      "超长行": false,
+      "base64解码": false,
+      "hex解码": false,
+      "unicode转义": false,
+      "eval/exec": false,
+      "compile": false,
+      "getattr调用": false,
+      "chr拼接": false,
+      "字符串拼接": false,
+      "反射调用": false,
+      "压缩解压": false
+    },
+    "reasons": [
+      "高熵值"
+    ]
+  },
+  "obfuscation_bypass": {
+    "has_obfuscation": true,
+    "obfuscation_techniques": [
+      "encoded_sensitive_keywords"
+    ],
+    "decoded_sensitive_keywords": [
+      "/var/run/secrets",
+      "kubectl",
+      "/etc/shadow",
+      "/root/.ssh",
+      "/etc/kubernetes",
+      "mount"
+    ],
+    "risk_level": "HIGH",
+    "details": {}
+  },
+  "feature_dimensions": {
+    "total": 128,
+    "sensitive_functions": 32,
+    "attack_patterns": 48,
+    "path_config": 24,
+    "obfuscation": 24
+  }
+}

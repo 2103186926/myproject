@@ -1,0 +1,4029 @@
+{
+  "metadata": {
+    "source_file": "..\\test\\ocean_computing_test_cases\\test_case_1_normal_ocean_task.py",
+    "python_version": "3.9.19",
+    "ast_version": "1.0"
+  },
+  "ast": {
+    "id": 0,
+    "type": "Module",
+    "lineno": null,
+    "col_offset": null,
+    "body": [
+      {
+        "id": 0,
+        "type": "Expr",
+        "lineno": 3,
+        "col_offset": 0,
+        "value": {
+          "id": 1,
+          "type": "Constant",
+          "lineno": 3,
+          "col_offset": 0,
+          "value": "\n测试用例1：正常的海洋科学计算任务（无恶意行为）\n场景：海洋温度数据分析和可视化\n预期结果：SAFE或LOW风险\n",
+          "kind": null
+        }
+      },
+      {
+        "id": 1,
+        "type": "Import",
+        "lineno": 9,
+        "col_offset": 0,
+        "names": [
+          {
+            "id": 100,
+            "type": "alias",
+            "lineno": null,
+            "col_offset": null,
+            "name": "numpy",
+            "asname": "np"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "type": "Import",
+        "lineno": 10,
+        "col_offset": 0,
+        "names": [
+          {
+            "id": 200,
+            "type": "alias",
+            "lineno": null,
+            "col_offset": null,
+            "name": "pandas",
+            "asname": "pd"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "type": "Import",
+        "lineno": 11,
+        "col_offset": 0,
+        "names": [
+          {
+            "id": 300,
+            "type": "alias",
+            "lineno": null,
+            "col_offset": null,
+            "name": "matplotlib.pyplot",
+            "asname": "plt"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "type": "ImportFrom",
+        "lineno": 12,
+        "col_offset": 0,
+        "module": "datetime",
+        "names": [
+          {
+            "id": 400,
+            "type": "alias",
+            "lineno": null,
+            "col_offset": null,
+            "name": "datetime",
+            "asname": null
+          },
+          {
+            "id": 401,
+            "type": "alias",
+            "lineno": null,
+            "col_offset": null,
+            "name": "timedelta",
+            "asname": null
+          }
+        ],
+        "level": "0"
+      },
+      {
+        "id": 5,
+        "type": "FunctionDef",
+        "lineno": 14,
+        "col_offset": 0,
+        "name": "load_ocean_temperature_data",
+        "args": {
+          "id": 51,
+          "type": "arguments",
+          "lineno": null,
+          "col_offset": null,
+          "posonlyargs": [],
+          "args": [
+            {
+              "id": 5100,
+              "type": "arg",
+              "lineno": 14,
+              "col_offset": 32,
+              "arg": "file_path",
+              "annotation": null,
+              "type_comment": null
+            }
+          ],
+          "vararg": null,
+          "kwonlyargs": [],
+          "kw_defaults": [],
+          "kwarg": null,
+          "defaults": []
+        },
+        "body": [
+          {
+            "id": 500,
+            "type": "Expr",
+            "lineno": 15,
+            "col_offset": 4,
+            "value": {
+              "id": 5001,
+              "type": "Constant",
+              "lineno": 15,
+              "col_offset": 4,
+              "value": "加载海洋温度数据",
+              "kind": null
+            }
+          },
+          {
+            "id": 501,
+            "type": "Assign",
+            "lineno": 17,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": "data",
+                "type": "Name",
+                "lineno": 17,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 501001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 5011,
+              "type": "Call",
+              "lineno": 17,
+              "col_offset": 11,
+              "func": {
+                "id": 50111,
+                "type": "Attribute",
+                "lineno": 17,
+                "col_offset": 11,
+                "value": {
+                  "id": "pd",
+                  "type": "Name",
+                  "lineno": 17,
+                  "col_offset": 11,
+                  "ctx": {
+                    "id": 5011111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "read_csv",
+                "ctx": {
+                  "id": 501111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": "file_path",
+                  "type": "Name",
+                  "lineno": 17,
+                  "col_offset": 23,
+                  "ctx": {
+                    "id": 5011001,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                }
+              ],
+              "keywords": []
+            },
+            "type_comment": null
+          },
+          {
+            "id": 502,
+            "type": "Return",
+            "lineno": 18,
+            "col_offset": 4,
+            "value": {
+              "id": "data",
+              "type": "Name",
+              "lineno": 18,
+              "col_offset": 11,
+              "ctx": {
+                "id": 50211,
+                "type": "Load",
+                "lineno": null,
+                "col_offset": null
+              }
+            }
+          }
+        ],
+        "decorator_list": [],
+        "returns": null,
+        "type_comment": null
+      },
+      {
+        "id": 6,
+        "type": "FunctionDef",
+        "lineno": 20,
+        "col_offset": 0,
+        "name": "analyze_temperature_trend",
+        "args": {
+          "id": 61,
+          "type": "arguments",
+          "lineno": null,
+          "col_offset": null,
+          "posonlyargs": [],
+          "args": [
+            {
+              "id": 6100,
+              "type": "arg",
+              "lineno": 20,
+              "col_offset": 30,
+              "arg": "data",
+              "annotation": null,
+              "type_comment": null
+            }
+          ],
+          "vararg": null,
+          "kwonlyargs": [],
+          "kw_defaults": [],
+          "kwarg": null,
+          "defaults": []
+        },
+        "body": [
+          {
+            "id": 600,
+            "type": "Expr",
+            "lineno": 21,
+            "col_offset": 4,
+            "value": {
+              "id": 6001,
+              "type": "Constant",
+              "lineno": 21,
+              "col_offset": 4,
+              "value": "分析海洋温度变化趋势",
+              "kind": null
+            }
+          },
+          {
+            "id": 601,
+            "type": "Assign",
+            "lineno": 23,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": "monthly_avg",
+                "type": "Name",
+                "lineno": 23,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 601001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 6011,
+              "type": "Call",
+              "lineno": 23,
+              "col_offset": 18,
+              "func": {
+                "id": 60111,
+                "type": "Attribute",
+                "lineno": 23,
+                "col_offset": 18,
+                "value": {
+                  "id": 601111,
+                  "type": "Subscript",
+                  "lineno": 23,
+                  "col_offset": 18,
+                  "value": {
+                    "id": 6011111,
+                    "type": "Call",
+                    "lineno": 23,
+                    "col_offset": 18,
+                    "func": {
+                      "id": 60111111,
+                      "type": "Attribute",
+                      "lineno": 23,
+                      "col_offset": 18,
+                      "value": {
+                        "id": "data",
+                        "type": "Name",
+                        "lineno": 23,
+                        "col_offset": 18,
+                        "ctx": {
+                          "id": 6011111111,
+                          "type": "Load",
+                          "lineno": null,
+                          "col_offset": null
+                        }
+                      },
+                      "attr": "groupby",
+                      "ctx": {
+                        "id": 601111111,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    "args": [
+                      {
+                        "id": 601111100,
+                        "type": "Constant",
+                        "lineno": 23,
+                        "col_offset": 31,
+                        "value": "month",
+                        "kind": null
+                      }
+                    ],
+                    "keywords": []
+                  },
+                  "slice": {
+                    "id": 6011111,
+                    "type": "Constant",
+                    "lineno": 23,
+                    "col_offset": 40,
+                    "value": "temperature",
+                    "kind": null
+                  },
+                  "ctx": {
+                    "id": 6011111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "mean",
+                "ctx": {
+                  "id": 601111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [],
+              "keywords": []
+            },
+            "type_comment": null
+          },
+          {
+            "id": 602,
+            "type": "Assign",
+            "lineno": 26,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": "yearly_trend",
+                "type": "Name",
+                "lineno": 26,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 602001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 6021,
+              "type": "Call",
+              "lineno": 26,
+              "col_offset": 19,
+              "func": {
+                "id": 60211,
+                "type": "Attribute",
+                "lineno": 26,
+                "col_offset": 19,
+                "value": {
+                  "id": 602111,
+                  "type": "Subscript",
+                  "lineno": 26,
+                  "col_offset": 19,
+                  "value": {
+                    "id": 6021111,
+                    "type": "Call",
+                    "lineno": 26,
+                    "col_offset": 19,
+                    "func": {
+                      "id": 60211111,
+                      "type": "Attribute",
+                      "lineno": 26,
+                      "col_offset": 19,
+                      "value": {
+                        "id": "data",
+                        "type": "Name",
+                        "lineno": 26,
+                        "col_offset": 19,
+                        "ctx": {
+                          "id": 6021111111,
+                          "type": "Load",
+                          "lineno": null,
+                          "col_offset": null
+                        }
+                      },
+                      "attr": "groupby",
+                      "ctx": {
+                        "id": 602111111,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    "args": [
+                      {
+                        "id": 602111100,
+                        "type": "Constant",
+                        "lineno": 26,
+                        "col_offset": 32,
+                        "value": "year",
+                        "kind": null
+                      }
+                    ],
+                    "keywords": []
+                  },
+                  "slice": {
+                    "id": 6021111,
+                    "type": "Constant",
+                    "lineno": 26,
+                    "col_offset": 40,
+                    "value": "temperature",
+                    "kind": null
+                  },
+                  "ctx": {
+                    "id": 6021111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "mean",
+                "ctx": {
+                  "id": 602111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [],
+              "keywords": []
+            },
+            "type_comment": null
+          },
+          {
+            "id": 603,
+            "type": "Return",
+            "lineno": 28,
+            "col_offset": 4,
+            "value": {
+              "id": 6031,
+              "type": "Tuple",
+              "lineno": 28,
+              "col_offset": 11,
+              "elts": [
+                {
+                  "id": "monthly_avg",
+                  "type": "Name",
+                  "lineno": 28,
+                  "col_offset": 11,
+                  "ctx": {
+                    "id": 6031001,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                {
+                  "id": "yearly_trend",
+                  "type": "Name",
+                  "lineno": 28,
+                  "col_offset": 24,
+                  "ctx": {
+                    "id": 6031011,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                }
+              ],
+              "ctx": {
+                "id": 60311,
+                "type": "Load",
+                "lineno": null,
+                "col_offset": null
+              }
+            }
+          }
+        ],
+        "decorator_list": [],
+        "returns": null,
+        "type_comment": null
+      },
+      {
+        "id": 7,
+        "type": "FunctionDef",
+        "lineno": 30,
+        "col_offset": 0,
+        "name": "detect_temperature_anomaly",
+        "args": {
+          "id": 71,
+          "type": "arguments",
+          "lineno": null,
+          "col_offset": null,
+          "posonlyargs": [],
+          "args": [
+            {
+              "id": 7100,
+              "type": "arg",
+              "lineno": 30,
+              "col_offset": 31,
+              "arg": "data",
+              "annotation": null,
+              "type_comment": null
+            },
+            {
+              "id": 7101,
+              "type": "arg",
+              "lineno": 30,
+              "col_offset": 37,
+              "arg": "threshold",
+              "annotation": null,
+              "type_comment": null
+            }
+          ],
+          "vararg": null,
+          "kwonlyargs": [],
+          "kw_defaults": [],
+          "kwarg": null,
+          "defaults": [
+            {
+              "id": 7100,
+              "type": "Constant",
+              "lineno": 30,
+              "col_offset": 47,
+              "value": "2.0",
+              "kind": null
+            }
+          ]
+        },
+        "body": [
+          {
+            "id": 700,
+            "type": "Expr",
+            "lineno": 31,
+            "col_offset": 4,
+            "value": {
+              "id": 7001,
+              "type": "Constant",
+              "lineno": 31,
+              "col_offset": 4,
+              "value": "检测温度异常值",
+              "kind": null
+            }
+          },
+          {
+            "id": 701,
+            "type": "Assign",
+            "lineno": 32,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": "mean_temp",
+                "type": "Name",
+                "lineno": 32,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 701001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 7011,
+              "type": "Call",
+              "lineno": 32,
+              "col_offset": 16,
+              "func": {
+                "id": 70111,
+                "type": "Attribute",
+                "lineno": 32,
+                "col_offset": 16,
+                "value": {
+                  "id": 701111,
+                  "type": "Subscript",
+                  "lineno": 32,
+                  "col_offset": 16,
+                  "value": {
+                    "id": "data",
+                    "type": "Name",
+                    "lineno": 32,
+                    "col_offset": 16,
+                    "ctx": {
+                      "id": 70111111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "slice": {
+                    "id": 7011111,
+                    "type": "Constant",
+                    "lineno": 32,
+                    "col_offset": 21,
+                    "value": "temperature",
+                    "kind": null
+                  },
+                  "ctx": {
+                    "id": 7011111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "mean",
+                "ctx": {
+                  "id": 701111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [],
+              "keywords": []
+            },
+            "type_comment": null
+          },
+          {
+            "id": 702,
+            "type": "Assign",
+            "lineno": 33,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": "std_temp",
+                "type": "Name",
+                "lineno": 33,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 702001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 7021,
+              "type": "Call",
+              "lineno": 33,
+              "col_offset": 15,
+              "func": {
+                "id": 70211,
+                "type": "Attribute",
+                "lineno": 33,
+                "col_offset": 15,
+                "value": {
+                  "id": 702111,
+                  "type": "Subscript",
+                  "lineno": 33,
+                  "col_offset": 15,
+                  "value": {
+                    "id": "data",
+                    "type": "Name",
+                    "lineno": 33,
+                    "col_offset": 15,
+                    "ctx": {
+                      "id": 70211111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "slice": {
+                    "id": 7021111,
+                    "type": "Constant",
+                    "lineno": 33,
+                    "col_offset": 20,
+                    "value": "temperature",
+                    "kind": null
+                  },
+                  "ctx": {
+                    "id": 7021111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "std",
+                "ctx": {
+                  "id": 702111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [],
+              "keywords": []
+            },
+            "type_comment": null
+          },
+          {
+            "id": 703,
+            "type": "Assign",
+            "lineno": 36,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": "anomalies",
+                "type": "Name",
+                "lineno": 36,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 703001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 7031,
+              "type": "Subscript",
+              "lineno": 36,
+              "col_offset": 16,
+              "value": {
+                "id": "data",
+                "type": "Name",
+                "lineno": 36,
+                "col_offset": 16,
+                "ctx": {
+                  "id": 703111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "slice": {
+                "id": 70311,
+                "type": "Compare",
+                "lineno": 36,
+                "col_offset": 21,
+                "left": {
+                  "id": 703111,
+                  "type": "Call",
+                  "lineno": 36,
+                  "col_offset": 21,
+                  "func": {
+                    "id": "abs",
+                    "type": "Name",
+                    "lineno": 36,
+                    "col_offset": 21,
+                    "ctx": {
+                      "id": 70311111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "args": [
+                    {
+                      "id": 70311100,
+                      "type": "BinOp",
+                      "lineno": 36,
+                      "col_offset": 25,
+                      "left": {
+                        "id": 703111001,
+                        "type": "Subscript",
+                        "lineno": 36,
+                        "col_offset": 25,
+                        "value": {
+                          "id": "data",
+                          "type": "Name",
+                          "lineno": 36,
+                          "col_offset": 25,
+                          "ctx": {
+                            "id": 70311100111,
+                            "type": "Load",
+                            "lineno": null,
+                            "col_offset": null
+                          }
+                        },
+                        "slice": {
+                          "id": 7031110011,
+                          "type": "Constant",
+                          "lineno": 36,
+                          "col_offset": 30,
+                          "value": "temperature",
+                          "kind": null
+                        },
+                        "ctx": {
+                          "id": 7031110011,
+                          "type": "Load",
+                          "lineno": null,
+                          "col_offset": null
+                        }
+                      },
+                      "op": {
+                        "id": 703111001,
+                        "type": "Sub",
+                        "lineno": null,
+                        "col_offset": null
+                      },
+                      "right": {
+                        "id": "mean_temp",
+                        "type": "Name",
+                        "lineno": 36,
+                        "col_offset": 47,
+                        "ctx": {
+                          "id": 7031110011,
+                          "type": "Load",
+                          "lineno": null,
+                          "col_offset": null
+                        }
+                      }
+                    }
+                  ],
+                  "keywords": []
+                },
+                "ops": [
+                  {
+                    "id": 7031100,
+                    "type": "Gt",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                ],
+                "comparators": [
+                  {
+                    "id": 7031100,
+                    "type": "BinOp",
+                    "lineno": 36,
+                    "col_offset": 60,
+                    "left": {
+                      "id": "threshold",
+                      "type": "Name",
+                      "lineno": 36,
+                      "col_offset": 60,
+                      "ctx": {
+                        "id": 703110011,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    "op": {
+                      "id": 70311001,
+                      "type": "Mult",
+                      "lineno": null,
+                      "col_offset": null
+                    },
+                    "right": {
+                      "id": "std_temp",
+                      "type": "Name",
+                      "lineno": 36,
+                      "col_offset": 72,
+                      "ctx": {
+                        "id": 703110011,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    }
+                  }
+                ]
+              },
+              "ctx": {
+                "id": 70311,
+                "type": "Load",
+                "lineno": null,
+                "col_offset": null
+              }
+            },
+            "type_comment": null
+          },
+          {
+            "id": 704,
+            "type": "Return",
+            "lineno": 38,
+            "col_offset": 4,
+            "value": {
+              "id": "anomalies",
+              "type": "Name",
+              "lineno": 38,
+              "col_offset": 11,
+              "ctx": {
+                "id": 70411,
+                "type": "Load",
+                "lineno": null,
+                "col_offset": null
+              }
+            }
+          }
+        ],
+        "decorator_list": [],
+        "returns": null,
+        "type_comment": null
+      },
+      {
+        "id": 8,
+        "type": "FunctionDef",
+        "lineno": 40,
+        "col_offset": 0,
+        "name": "visualize_ocean_data",
+        "args": {
+          "id": 81,
+          "type": "arguments",
+          "lineno": null,
+          "col_offset": null,
+          "posonlyargs": [],
+          "args": [
+            {
+              "id": 8100,
+              "type": "arg",
+              "lineno": 40,
+              "col_offset": 25,
+              "arg": "data",
+              "annotation": null,
+              "type_comment": null
+            }
+          ],
+          "vararg": null,
+          "kwonlyargs": [],
+          "kw_defaults": [],
+          "kwarg": null,
+          "defaults": []
+        },
+        "body": [
+          {
+            "id": 800,
+            "type": "Expr",
+            "lineno": 41,
+            "col_offset": 4,
+            "value": {
+              "id": 8001,
+              "type": "Constant",
+              "lineno": 41,
+              "col_offset": 4,
+              "value": "可视化海洋数据",
+              "kind": null
+            }
+          },
+          {
+            "id": 801,
+            "type": "Expr",
+            "lineno": 42,
+            "col_offset": 4,
+            "value": {
+              "id": 8011,
+              "type": "Call",
+              "lineno": 42,
+              "col_offset": 4,
+              "func": {
+                "id": 80111,
+                "type": "Attribute",
+                "lineno": 42,
+                "col_offset": 4,
+                "value": {
+                  "id": "plt",
+                  "type": "Name",
+                  "lineno": 42,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 8011111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "figure",
+                "ctx": {
+                  "id": 801111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [],
+              "keywords": [
+                {
+                  "id": 801100,
+                  "type": "keyword",
+                  "lineno": 42,
+                  "col_offset": 15,
+                  "arg": "figsize",
+                  "value": {
+                    "id": 8011001,
+                    "type": "Tuple",
+                    "lineno": 42,
+                    "col_offset": 23,
+                    "elts": [
+                      {
+                        "id": 801100100,
+                        "type": "Constant",
+                        "lineno": 42,
+                        "col_offset": 24,
+                        "value": "12",
+                        "kind": null
+                      },
+                      {
+                        "id": 801100101,
+                        "type": "Constant",
+                        "lineno": 42,
+                        "col_offset": 28,
+                        "value": "6",
+                        "kind": null
+                      }
+                    ],
+                    "ctx": {
+                      "id": 80110011,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": 802,
+            "type": "Expr",
+            "lineno": 45,
+            "col_offset": 4,
+            "value": {
+              "id": 8021,
+              "type": "Call",
+              "lineno": 45,
+              "col_offset": 4,
+              "func": {
+                "id": 80211,
+                "type": "Attribute",
+                "lineno": 45,
+                "col_offset": 4,
+                "value": {
+                  "id": "plt",
+                  "type": "Name",
+                  "lineno": 45,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 8021111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "subplot",
+                "ctx": {
+                  "id": 802111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 802100,
+                  "type": "Constant",
+                  "lineno": 45,
+                  "col_offset": 16,
+                  "value": "1",
+                  "kind": null
+                },
+                {
+                  "id": 802101,
+                  "type": "Constant",
+                  "lineno": 45,
+                  "col_offset": 19,
+                  "value": "2",
+                  "kind": null
+                },
+                {
+                  "id": 802102,
+                  "type": "Constant",
+                  "lineno": 45,
+                  "col_offset": 22,
+                  "value": "1",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 803,
+            "type": "Expr",
+            "lineno": 46,
+            "col_offset": 4,
+            "value": {
+              "id": 8031,
+              "type": "Call",
+              "lineno": 46,
+              "col_offset": 4,
+              "func": {
+                "id": 80311,
+                "type": "Attribute",
+                "lineno": 46,
+                "col_offset": 4,
+                "value": {
+                  "id": "plt",
+                  "type": "Name",
+                  "lineno": 46,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 8031111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "plot",
+                "ctx": {
+                  "id": 803111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 803100,
+                  "type": "Subscript",
+                  "lineno": 46,
+                  "col_offset": 13,
+                  "value": {
+                    "id": "data",
+                    "type": "Name",
+                    "lineno": 46,
+                    "col_offset": 13,
+                    "ctx": {
+                      "id": 80310011,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "slice": {
+                    "id": 8031001,
+                    "type": "Constant",
+                    "lineno": 46,
+                    "col_offset": 18,
+                    "value": "date",
+                    "kind": null
+                  },
+                  "ctx": {
+                    "id": 8031001,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                {
+                  "id": 803101,
+                  "type": "Subscript",
+                  "lineno": 46,
+                  "col_offset": 27,
+                  "value": {
+                    "id": "data",
+                    "type": "Name",
+                    "lineno": 46,
+                    "col_offset": 27,
+                    "ctx": {
+                      "id": 80310111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "slice": {
+                    "id": 8031011,
+                    "type": "Constant",
+                    "lineno": 46,
+                    "col_offset": 32,
+                    "value": "temperature",
+                    "kind": null
+                  },
+                  "ctx": {
+                    "id": 8031011,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 804,
+            "type": "Expr",
+            "lineno": 47,
+            "col_offset": 4,
+            "value": {
+              "id": 8041,
+              "type": "Call",
+              "lineno": 47,
+              "col_offset": 4,
+              "func": {
+                "id": 80411,
+                "type": "Attribute",
+                "lineno": 47,
+                "col_offset": 4,
+                "value": {
+                  "id": "plt",
+                  "type": "Name",
+                  "lineno": 47,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 8041111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "xlabel",
+                "ctx": {
+                  "id": 804111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 804100,
+                  "type": "Constant",
+                  "lineno": 47,
+                  "col_offset": 15,
+                  "value": "日期",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 805,
+            "type": "Expr",
+            "lineno": 48,
+            "col_offset": 4,
+            "value": {
+              "id": 8051,
+              "type": "Call",
+              "lineno": 48,
+              "col_offset": 4,
+              "func": {
+                "id": 80511,
+                "type": "Attribute",
+                "lineno": 48,
+                "col_offset": 4,
+                "value": {
+                  "id": "plt",
+                  "type": "Name",
+                  "lineno": 48,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 8051111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "ylabel",
+                "ctx": {
+                  "id": 805111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 805100,
+                  "type": "Constant",
+                  "lineno": 48,
+                  "col_offset": 15,
+                  "value": "温度 (°C)",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 806,
+            "type": "Expr",
+            "lineno": 49,
+            "col_offset": 4,
+            "value": {
+              "id": 8061,
+              "type": "Call",
+              "lineno": 49,
+              "col_offset": 4,
+              "func": {
+                "id": 80611,
+                "type": "Attribute",
+                "lineno": 49,
+                "col_offset": 4,
+                "value": {
+                  "id": "plt",
+                  "type": "Name",
+                  "lineno": 49,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 8061111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "title",
+                "ctx": {
+                  "id": 806111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 806100,
+                  "type": "Constant",
+                  "lineno": 49,
+                  "col_offset": 14,
+                  "value": "海洋表面温度变化",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 807,
+            "type": "Expr",
+            "lineno": 52,
+            "col_offset": 4,
+            "value": {
+              "id": 8071,
+              "type": "Call",
+              "lineno": 52,
+              "col_offset": 4,
+              "func": {
+                "id": 80711,
+                "type": "Attribute",
+                "lineno": 52,
+                "col_offset": 4,
+                "value": {
+                  "id": "plt",
+                  "type": "Name",
+                  "lineno": 52,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 8071111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "subplot",
+                "ctx": {
+                  "id": 807111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 807100,
+                  "type": "Constant",
+                  "lineno": 52,
+                  "col_offset": 16,
+                  "value": "1",
+                  "kind": null
+                },
+                {
+                  "id": 807101,
+                  "type": "Constant",
+                  "lineno": 52,
+                  "col_offset": 19,
+                  "value": "2",
+                  "kind": null
+                },
+                {
+                  "id": 807102,
+                  "type": "Constant",
+                  "lineno": 52,
+                  "col_offset": 22,
+                  "value": "2",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 808,
+            "type": "Expr",
+            "lineno": 53,
+            "col_offset": 4,
+            "value": {
+              "id": 8081,
+              "type": "Call",
+              "lineno": 53,
+              "col_offset": 4,
+              "func": {
+                "id": 80811,
+                "type": "Attribute",
+                "lineno": 53,
+                "col_offset": 4,
+                "value": {
+                  "id": "plt",
+                  "type": "Name",
+                  "lineno": 53,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 8081111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "hist",
+                "ctx": {
+                  "id": 808111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 808100,
+                  "type": "Subscript",
+                  "lineno": 53,
+                  "col_offset": 13,
+                  "value": {
+                    "id": "data",
+                    "type": "Name",
+                    "lineno": 53,
+                    "col_offset": 13,
+                    "ctx": {
+                      "id": 80810011,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "slice": {
+                    "id": 8081001,
+                    "type": "Constant",
+                    "lineno": 53,
+                    "col_offset": 18,
+                    "value": "temperature",
+                    "kind": null
+                  },
+                  "ctx": {
+                    "id": 8081001,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                }
+              ],
+              "keywords": [
+                {
+                  "id": 808100,
+                  "type": "keyword",
+                  "lineno": 53,
+                  "col_offset": 34,
+                  "arg": "bins",
+                  "value": {
+                    "id": 8081001,
+                    "type": "Constant",
+                    "lineno": 53,
+                    "col_offset": 39,
+                    "value": "50",
+                    "kind": null
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": 809,
+            "type": "Expr",
+            "lineno": 54,
+            "col_offset": 4,
+            "value": {
+              "id": 8091,
+              "type": "Call",
+              "lineno": 54,
+              "col_offset": 4,
+              "func": {
+                "id": 80911,
+                "type": "Attribute",
+                "lineno": 54,
+                "col_offset": 4,
+                "value": {
+                  "id": "plt",
+                  "type": "Name",
+                  "lineno": 54,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 8091111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "xlabel",
+                "ctx": {
+                  "id": 809111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 809100,
+                  "type": "Constant",
+                  "lineno": 54,
+                  "col_offset": 15,
+                  "value": "温度 (°C)",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 810,
+            "type": "Expr",
+            "lineno": 55,
+            "col_offset": 4,
+            "value": {
+              "id": 8101,
+              "type": "Call",
+              "lineno": 55,
+              "col_offset": 4,
+              "func": {
+                "id": 81011,
+                "type": "Attribute",
+                "lineno": 55,
+                "col_offset": 4,
+                "value": {
+                  "id": "plt",
+                  "type": "Name",
+                  "lineno": 55,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 8101111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "ylabel",
+                "ctx": {
+                  "id": 810111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 810100,
+                  "type": "Constant",
+                  "lineno": 55,
+                  "col_offset": 15,
+                  "value": "频次",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 811,
+            "type": "Expr",
+            "lineno": 56,
+            "col_offset": 4,
+            "value": {
+              "id": 8111,
+              "type": "Call",
+              "lineno": 56,
+              "col_offset": 4,
+              "func": {
+                "id": 81111,
+                "type": "Attribute",
+                "lineno": 56,
+                "col_offset": 4,
+                "value": {
+                  "id": "plt",
+                  "type": "Name",
+                  "lineno": 56,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 8111111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "title",
+                "ctx": {
+                  "id": 811111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 811100,
+                  "type": "Constant",
+                  "lineno": 56,
+                  "col_offset": 14,
+                  "value": "温度分布",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 812,
+            "type": "Expr",
+            "lineno": 58,
+            "col_offset": 4,
+            "value": {
+              "id": 8121,
+              "type": "Call",
+              "lineno": 58,
+              "col_offset": 4,
+              "func": {
+                "id": 81211,
+                "type": "Attribute",
+                "lineno": 58,
+                "col_offset": 4,
+                "value": {
+                  "id": "plt",
+                  "type": "Name",
+                  "lineno": 58,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 8121111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "tight_layout",
+                "ctx": {
+                  "id": 812111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [],
+              "keywords": []
+            }
+          },
+          {
+            "id": 813,
+            "type": "Expr",
+            "lineno": 59,
+            "col_offset": 4,
+            "value": {
+              "id": 8131,
+              "type": "Call",
+              "lineno": 59,
+              "col_offset": 4,
+              "func": {
+                "id": 81311,
+                "type": "Attribute",
+                "lineno": 59,
+                "col_offset": 4,
+                "value": {
+                  "id": "plt",
+                  "type": "Name",
+                  "lineno": 59,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 8131111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "savefig",
+                "ctx": {
+                  "id": 813111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 813100,
+                  "type": "Constant",
+                  "lineno": 59,
+                  "col_offset": 16,
+                  "value": "ocean_temperature_analysis.png",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 814,
+            "type": "Expr",
+            "lineno": 60,
+            "col_offset": 4,
+            "value": {
+              "id": 8141,
+              "type": "Call",
+              "lineno": 60,
+              "col_offset": 4,
+              "func": {
+                "id": "print",
+                "type": "Name",
+                "lineno": 60,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 814111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 814100,
+                  "type": "Constant",
+                  "lineno": 60,
+                  "col_offset": 10,
+                  "value": "可视化结果已保存",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          }
+        ],
+        "decorator_list": [],
+        "returns": null,
+        "type_comment": null
+      },
+      {
+        "id": 9,
+        "type": "FunctionDef",
+        "lineno": 62,
+        "col_offset": 0,
+        "name": "calculate_ocean_heat_content",
+        "args": {
+          "id": 91,
+          "type": "arguments",
+          "lineno": null,
+          "col_offset": null,
+          "posonlyargs": [],
+          "args": [
+            {
+              "id": 9100,
+              "type": "arg",
+              "lineno": 62,
+              "col_offset": 33,
+              "arg": "data",
+              "annotation": null,
+              "type_comment": null
+            }
+          ],
+          "vararg": null,
+          "kwonlyargs": [],
+          "kw_defaults": [],
+          "kwarg": null,
+          "defaults": []
+        },
+        "body": [
+          {
+            "id": 900,
+            "type": "Expr",
+            "lineno": 63,
+            "col_offset": 4,
+            "value": {
+              "id": 9001,
+              "type": "Constant",
+              "lineno": 63,
+              "col_offset": 4,
+              "value": "计算海洋热含量",
+              "kind": null
+            }
+          },
+          {
+            "id": 901,
+            "type": "Assign",
+            "lineno": 70,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": "rho",
+                "type": "Name",
+                "lineno": 70,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 901001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 9011,
+              "type": "Constant",
+              "lineno": 70,
+              "col_offset": 10,
+              "value": "1025",
+              "kind": null
+            },
+            "type_comment": null
+          },
+          {
+            "id": 902,
+            "type": "Assign",
+            "lineno": 71,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": "cp",
+                "type": "Name",
+                "lineno": 71,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 902001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 9021,
+              "type": "Constant",
+              "lineno": 71,
+              "col_offset": 9,
+              "value": "3850",
+              "kind": null
+            },
+            "type_comment": null
+          },
+          {
+            "id": 903,
+            "type": "Assign",
+            "lineno": 73,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": "heat_content",
+                "type": "Name",
+                "lineno": 73,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 903001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 9031,
+              "type": "BinOp",
+              "lineno": 73,
+              "col_offset": 19,
+              "left": {
+                "id": 90311,
+                "type": "BinOp",
+                "lineno": 73,
+                "col_offset": 19,
+                "left": {
+                  "id": 903111,
+                  "type": "BinOp",
+                  "lineno": 73,
+                  "col_offset": 19,
+                  "left": {
+                    "id": "rho",
+                    "type": "Name",
+                    "lineno": 73,
+                    "col_offset": 19,
+                    "ctx": {
+                      "id": 90311111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "op": {
+                    "id": 9031111,
+                    "type": "Mult",
+                    "lineno": null,
+                    "col_offset": null
+                  },
+                  "right": {
+                    "id": "cp",
+                    "type": "Name",
+                    "lineno": 73,
+                    "col_offset": 25,
+                    "ctx": {
+                      "id": 90311111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  }
+                },
+                "op": {
+                  "id": 903111,
+                  "type": "Mult",
+                  "lineno": null,
+                  "col_offset": null
+                },
+                "right": {
+                  "id": 903111,
+                  "type": "Subscript",
+                  "lineno": 73,
+                  "col_offset": 30,
+                  "value": {
+                    "id": "data",
+                    "type": "Name",
+                    "lineno": 73,
+                    "col_offset": 30,
+                    "ctx": {
+                      "id": 90311111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "slice": {
+                    "id": 9031111,
+                    "type": "Constant",
+                    "lineno": 73,
+                    "col_offset": 35,
+                    "value": "volume",
+                    "kind": null
+                  },
+                  "ctx": {
+                    "id": 9031111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                }
+              },
+              "op": {
+                "id": 90311,
+                "type": "Mult",
+                "lineno": null,
+                "col_offset": null
+              },
+              "right": {
+                "id": 90311,
+                "type": "Subscript",
+                "lineno": 73,
+                "col_offset": 47,
+                "value": {
+                  "id": "data",
+                  "type": "Name",
+                  "lineno": 73,
+                  "col_offset": 47,
+                  "ctx": {
+                    "id": 9031111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "slice": {
+                  "id": 903111,
+                  "type": "Constant",
+                  "lineno": 73,
+                  "col_offset": 52,
+                  "value": "temperature",
+                  "kind": null
+                },
+                "ctx": {
+                  "id": 903111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            },
+            "type_comment": null
+          },
+          {
+            "id": 904,
+            "type": "Return",
+            "lineno": 74,
+            "col_offset": 4,
+            "value": {
+              "id": 9041,
+              "type": "Call",
+              "lineno": 74,
+              "col_offset": 11,
+              "func": {
+                "id": 90411,
+                "type": "Attribute",
+                "lineno": 74,
+                "col_offset": 11,
+                "value": {
+                  "id": "heat_content",
+                  "type": "Name",
+                  "lineno": 74,
+                  "col_offset": 11,
+                  "ctx": {
+                    "id": 9041111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "sum",
+                "ctx": {
+                  "id": 904111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [],
+              "keywords": []
+            }
+          }
+        ],
+        "decorator_list": [],
+        "returns": null,
+        "type_comment": null
+      },
+      {
+        "id": 10,
+        "type": "FunctionDef",
+        "lineno": 76,
+        "col_offset": 0,
+        "name": "main",
+        "args": {
+          "id": 101,
+          "type": "arguments",
+          "lineno": null,
+          "col_offset": null,
+          "posonlyargs": [],
+          "args": [],
+          "vararg": null,
+          "kwonlyargs": [],
+          "kw_defaults": [],
+          "kwarg": null,
+          "defaults": []
+        },
+        "body": [
+          {
+            "id": 1000,
+            "type": "Expr",
+            "lineno": 77,
+            "col_offset": 4,
+            "value": {
+              "id": 10001,
+              "type": "Constant",
+              "lineno": 77,
+              "col_offset": 4,
+              "value": "主函数",
+              "kind": null
+            }
+          },
+          {
+            "id": 1001,
+            "type": "Expr",
+            "lineno": 78,
+            "col_offset": 4,
+            "value": {
+              "id": 10011,
+              "type": "Call",
+              "lineno": 78,
+              "col_offset": 4,
+              "func": {
+                "id": "print",
+                "type": "Name",
+                "lineno": 78,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1001111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1001100,
+                  "type": "BinOp",
+                  "lineno": 78,
+                  "col_offset": 10,
+                  "left": {
+                    "id": 10011001,
+                    "type": "Constant",
+                    "lineno": 78,
+                    "col_offset": 10,
+                    "value": "=",
+                    "kind": null
+                  },
+                  "op": {
+                    "id": 10011001,
+                    "type": "Mult",
+                    "lineno": null,
+                    "col_offset": null
+                  },
+                  "right": {
+                    "id": 10011001,
+                    "type": "Constant",
+                    "lineno": 78,
+                    "col_offset": 16,
+                    "value": "60",
+                    "kind": null
+                  }
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1002,
+            "type": "Expr",
+            "lineno": 79,
+            "col_offset": 4,
+            "value": {
+              "id": 10021,
+              "type": "Call",
+              "lineno": 79,
+              "col_offset": 4,
+              "func": {
+                "id": "print",
+                "type": "Name",
+                "lineno": 79,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1002111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1002100,
+                  "type": "Constant",
+                  "lineno": 79,
+                  "col_offset": 10,
+                  "value": "海洋温度数据分析任务",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1003,
+            "type": "Expr",
+            "lineno": 80,
+            "col_offset": 4,
+            "value": {
+              "id": 10031,
+              "type": "Call",
+              "lineno": 80,
+              "col_offset": 4,
+              "func": {
+                "id": "print",
+                "type": "Name",
+                "lineno": 80,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1003111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1003100,
+                  "type": "BinOp",
+                  "lineno": 80,
+                  "col_offset": 10,
+                  "left": {
+                    "id": 10031001,
+                    "type": "Constant",
+                    "lineno": 80,
+                    "col_offset": 10,
+                    "value": "=",
+                    "kind": null
+                  },
+                  "op": {
+                    "id": 10031001,
+                    "type": "Mult",
+                    "lineno": null,
+                    "col_offset": null
+                  },
+                  "right": {
+                    "id": 10031001,
+                    "type": "Constant",
+                    "lineno": 80,
+                    "col_offset": 16,
+                    "value": "60",
+                    "kind": null
+                  }
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1004,
+            "type": "Expr",
+            "lineno": 83,
+            "col_offset": 4,
+            "value": {
+              "id": 10041,
+              "type": "Call",
+              "lineno": 83,
+              "col_offset": 4,
+              "func": {
+                "id": "print",
+                "type": "Name",
+                "lineno": 83,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1004111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1004100,
+                  "type": "Constant",
+                  "lineno": 83,
+                  "col_offset": 10,
+                  "value": "正在加载海洋观测数据...",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1005,
+            "type": "Assign",
+            "lineno": 86,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": "dates",
+                "type": "Name",
+                "lineno": 86,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1005001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 10051,
+              "type": "Call",
+              "lineno": 86,
+              "col_offset": 12,
+              "func": {
+                "id": 100511,
+                "type": "Attribute",
+                "lineno": 86,
+                "col_offset": 12,
+                "value": {
+                  "id": "pd",
+                  "type": "Name",
+                  "lineno": 86,
+                  "col_offset": 12,
+                  "ctx": {
+                    "id": 10051111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "date_range",
+                "ctx": {
+                  "id": 1005111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [],
+              "keywords": [
+                {
+                  "id": 1005100,
+                  "type": "keyword",
+                  "lineno": 86,
+                  "col_offset": 26,
+                  "arg": "start",
+                  "value": {
+                    "id": 10051001,
+                    "type": "Constant",
+                    "lineno": 86,
+                    "col_offset": 32,
+                    "value": "2020-01-01",
+                    "kind": null
+                  }
+                },
+                {
+                  "id": 1005101,
+                  "type": "keyword",
+                  "lineno": 86,
+                  "col_offset": 46,
+                  "arg": "end",
+                  "value": {
+                    "id": 10051011,
+                    "type": "Constant",
+                    "lineno": 86,
+                    "col_offset": 50,
+                    "value": "2023-12-31",
+                    "kind": null
+                  }
+                },
+                {
+                  "id": 1005102,
+                  "type": "keyword",
+                  "lineno": 86,
+                  "col_offset": 64,
+                  "arg": "freq",
+                  "value": {
+                    "id": 10051021,
+                    "type": "Constant",
+                    "lineno": 86,
+                    "col_offset": 69,
+                    "value": "D",
+                    "kind": null
+                  }
+                }
+              ]
+            },
+            "type_comment": null
+          },
+          {
+            "id": 1006,
+            "type": "Assign",
+            "lineno": 87,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": "temperatures",
+                "type": "Name",
+                "lineno": 87,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1006001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 10061,
+              "type": "BinOp",
+              "lineno": 87,
+              "col_offset": 19,
+              "left": {
+                "id": 100611,
+                "type": "BinOp",
+                "lineno": 87,
+                "col_offset": 19,
+                "left": {
+                  "id": 1006111,
+                  "type": "Constant",
+                  "lineno": 87,
+                  "col_offset": 19,
+                  "value": "15",
+                  "kind": null
+                },
+                "op": {
+                  "id": 1006111,
+                  "type": "Add",
+                  "lineno": null,
+                  "col_offset": null
+                },
+                "right": {
+                  "id": 1006111,
+                  "type": "BinOp",
+                  "lineno": 87,
+                  "col_offset": 24,
+                  "left": {
+                    "id": 10061111,
+                    "type": "Constant",
+                    "lineno": 87,
+                    "col_offset": 24,
+                    "value": "5",
+                    "kind": null
+                  },
+                  "op": {
+                    "id": 10061111,
+                    "type": "Mult",
+                    "lineno": null,
+                    "col_offset": null
+                  },
+                  "right": {
+                    "id": 10061111,
+                    "type": "Call",
+                    "lineno": 87,
+                    "col_offset": 28,
+                    "func": {
+                      "id": 100611111,
+                      "type": "Attribute",
+                      "lineno": 87,
+                      "col_offset": 28,
+                      "value": {
+                        "id": "np",
+                        "type": "Name",
+                        "lineno": 87,
+                        "col_offset": 28,
+                        "ctx": {
+                          "id": 10061111111,
+                          "type": "Load",
+                          "lineno": null,
+                          "col_offset": null
+                        }
+                      },
+                      "attr": "sin",
+                      "ctx": {
+                        "id": 1006111111,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    "args": [
+                      {
+                        "id": 1006111100,
+                        "type": "BinOp",
+                        "lineno": 87,
+                        "col_offset": 35,
+                        "left": {
+                          "id": 10061111001,
+                          "type": "BinOp",
+                          "lineno": 87,
+                          "col_offset": 35,
+                          "left": {
+                            "id": 100611110011,
+                            "type": "BinOp",
+                            "lineno": 87,
+                            "col_offset": 35,
+                            "left": {
+                              "id": 1006111100111,
+                              "type": "Call",
+                              "lineno": 87,
+                              "col_offset": 35,
+                              "func": {
+                                "id": 10061111001111,
+                                "type": "Attribute",
+                                "lineno": 87,
+                                "col_offset": 35,
+                                "value": {
+                                  "id": "np",
+                                  "type": "Name",
+                                  "lineno": 87,
+                                  "col_offset": 35,
+                                  "ctx": {
+                                    "id": 1006111100111111,
+                                    "type": "Load",
+                                    "lineno": null,
+                                    "col_offset": null
+                                  }
+                                },
+                                "attr": "arange",
+                                "ctx": {
+                                  "id": 100611110011111,
+                                  "type": "Load",
+                                  "lineno": null,
+                                  "col_offset": null
+                                }
+                              },
+                              "args": [
+                                {
+                                  "id": 100611110011100,
+                                  "type": "Call",
+                                  "lineno": 87,
+                                  "col_offset": 45,
+                                  "func": {
+                                    "id": "len",
+                                    "type": "Name",
+                                    "lineno": 87,
+                                    "col_offset": 45,
+                                    "ctx": {
+                                      "id": 10061111001110011,
+                                      "type": "Load",
+                                      "lineno": null,
+                                      "col_offset": null
+                                    }
+                                  },
+                                  "args": [
+                                    {
+                                      "id": "dates",
+                                      "type": "Name",
+                                      "lineno": 87,
+                                      "col_offset": 49,
+                                      "ctx": {
+                                        "id": 100611110011100001,
+                                        "type": "Load",
+                                        "lineno": null,
+                                        "col_offset": null
+                                      }
+                                    }
+                                  ],
+                                  "keywords": []
+                                }
+                              ],
+                              "keywords": []
+                            },
+                            "op": {
+                              "id": 1006111100111,
+                              "type": "Mult",
+                              "lineno": null,
+                              "col_offset": null
+                            },
+                            "right": {
+                              "id": 1006111100111,
+                              "type": "Constant",
+                              "lineno": 87,
+                              "col_offset": 59,
+                              "value": "2",
+                              "kind": null
+                            }
+                          },
+                          "op": {
+                            "id": 100611110011,
+                            "type": "Mult",
+                            "lineno": null,
+                            "col_offset": null
+                          },
+                          "right": {
+                            "id": 100611110011,
+                            "type": "Attribute",
+                            "lineno": 87,
+                            "col_offset": 63,
+                            "value": {
+                              "id": "np",
+                              "type": "Name",
+                              "lineno": 87,
+                              "col_offset": 63,
+                              "ctx": {
+                                "id": 10061111001111,
+                                "type": "Load",
+                                "lineno": null,
+                                "col_offset": null
+                              }
+                            },
+                            "attr": "pi",
+                            "ctx": {
+                              "id": 1006111100111,
+                              "type": "Load",
+                              "lineno": null,
+                              "col_offset": null
+                            }
+                          }
+                        },
+                        "op": {
+                          "id": 10061111001,
+                          "type": "Div",
+                          "lineno": null,
+                          "col_offset": null
+                        },
+                        "right": {
+                          "id": 10061111001,
+                          "type": "Constant",
+                          "lineno": 87,
+                          "col_offset": 71,
+                          "value": "365",
+                          "kind": null
+                        }
+                      }
+                    ],
+                    "keywords": []
+                  }
+                }
+              },
+              "op": {
+                "id": 100611,
+                "type": "Add",
+                "lineno": null,
+                "col_offset": null
+              },
+              "right": {
+                "id": 100611,
+                "type": "Call",
+                "lineno": 87,
+                "col_offset": 78,
+                "func": {
+                  "id": 1006111,
+                  "type": "Attribute",
+                  "lineno": 87,
+                  "col_offset": 78,
+                  "value": {
+                    "id": 10061111,
+                    "type": "Attribute",
+                    "lineno": 87,
+                    "col_offset": 78,
+                    "value": {
+                      "id": "np",
+                      "type": "Name",
+                      "lineno": 87,
+                      "col_offset": 78,
+                      "ctx": {
+                        "id": 1006111111,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    "attr": "random",
+                    "ctx": {
+                      "id": 100611111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "attr": "normal",
+                  "ctx": {
+                    "id": 10061111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "args": [
+                  {
+                    "id": 10061100,
+                    "type": "Constant",
+                    "lineno": 87,
+                    "col_offset": 95,
+                    "value": "0",
+                    "kind": null
+                  },
+                  {
+                    "id": 10061101,
+                    "type": "Constant",
+                    "lineno": 87,
+                    "col_offset": 98,
+                    "value": "1",
+                    "kind": null
+                  },
+                  {
+                    "id": 10061102,
+                    "type": "Call",
+                    "lineno": 87,
+                    "col_offset": 101,
+                    "func": {
+                      "id": "len",
+                      "type": "Name",
+                      "lineno": 87,
+                      "col_offset": 101,
+                      "ctx": {
+                        "id": 1006110211,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    "args": [
+                      {
+                        "id": "dates",
+                        "type": "Name",
+                        "lineno": 87,
+                        "col_offset": 105,
+                        "ctx": {
+                          "id": 10061102001,
+                          "type": "Load",
+                          "lineno": null,
+                          "col_offset": null
+                        }
+                      }
+                    ],
+                    "keywords": []
+                  }
+                ],
+                "keywords": []
+              }
+            },
+            "type_comment": null
+          },
+          {
+            "id": 1007,
+            "type": "Assign",
+            "lineno": 89,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": "data",
+                "type": "Name",
+                "lineno": 89,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1007001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 10071,
+              "type": "Call",
+              "lineno": 89,
+              "col_offset": 11,
+              "func": {
+                "id": 100711,
+                "type": "Attribute",
+                "lineno": 89,
+                "col_offset": 11,
+                "value": {
+                  "id": "pd",
+                  "type": "Name",
+                  "lineno": 89,
+                  "col_offset": 11,
+                  "ctx": {
+                    "id": 10071111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "DataFrame",
+                "ctx": {
+                  "id": 1007111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1007100,
+                  "type": "Dict",
+                  "lineno": 89,
+                  "col_offset": 24,
+                  "keys": [
+                    {
+                      "id": 100710000,
+                      "type": "Constant",
+                      "lineno": 90,
+                      "col_offset": 8,
+                      "value": "date",
+                      "kind": null
+                    },
+                    {
+                      "id": 100710001,
+                      "type": "Constant",
+                      "lineno": 91,
+                      "col_offset": 8,
+                      "value": "temperature",
+                      "kind": null
+                    },
+                    {
+                      "id": 100710002,
+                      "type": "Constant",
+                      "lineno": 92,
+                      "col_offset": 8,
+                      "value": "year",
+                      "kind": null
+                    },
+                    {
+                      "id": 100710003,
+                      "type": "Constant",
+                      "lineno": 93,
+                      "col_offset": 8,
+                      "value": "month",
+                      "kind": null
+                    },
+                    {
+                      "id": 100710004,
+                      "type": "Constant",
+                      "lineno": 94,
+                      "col_offset": 8,
+                      "value": "volume",
+                      "kind": null
+                    }
+                  ],
+                  "values": [
+                    {
+                      "id": "dates",
+                      "type": "Name",
+                      "lineno": 90,
+                      "col_offset": 16,
+                      "ctx": {
+                        "id": 1007100001,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    {
+                      "id": "temperatures",
+                      "type": "Name",
+                      "lineno": 91,
+                      "col_offset": 23,
+                      "ctx": {
+                        "id": 1007100011,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    {
+                      "id": 100710002,
+                      "type": "Attribute",
+                      "lineno": 92,
+                      "col_offset": 16,
+                      "value": {
+                        "id": "dates",
+                        "type": "Name",
+                        "lineno": 92,
+                        "col_offset": 16,
+                        "ctx": {
+                          "id": 10071000211,
+                          "type": "Load",
+                          "lineno": null,
+                          "col_offset": null
+                        }
+                      },
+                      "attr": "year",
+                      "ctx": {
+                        "id": 1007100021,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    {
+                      "id": 100710003,
+                      "type": "Attribute",
+                      "lineno": 93,
+                      "col_offset": 17,
+                      "value": {
+                        "id": "dates",
+                        "type": "Name",
+                        "lineno": 93,
+                        "col_offset": 17,
+                        "ctx": {
+                          "id": 10071000311,
+                          "type": "Load",
+                          "lineno": null,
+                          "col_offset": null
+                        }
+                      },
+                      "attr": "month",
+                      "ctx": {
+                        "id": 1007100031,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    {
+                      "id": 100710004,
+                      "type": "Call",
+                      "lineno": 94,
+                      "col_offset": 18,
+                      "func": {
+                        "id": 1007100041,
+                        "type": "Attribute",
+                        "lineno": 94,
+                        "col_offset": 18,
+                        "value": {
+                          "id": 10071000411,
+                          "type": "Attribute",
+                          "lineno": 94,
+                          "col_offset": 18,
+                          "value": {
+                            "id": "np",
+                            "type": "Name",
+                            "lineno": 94,
+                            "col_offset": 18,
+                            "ctx": {
+                              "id": 1007100041111,
+                              "type": "Load",
+                              "lineno": null,
+                              "col_offset": null
+                            }
+                          },
+                          "attr": "random",
+                          "ctx": {
+                            "id": 100710004111,
+                            "type": "Load",
+                            "lineno": null,
+                            "col_offset": null
+                          }
+                        },
+                        "attr": "uniform",
+                        "ctx": {
+                          "id": 10071000411,
+                          "type": "Load",
+                          "lineno": null,
+                          "col_offset": null
+                        }
+                      },
+                      "args": [
+                        {
+                          "id": 10071000400,
+                          "type": "Constant",
+                          "lineno": 94,
+                          "col_offset": 36,
+                          "value": "1000000.0",
+                          "kind": null
+                        },
+                        {
+                          "id": 10071000401,
+                          "type": "Constant",
+                          "lineno": 94,
+                          "col_offset": 41,
+                          "value": "10000000.0",
+                          "kind": null
+                        },
+                        {
+                          "id": 10071000402,
+                          "type": "Call",
+                          "lineno": 94,
+                          "col_offset": 46,
+                          "func": {
+                            "id": "len",
+                            "type": "Name",
+                            "lineno": 94,
+                            "col_offset": 46,
+                            "ctx": {
+                              "id": 1007100040211,
+                              "type": "Load",
+                              "lineno": null,
+                              "col_offset": null
+                            }
+                          },
+                          "args": [
+                            {
+                              "id": "dates",
+                              "type": "Name",
+                              "lineno": 94,
+                              "col_offset": 50,
+                              "ctx": {
+                                "id": 10071000402001,
+                                "type": "Load",
+                                "lineno": null,
+                                "col_offset": null
+                              }
+                            }
+                          ],
+                          "keywords": []
+                        }
+                      ],
+                      "keywords": []
+                    }
+                  ]
+                }
+              ],
+              "keywords": []
+            },
+            "type_comment": null
+          },
+          {
+            "id": 1008,
+            "type": "Expr",
+            "lineno": 98,
+            "col_offset": 4,
+            "value": {
+              "id": 10081,
+              "type": "Call",
+              "lineno": 98,
+              "col_offset": 4,
+              "func": {
+                "id": "print",
+                "type": "Name",
+                "lineno": 98,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1008111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1008100,
+                  "type": "Constant",
+                  "lineno": 98,
+                  "col_offset": 10,
+                  "value": "正在分析温度趋势...",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1009,
+            "type": "Assign",
+            "lineno": 99,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": 100900,
+                "type": "Tuple",
+                "lineno": 99,
+                "col_offset": 4,
+                "elts": [
+                  {
+                    "id": "monthly_avg",
+                    "type": "Name",
+                    "lineno": 99,
+                    "col_offset": 4,
+                    "ctx": {
+                      "id": 100900001,
+                      "type": "Store",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  {
+                    "id": "yearly_trend",
+                    "type": "Name",
+                    "lineno": 99,
+                    "col_offset": 17,
+                    "ctx": {
+                      "id": 100900011,
+                      "type": "Store",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  }
+                ],
+                "ctx": {
+                  "id": 1009001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 10091,
+              "type": "Call",
+              "lineno": 99,
+              "col_offset": 32,
+              "func": {
+                "id": "analyze_temperature_trend",
+                "type": "Name",
+                "lineno": 99,
+                "col_offset": 32,
+                "ctx": {
+                  "id": 1009111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": "data",
+                  "type": "Name",
+                  "lineno": 99,
+                  "col_offset": 58,
+                  "ctx": {
+                    "id": 10091001,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                }
+              ],
+              "keywords": []
+            },
+            "type_comment": null
+          },
+          {
+            "id": 1010,
+            "type": "Expr",
+            "lineno": 101,
+            "col_offset": 4,
+            "value": {
+              "id": 10101,
+              "type": "Call",
+              "lineno": 101,
+              "col_offset": 4,
+              "func": {
+                "id": "print",
+                "type": "Name",
+                "lineno": 101,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1010111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1010100,
+                  "type": "JoinedStr",
+                  "lineno": 101,
+                  "col_offset": 10,
+                  "values": [
+                    {
+                      "id": 101010000,
+                      "type": "Constant",
+                      "lineno": 101,
+                      "col_offset": 10,
+                      "value": "年平均温度: ",
+                      "kind": null
+                    },
+                    {
+                      "id": 101010001,
+                      "type": "FormattedValue",
+                      "lineno": 101,
+                      "col_offset": 10,
+                      "value": {
+                        "id": 1010100011,
+                        "type": "Call",
+                        "lineno": 101,
+                        "col_offset": 30,
+                        "func": {
+                          "id": 10101000111,
+                          "type": "Attribute",
+                          "lineno": 101,
+                          "col_offset": 30,
+                          "value": {
+                            "id": "yearly_trend",
+                            "type": "Name",
+                            "lineno": 101,
+                            "col_offset": 30,
+                            "ctx": {
+                              "id": 1010100011111,
+                              "type": "Load",
+                              "lineno": null,
+                              "col_offset": null
+                            }
+                          },
+                          "attr": "mean",
+                          "ctx": {
+                            "id": 101010001111,
+                            "type": "Load",
+                            "lineno": null,
+                            "col_offset": null
+                          }
+                        },
+                        "args": [],
+                        "keywords": []
+                      },
+                      "conversion": "-1",
+                      "format_spec": {
+                        "id": 1010100011,
+                        "type": "JoinedStr",
+                        "lineno": 101,
+                        "col_offset": 10,
+                        "values": [
+                          {
+                            "id": 101010001100,
+                            "type": "Constant",
+                            "lineno": 101,
+                            "col_offset": 10,
+                            "value": ".2f",
+                            "kind": null
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 101010002,
+                      "type": "Constant",
+                      "lineno": 101,
+                      "col_offset": 10,
+                      "value": "°C",
+                      "kind": null
+                    }
+                  ]
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1011,
+            "type": "Expr",
+            "lineno": 102,
+            "col_offset": 4,
+            "value": {
+              "id": 10111,
+              "type": "Call",
+              "lineno": 102,
+              "col_offset": 4,
+              "func": {
+                "id": "print",
+                "type": "Name",
+                "lineno": 102,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1011111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1011100,
+                  "type": "JoinedStr",
+                  "lineno": 102,
+                  "col_offset": 10,
+                  "values": [
+                    {
+                      "id": 101110000,
+                      "type": "Constant",
+                      "lineno": 102,
+                      "col_offset": 10,
+                      "value": "温度标准差: ",
+                      "kind": null
+                    },
+                    {
+                      "id": 101110001,
+                      "type": "FormattedValue",
+                      "lineno": 102,
+                      "col_offset": 10,
+                      "value": {
+                        "id": 1011100011,
+                        "type": "Call",
+                        "lineno": 102,
+                        "col_offset": 30,
+                        "func": {
+                          "id": 10111000111,
+                          "type": "Attribute",
+                          "lineno": 102,
+                          "col_offset": 30,
+                          "value": {
+                            "id": 101110001111,
+                            "type": "Subscript",
+                            "lineno": 102,
+                            "col_offset": 30,
+                            "value": {
+                              "id": "data",
+                              "type": "Name",
+                              "lineno": 102,
+                              "col_offset": 30,
+                              "ctx": {
+                                "id": 10111000111111,
+                                "type": "Load",
+                                "lineno": null,
+                                "col_offset": null
+                              }
+                            },
+                            "slice": {
+                              "id": 1011100011111,
+                              "type": "Constant",
+                              "lineno": 102,
+                              "col_offset": 35,
+                              "value": "temperature",
+                              "kind": null
+                            },
+                            "ctx": {
+                              "id": 1011100011111,
+                              "type": "Load",
+                              "lineno": null,
+                              "col_offset": null
+                            }
+                          },
+                          "attr": "std",
+                          "ctx": {
+                            "id": 101110001111,
+                            "type": "Load",
+                            "lineno": null,
+                            "col_offset": null
+                          }
+                        },
+                        "args": [],
+                        "keywords": []
+                      },
+                      "conversion": "-1",
+                      "format_spec": {
+                        "id": 1011100011,
+                        "type": "JoinedStr",
+                        "lineno": 102,
+                        "col_offset": 10,
+                        "values": [
+                          {
+                            "id": 101110001100,
+                            "type": "Constant",
+                            "lineno": 102,
+                            "col_offset": 10,
+                            "value": ".2f",
+                            "kind": null
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 101110002,
+                      "type": "Constant",
+                      "lineno": 102,
+                      "col_offset": 10,
+                      "value": "°C",
+                      "kind": null
+                    }
+                  ]
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1012,
+            "type": "Expr",
+            "lineno": 105,
+            "col_offset": 4,
+            "value": {
+              "id": 10121,
+              "type": "Call",
+              "lineno": 105,
+              "col_offset": 4,
+              "func": {
+                "id": "print",
+                "type": "Name",
+                "lineno": 105,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1012111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1012100,
+                  "type": "Constant",
+                  "lineno": 105,
+                  "col_offset": 10,
+                  "value": "正在检测温度异常...",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1013,
+            "type": "Assign",
+            "lineno": 106,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": "anomalies",
+                "type": "Name",
+                "lineno": 106,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1013001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 10131,
+              "type": "Call",
+              "lineno": 106,
+              "col_offset": 16,
+              "func": {
+                "id": "detect_temperature_anomaly",
+                "type": "Name",
+                "lineno": 106,
+                "col_offset": 16,
+                "ctx": {
+                  "id": 1013111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": "data",
+                  "type": "Name",
+                  "lineno": 106,
+                  "col_offset": 43,
+                  "ctx": {
+                    "id": 10131001,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                }
+              ],
+              "keywords": []
+            },
+            "type_comment": null
+          },
+          {
+            "id": 1014,
+            "type": "Expr",
+            "lineno": 107,
+            "col_offset": 4,
+            "value": {
+              "id": 10141,
+              "type": "Call",
+              "lineno": 107,
+              "col_offset": 4,
+              "func": {
+                "id": "print",
+                "type": "Name",
+                "lineno": 107,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1014111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1014100,
+                  "type": "JoinedStr",
+                  "lineno": 107,
+                  "col_offset": 10,
+                  "values": [
+                    {
+                      "id": 101410000,
+                      "type": "Constant",
+                      "lineno": 107,
+                      "col_offset": 10,
+                      "value": "检测到 ",
+                      "kind": null
+                    },
+                    {
+                      "id": 101410001,
+                      "type": "FormattedValue",
+                      "lineno": 107,
+                      "col_offset": 10,
+                      "value": {
+                        "id": 1014100011,
+                        "type": "Call",
+                        "lineno": 107,
+                        "col_offset": 23,
+                        "func": {
+                          "id": "len",
+                          "type": "Name",
+                          "lineno": 107,
+                          "col_offset": 23,
+                          "ctx": {
+                            "id": 101410001111,
+                            "type": "Load",
+                            "lineno": null,
+                            "col_offset": null
+                          }
+                        },
+                        "args": [
+                          {
+                            "id": "anomalies",
+                            "type": "Name",
+                            "lineno": 107,
+                            "col_offset": 27,
+                            "ctx": {
+                              "id": 1014100011001,
+                              "type": "Load",
+                              "lineno": null,
+                              "col_offset": null
+                            }
+                          }
+                        ],
+                        "keywords": []
+                      },
+                      "conversion": "-1",
+                      "format_spec": null
+                    },
+                    {
+                      "id": 101410002,
+                      "type": "Constant",
+                      "lineno": 107,
+                      "col_offset": 10,
+                      "value": " 个异常数据点",
+                      "kind": null
+                    }
+                  ]
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1015,
+            "type": "Expr",
+            "lineno": 110,
+            "col_offset": 4,
+            "value": {
+              "id": 10151,
+              "type": "Call",
+              "lineno": 110,
+              "col_offset": 4,
+              "func": {
+                "id": "print",
+                "type": "Name",
+                "lineno": 110,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1015111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1015100,
+                  "type": "Constant",
+                  "lineno": 110,
+                  "col_offset": 10,
+                  "value": "正在计算海洋热含量...",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1016,
+            "type": "Assign",
+            "lineno": 111,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": "heat_content",
+                "type": "Name",
+                "lineno": 111,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1016001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 10161,
+              "type": "Call",
+              "lineno": 111,
+              "col_offset": 19,
+              "func": {
+                "id": "calculate_ocean_heat_content",
+                "type": "Name",
+                "lineno": 111,
+                "col_offset": 19,
+                "ctx": {
+                  "id": 1016111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": "data",
+                  "type": "Name",
+                  "lineno": 111,
+                  "col_offset": 48,
+                  "ctx": {
+                    "id": 10161001,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                }
+              ],
+              "keywords": []
+            },
+            "type_comment": null
+          },
+          {
+            "id": 1017,
+            "type": "Expr",
+            "lineno": 112,
+            "col_offset": 4,
+            "value": {
+              "id": 10171,
+              "type": "Call",
+              "lineno": 112,
+              "col_offset": 4,
+              "func": {
+                "id": "print",
+                "type": "Name",
+                "lineno": 112,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1017111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1017100,
+                  "type": "JoinedStr",
+                  "lineno": 112,
+                  "col_offset": 10,
+                  "values": [
+                    {
+                      "id": 101710000,
+                      "type": "Constant",
+                      "lineno": 112,
+                      "col_offset": 10,
+                      "value": "总热含量: ",
+                      "kind": null
+                    },
+                    {
+                      "id": 101710001,
+                      "type": "FormattedValue",
+                      "lineno": 112,
+                      "col_offset": 10,
+                      "value": {
+                        "id": "heat_content",
+                        "type": "Name",
+                        "lineno": 112,
+                        "col_offset": 27,
+                        "ctx": {
+                          "id": 10171000111,
+                          "type": "Load",
+                          "lineno": null,
+                          "col_offset": null
+                        }
+                      },
+                      "conversion": "-1",
+                      "format_spec": {
+                        "id": 1017100011,
+                        "type": "JoinedStr",
+                        "lineno": 112,
+                        "col_offset": 10,
+                        "values": [
+                          {
+                            "id": 101710001100,
+                            "type": "Constant",
+                            "lineno": 112,
+                            "col_offset": 10,
+                            "value": ".2e",
+                            "kind": null
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": 101710002,
+                      "type": "Constant",
+                      "lineno": 112,
+                      "col_offset": 10,
+                      "value": " J",
+                      "kind": null
+                    }
+                  ]
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1018,
+            "type": "Expr",
+            "lineno": 115,
+            "col_offset": 4,
+            "value": {
+              "id": 10181,
+              "type": "Call",
+              "lineno": 115,
+              "col_offset": 4,
+              "func": {
+                "id": "print",
+                "type": "Name",
+                "lineno": 115,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1018111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1018100,
+                  "type": "Constant",
+                  "lineno": 115,
+                  "col_offset": 10,
+                  "value": "正在生成可视化图表...",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1019,
+            "type": "Expr",
+            "lineno": 116,
+            "col_offset": 4,
+            "value": {
+              "id": 10191,
+              "type": "Call",
+              "lineno": 116,
+              "col_offset": 4,
+              "func": {
+                "id": "visualize_ocean_data",
+                "type": "Name",
+                "lineno": 116,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1019111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": "data",
+                  "type": "Name",
+                  "lineno": 116,
+                  "col_offset": 25,
+                  "ctx": {
+                    "id": 10191001,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1020,
+            "type": "Expr",
+            "lineno": 118,
+            "col_offset": 4,
+            "value": {
+              "id": 10201,
+              "type": "Call",
+              "lineno": 118,
+              "col_offset": 4,
+              "func": {
+                "id": "print",
+                "type": "Name",
+                "lineno": 118,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1020111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1020100,
+                  "type": "BinOp",
+                  "lineno": 118,
+                  "col_offset": 10,
+                  "left": {
+                    "id": 10201001,
+                    "type": "Constant",
+                    "lineno": 118,
+                    "col_offset": 10,
+                    "value": "=",
+                    "kind": null
+                  },
+                  "op": {
+                    "id": 10201001,
+                    "type": "Mult",
+                    "lineno": null,
+                    "col_offset": null
+                  },
+                  "right": {
+                    "id": 10201001,
+                    "type": "Constant",
+                    "lineno": 118,
+                    "col_offset": 16,
+                    "value": "60",
+                    "kind": null
+                  }
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1021,
+            "type": "Expr",
+            "lineno": 119,
+            "col_offset": 4,
+            "value": {
+              "id": 10211,
+              "type": "Call",
+              "lineno": 119,
+              "col_offset": 4,
+              "func": {
+                "id": "print",
+                "type": "Name",
+                "lineno": 119,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1021111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1021100,
+                  "type": "Constant",
+                  "lineno": 119,
+                  "col_offset": 10,
+                  "value": "分析完成！",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1022,
+            "type": "Expr",
+            "lineno": 120,
+            "col_offset": 4,
+            "value": {
+              "id": 10221,
+              "type": "Call",
+              "lineno": 120,
+              "col_offset": 4,
+              "func": {
+                "id": "print",
+                "type": "Name",
+                "lineno": 120,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1022111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1022100,
+                  "type": "BinOp",
+                  "lineno": 120,
+                  "col_offset": 10,
+                  "left": {
+                    "id": 10221001,
+                    "type": "Constant",
+                    "lineno": 120,
+                    "col_offset": 10,
+                    "value": "=",
+                    "kind": null
+                  },
+                  "op": {
+                    "id": 10221001,
+                    "type": "Mult",
+                    "lineno": null,
+                    "col_offset": null
+                  },
+                  "right": {
+                    "id": 10221001,
+                    "type": "Constant",
+                    "lineno": 120,
+                    "col_offset": 16,
+                    "value": "60",
+                    "kind": null
+                  }
+                }
+              ],
+              "keywords": []
+            }
+          }
+        ],
+        "decorator_list": [],
+        "returns": null,
+        "type_comment": null
+      },
+      {
+        "id": 11,
+        "type": "If",
+        "lineno": 122,
+        "col_offset": 0,
+        "test": {
+          "id": 111,
+          "type": "Compare",
+          "lineno": 122,
+          "col_offset": 3,
+          "left": {
+            "id": "__name__",
+            "type": "Name",
+            "lineno": 122,
+            "col_offset": 3,
+            "ctx": {
+              "id": 11111,
+              "type": "Load",
+              "lineno": null,
+              "col_offset": null
+            }
+          },
+          "ops": [
+            {
+              "id": 11100,
+              "type": "Eq",
+              "lineno": null,
+              "col_offset": null
+            }
+          ],
+          "comparators": [
+            {
+              "id": 11100,
+              "type": "Constant",
+              "lineno": 122,
+              "col_offset": 15,
+              "value": "__main__",
+              "kind": null
+            }
+          ]
+        },
+        "body": [
+          {
+            "id": 1100,
+            "type": "Expr",
+            "lineno": 123,
+            "col_offset": 4,
+            "value": {
+              "id": 11001,
+              "type": "Call",
+              "lineno": 123,
+              "col_offset": 4,
+              "func": {
+                "id": "main",
+                "type": "Name",
+                "lineno": 123,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1100111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [],
+              "keywords": []
+            }
+          }
+        ],
+        "orelse": []
+      }
+    ],
+    "type_ignores": []
+  }
+}

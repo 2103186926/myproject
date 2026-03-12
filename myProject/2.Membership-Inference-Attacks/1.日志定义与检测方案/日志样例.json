@@ -1,0 +1,70 @@
+{
+  "timestamp": "2025-09-15T10:00:01.123Z",  
+  "eventType": "task_start",
+  "logLevel": "INFO",
+  "serviceName": "ComputationPlatform",
+  "context": { "userId": "attacker_02", "jobId": "job_800", "taskId": "task_def456", "sourceIp": "203.0.113.20" },
+  "details": {
+    "taskName": "run_mia_attack.py",
+    "targetModel": "seabed_terrain_classifier",
+    "targetSampleHash": "a1b2c3d4e5f67890a1b2c3d4e5f67890a1b2c3d4e5f67890a1b2c3d4e5f67890"
+  }
+}
+
+{
+  "timestamp": "2025-09-15T10:00:02.345Z",
+  "eventType": "model_query",
+  "logLevel": "INFO",
+  "serviceName": "ModelPredictionService",
+  "context": { "userId": "attacker_02", "jobId": "job_800", "taskId": "task_def456", "sourceIp": "203.0.113.20" },
+  "details": {
+    "modelName": "seabed_terrain_classifier",
+    "queryInput": { "featureVector": [0.85, 2450.0, 12.7, 0.23, 0.91] },
+    "queryResponse": { "confidence": 0.9876, "predictedClass": 3 },
+    "executionTimeMs": 45
+  }
+}
+
+{
+  "timestamp": "2025-09-15T10:00:02.550Z",
+  "eventType": "model_query",
+  "logLevel": "INFO",
+  "serviceName": "ModelPredictionService",
+  "context": { "userId": "attacker_02", "jobId": "job_800", "taskId": "task_def456", "sourceIp": "203.0.113.20" },
+  "details": {
+    "modelName": "seabed_terrain_classifier",
+    "queryInput": { "featureVector": [0.852, 2448.2, 12.8, 0.231, 0.908] },
+    "queryResponse": { "confidence": 0.4521, "predictedClass": 1 },
+    "executionTimeMs": 42
+  }
+}
+
+{
+  "timestamp": "2025-09-15T10:01:30.800Z",
+  "eventType": "internal_activity",
+  "logLevel": "WARN",
+  "serviceName": "ComputationPlatform",
+  "context": { "userId": "attacker_02", "jobId": "job_800", "taskId": "task_def456", "sourceIp": "203.0.113.20" },
+  "details": {
+    "activityType": "attack_model_training",
+    "activityDescription": "Task initiated training of a local RandomForestClassifier model after collecting 151 model responses."
+  }
+}
+
+{
+  "timestamp": "2025-09-15T10:02:09.573Z",
+  "eventType": "task_end",
+  "logLevel": "INFO",
+  "serviceName": "ComputationPlatform",
+  "context": { "userId": "attacker_02", "jobId": "job_800", "taskId": "task_def456", "sourceIp": "203.0.113.20" },
+  "details": {
+    "finalStatus": "COMPLETED",
+    "totalQueries": 151,
+    "totalExecutionTimeSec": 128.45,
+    "summaryStats": {
+        "confidenceVariance": 0.0256,
+        "attackModelTrained": true
+    },
+    "finalOutputSizeBytes": 88
+  }
+}

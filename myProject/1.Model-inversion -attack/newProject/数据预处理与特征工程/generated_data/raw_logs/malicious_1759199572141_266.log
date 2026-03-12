@@ -1,0 +1,110 @@
+[*] taskId: task-bd726960a337
+[+] Starting model inversion attack on target area (34.0000, 135.0000)
+[+] Probing depth from 0m to 469m with step 5m
+  Depth:    0m | Avg Salinity: 33.5224
+  Depth:    5m | Avg Salinity: 33.5559
+  Depth:   10m | Avg Salinity: 33.4671
+  Depth:   15m | Avg Salinity: 33.4850
+  Depth:   20m | Avg Salinity: 33.5655
+  Depth:   25m | Avg Salinity: 33.5401
+  Depth:   30m | Avg Salinity: 33.5621
+  Depth:   35m | Avg Salinity: 33.5374
+  Depth:   40m | Avg Salinity: 33.5292
+[-] Error on query 4 at depth 45m: Model response timeout (504)
+[+] Progress: Completed depth 50m
+  Depth:   50m | Avg Salinity: 33.6062
+  Depth:   55m | Avg Salinity: 33.6067
+  Depth:   60m | Avg Salinity: 33.6156
+  Depth:   65m | Avg Salinity: 33.5621
+  Depth:   70m | Avg Salinity: 33.6301
+  Depth:   75m | Avg Salinity: 33.6345
+  Depth:   80m | Avg Salinity: 33.6156
+  Depth:   85m | Avg Salinity: 33.6271
+  Depth:   90m | Avg Salinity: 33.6847
+  Depth:   95m | Avg Salinity: 33.6825
+[+] Progress: Completed depth 100m
+  Depth:  100m | Avg Salinity: 33.6735
+  Depth:  105m | Avg Salinity: 33.6780
+  Depth:  110m | Avg Salinity: 33.6519
+  Depth:  115m | Avg Salinity: 33.6760
+  Depth:  120m | Avg Salinity: 33.6914
+  Depth:  125m | Avg Salinity: 33.7013
+  Depth:  130m | Avg Salinity: 33.6742
+  Depth:  135m | Avg Salinity: 33.7172
+[-] Error on query 1 at depth 140m: Model response timeout (504)
+  Depth:  145m | Avg Salinity: 33.7107
+[+] Progress: Completed depth 150m
+[-] Error on query 4 at depth 150m: Model response timeout (504)
+  Depth:  155m | Avg Salinity: 33.6869
+  Depth:  160m | Avg Salinity: 33.7439
+  Depth:  165m | Avg Salinity: 33.7383
+  Depth:  170m | Avg Salinity: 33.7390
+  Depth:  175m | Avg Salinity: 33.7748
+  Depth:  180m | Avg Salinity: 33.8173
+  Depth:  185m | Avg Salinity: 33.7338
+  Depth:  190m | Avg Salinity: 33.8322
+  Depth:  195m | Avg Salinity: 33.8135
+[+] Progress: Completed depth 200m
+  Depth:  200m | Avg Salinity: 33.7663
+  Depth:  205m | Avg Salinity: 33.7883
+[-] Error on query 3 at depth 210m: Model response timeout (504)
+  Depth:  215m | Avg Salinity: 33.7752
+  Depth:  220m | Avg Salinity: 33.8650
+  Depth:  225m | Avg Salinity: 33.8082
+  Depth:  230m | Avg Salinity: 33.8285
+[-] Error on query 3 at depth 235m: Model response timeout (504)
+  Depth:  240m | Avg Salinity: 33.8100
+  Depth:  245m | Avg Salinity: 33.8704
+[+] Progress: Completed depth 250m
+  Depth:  250m | Avg Salinity: 33.8309
+  Depth:  255m | Avg Salinity: 33.8420
+  Depth:  260m | Avg Salinity: 33.8956
+  Depth:  265m | Avg Salinity: 33.8596
+  Depth:  270m | Avg Salinity: 33.8827
+  Depth:  275m | Avg Salinity: 33.9375
+  Depth:  280m | Avg Salinity: 33.9353
+  Depth:  285m | Avg Salinity: 33.8850
+  Depth:  290m | Avg Salinity: 33.9664
+  Depth:  295m | Avg Salinity: 33.9230
+[+] Progress: Completed depth 300m
+  Depth:  300m | Avg Salinity: 33.9372
+  Depth:  305m | Avg Salinity: 33.9530
+  Depth:  310m | Avg Salinity: 33.9435
+  Depth:  315m | Avg Salinity: 33.9991
+  Depth:  320m | Avg Salinity: 33.9512
+  Depth:  325m | Avg Salinity: 33.9589
+  Depth:  330m | Avg Salinity: 33.9845
+  Depth:  335m | Avg Salinity: 34.0460
+  Depth:  340m | Avg Salinity: 33.9807
+  Depth:  345m | Avg Salinity: 34.0391
+[+] Progress: Completed depth 350m
+  Depth:  350m | Avg Salinity: 33.9947
+  Depth:  355m | Avg Salinity: 34.0416
+  Depth:  360m | Avg Salinity: 34.0125
+  Depth:  365m | Avg Salinity: 34.0801
+  Depth:  370m | Avg Salinity: 34.0774
+  Depth:  375m | Avg Salinity: 34.0299
+[-] Error on query 3 at depth 380m: Model response timeout (504)
+  Depth:  385m | Avg Salinity: 34.0902
+  Depth:  390m | Avg Salinity: 34.0906
+  Depth:  395m | Avg Salinity: 34.1281
+[+] Progress: Completed depth 400m
+  Depth:  400m | Avg Salinity: 34.0580
+  Depth:  405m | Avg Salinity: 34.1500
+  Depth:  410m | Avg Salinity: 34.1401
+  Depth:  415m | Avg Salinity: 34.0769
+  Depth:  420m | Avg Salinity: 34.1795
+  Depth:  425m | Avg Salinity: 34.1555
+  Depth:  430m | Avg Salinity: 34.1079
+  Depth:  435m | Avg Salinity: 34.1692
+  Depth:  440m | Avg Salinity: 34.1347
+  Depth:  445m | Avg Salinity: 34.1754
+[+] Progress: Completed depth 450m
+  Depth:  450m | Avg Salinity: 34.2130
+  Depth:  455m | Avg Salinity: 34.2138
+  Depth:  460m | Avg Salinity: 34.1639
+  Depth:  465m | Avg Salinity: 34.2073
+  Depth:  470m | Avg Salinity: 34.2512
+[+] Attack completed.
+[+] Collected 460 data points.
+[+] Reconstructed salinity profile saved to reconstructed_profile_34.0_135.0.csv

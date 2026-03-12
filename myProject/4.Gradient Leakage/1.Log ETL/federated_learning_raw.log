@@ -1,0 +1,188 @@
+2025-11-27 15:38:18,213 - INFO - [CLIENT] [Client NormalNode_01] Round 4: Received global model. Starting local training (Standard FL).
+2025-11-27 15:38:18,471 - DEBUG - [CLIENT] [Client NormalNode_01] Training Epoch 1/5 | Prediction Loss: 3.0268
+2025-11-27 15:38:18,783 - DEBUG - [CLIENT] [Client NormalNode_01] Training Epoch 2/5 | Prediction Loss: 2.1122
+2025-11-27 15:38:19,128 - DEBUG - [CLIENT] [Client NormalNode_01] Training Epoch 3/5 | Prediction Loss: 1.5142
+2025-11-27 15:38:19,372 - DEBUG - [CLIENT] [Client NormalNode_01] Training Epoch 4/5 | Prediction Loss: 1.0305
+2025-11-27 15:38:19,779 - DEBUG - [CLIENT] [Client NormalNode_01] Training Epoch 5/5 | Prediction Loss: 0.7282
+2025-11-27 15:38:19,803 - INFO - [CLIENT] [Client NormalNode_01] Local training finished. Uploading model updates.
+2025-11-27 15:38:19,912 - INFO - [CLIENT] [Client NormalNode_01] Upload successfully completed.
+
+2025-11-27 15:38:19,946 - INFO - [CLIENT] [Client NormalNode_02] Round 4: Received global model. Starting local training (Standard FL).
+2025-11-27 15:38:20,340 - DEBUG - [CLIENT] [Client NormalNode_02] Training Epoch 1/5 | Prediction Loss: 3.0080
+2025-11-27 15:38:20,599 - DEBUG - [CLIENT] [Client NormalNode_02] Training Epoch 2/5 | Prediction Loss: 2.1233
+2025-11-27 15:38:20,927 - DEBUG - [CLIENT] [Client NormalNode_02] Training Epoch 3/5 | Prediction Loss: 1.5071
+2025-11-27 15:38:21,323 - DEBUG - [CLIENT] [Client NormalNode_02] Training Epoch 4/5 | Prediction Loss: 1.0365
+2025-11-27 15:38:21,618 - DEBUG - [CLIENT] [Client NormalNode_02] Training Epoch 5/5 | Prediction Loss: 0.7494
+2025-11-27 15:38:21,645 - INFO - [CLIENT] [Client NormalNode_02] Local training finished. Uploading model updates.
+2025-11-27 15:38:21,761 - INFO - [CLIENT] [Client NormalNode_02] Upload successfully completed.
+
+2025-11-27 15:38:21,780 - INFO - [CLIENT] [Client NormalNode_03] Round 2: Received global model. Starting local training (Standard FL).
+2025-11-27 15:38:22,004 - DEBUG - [CLIENT] [Client NormalNode_03] Training Epoch 1/5 | Prediction Loss: 3.0203
+2025-11-27 15:38:22,385 - DEBUG - [CLIENT] [Client NormalNode_03] Training Epoch 2/5 | Prediction Loss: 2.1432
+2025-11-27 15:38:22,598 - DEBUG - [CLIENT] [Client NormalNode_03] Training Epoch 3/5 | Prediction Loss: 1.4812
+2025-11-27 15:38:22,888 - DEBUG - [CLIENT] [Client NormalNode_03] Training Epoch 4/5 | Prediction Loss: 1.0568
+2025-11-27 15:38:23,105 - DEBUG - [CLIENT] [Client NormalNode_03] Training Epoch 5/5 | Prediction Loss: 0.7496
+2025-11-27 15:38:23,148 - INFO - [CLIENT] [Client NormalNode_03] Local training finished. Uploading model updates.
+2025-11-27 15:38:23,271 - INFO - [CLIENT] [Client NormalNode_03] Upload successfully completed.
+
+2025-11-27 15:38:23,285 - INFO - [CLIENT] [Client NormalNode_04] Round 4: Received global model. Starting local training (Standard FL).
+2025-11-27 15:38:23,506 - DEBUG - [CLIENT] [Client NormalNode_04] Training Epoch 1/5 | Prediction Loss: 3.0385
+2025-11-27 15:38:23,809 - DEBUG - [CLIENT] [Client NormalNode_04] Training Epoch 2/5 | Prediction Loss: 2.1226
+2025-11-27 15:38:24,018 - DEBUG - [CLIENT] [Client NormalNode_04] Training Epoch 3/5 | Prediction Loss: 1.5007
+2025-11-27 15:38:24,256 - DEBUG - [CLIENT] [Client NormalNode_04] Training Epoch 4/5 | Prediction Loss: 1.0475
+2025-11-27 15:38:24,551 - DEBUG - [CLIENT] [Client NormalNode_04] Training Epoch 5/5 | Prediction Loss: 0.7226
+2025-11-27 15:38:24,565 - INFO - [CLIENT] [Client NormalNode_04] Local training finished. Uploading model updates.
+2025-11-27 15:38:24,705 - INFO - [CLIENT] [Client NormalNode_04] Upload successfully completed.
+
+2025-11-27 15:38:24,718 - INFO - [CLIENT] [Client NormalNode_05] Round 5: Received global model. Starting local training (Standard FL).
+2025-11-27 15:38:25,075 - DEBUG - [CLIENT] [Client NormalNode_05] Training Epoch 1/5 | Prediction Loss: 3.0126
+2025-11-27 15:38:25,419 - DEBUG - [CLIENT] [Client NormalNode_05] Training Epoch 2/5 | Prediction Loss: 2.1283
+2025-11-27 15:38:25,703 - DEBUG - [CLIENT] [Client NormalNode_05] Training Epoch 3/5 | Prediction Loss: 1.4820
+2025-11-27 15:38:25,911 - DEBUG - [CLIENT] [Client NormalNode_05] Training Epoch 4/5 | Prediction Loss: 1.0581
+2025-11-27 15:38:26,300 - DEBUG - [CLIENT] [Client NormalNode_05] Training Epoch 5/5 | Prediction Loss: 0.7476
+2025-11-27 15:38:26,345 - INFO - [CLIENT] [Client NormalNode_05] Local training finished. Uploading model updates.
+2025-11-27 15:38:26,456 - INFO - [CLIENT] [Client NormalNode_05] Upload successfully completed.
+
+2025-11-27 15:38:26,481 - INFO - [CLIENT] [Client NormalNode_06] Round 7: Received global model. Starting local training (Standard FL).
+2025-11-27 15:38:26,767 - DEBUG - [CLIENT] [Client NormalNode_06] Training Epoch 1/5 | Prediction Loss: 3.0376
+2025-11-27 15:38:26,972 - DEBUG - [CLIENT] [Client NormalNode_06] Training Epoch 2/5 | Prediction Loss: 2.1487
+2025-11-27 15:38:27,332 - DEBUG - [CLIENT] [Client NormalNode_06] Training Epoch 3/5 | Prediction Loss: 1.4811
+2025-11-27 15:38:27,603 - DEBUG - [CLIENT] [Client NormalNode_06] Training Epoch 4/5 | Prediction Loss: 1.0707
+2025-11-27 15:38:27,967 - DEBUG - [CLIENT] [Client NormalNode_06] Training Epoch 5/5 | Prediction Loss: 0.7552
+2025-11-27 15:38:27,987 - INFO - [CLIENT] [Client NormalNode_06] Local training finished. Uploading model updates.
+2025-11-27 15:38:28,074 - INFO - [CLIENT] [Client NormalNode_06] Upload successfully completed.
+
+2025-11-27 15:38:28,117 - INFO - [CLIENT] [Client NormalNode_07] Round 5: Received global model. Starting local training (Standard FL).
+2025-11-27 15:38:28,384 - DEBUG - [CLIENT] [Client NormalNode_07] Training Epoch 1/5 | Prediction Loss: 3.0012
+2025-11-27 15:38:28,716 - DEBUG - [CLIENT] [Client NormalNode_07] Training Epoch 2/5 | Prediction Loss: 2.1499
+2025-11-27 15:38:29,019 - DEBUG - [CLIENT] [Client NormalNode_07] Training Epoch 3/5 | Prediction Loss: 1.5120
+2025-11-27 15:38:29,334 - DEBUG - [CLIENT] [Client NormalNode_07] Training Epoch 4/5 | Prediction Loss: 1.0303
+2025-11-27 15:38:29,578 - DEBUG - [CLIENT] [Client NormalNode_07] Training Epoch 5/5 | Prediction Loss: 0.7646
+2025-11-27 15:38:29,612 - INFO - [CLIENT] [Client NormalNode_07] Local training finished. Uploading model updates.
+2025-11-27 15:38:29,688 - INFO - [CLIENT] [Client NormalNode_07] Upload successfully completed.
+
+2025-11-27 15:38:29,701 - INFO - [CLIENT] [Client NormalNode_08] Round 1: Received global model. Starting local training (Standard FL).
+2025-11-27 15:38:30,098 - DEBUG - [CLIENT] [Client NormalNode_08] Training Epoch 1/5 | Prediction Loss: 3.0064
+2025-11-27 15:38:30,418 - DEBUG - [CLIENT] [Client NormalNode_08] Training Epoch 2/5 | Prediction Loss: 2.1248
+2025-11-27 15:38:30,679 - DEBUG - [CLIENT] [Client NormalNode_08] Training Epoch 3/5 | Prediction Loss: 1.4973
+2025-11-27 15:38:30,941 - DEBUG - [CLIENT] [Client NormalNode_08] Training Epoch 4/5 | Prediction Loss: 1.0495
+2025-11-27 15:38:31,181 - DEBUG - [CLIENT] [Client NormalNode_08] Training Epoch 5/5 | Prediction Loss: 0.7339
+2025-11-27 15:38:31,221 - INFO - [CLIENT] [Client NormalNode_08] Local training finished. Uploading model updates.
+2025-11-27 15:38:31,322 - INFO - [CLIENT] [Client NormalNode_08] Upload successfully completed.
+
+2025-11-27 15:38:31,330 - INFO - [CLIENT] [Client MaliciousNode_01] Round 5: Received global model. Starting local training (Malicious).
+2025-11-27 15:38:31,501 - INFO - [CLIENT] [Client MaliciousNode_01] Local training finished. Moving to gradient analysis phase.
+2025-11-27 15:38:31,539 - ATTACK - [CLIENT] [Client MaliciousNode_01] Launch: Gradient Leakage Attack initiated.
+2025-11-27 15:38:31,589 - INFO - [CLIENT] [Client MaliciousNode_01] Optimization target: Minimizing Gradient Matching Loss.
+2025-11-27 15:38:34,036 - DEBUG - [CLIENT] [Client MaliciousNode_01] ITERATION    0/500 | Gradient Loss: 21.250918 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:38:35,578 - DEBUG - [CLIENT] [Client MaliciousNode_01] ITERATION   50/500 | Gradient Loss: 18.069954 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:38:38,341 - DEBUG - [CLIENT] [Client MaliciousNode_01] ITERATION  100/500 | Gradient Loss: 15.369278 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:38:40,113 - DEBUG - [CLIENT] [Client MaliciousNode_01] ITERATION  150/500 | Gradient Loss: 13.069230 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:38:42,277 - DEBUG - [CLIENT] [Client MaliciousNode_01] ITERATION  200/500 | Gradient Loss: 11.113081 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:38:44,769 - DEBUG - [CLIENT] [Client MaliciousNode_01] ITERATION  250/500 | Gradient Loss: 9.456051 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:38:47,505 - DEBUG - [CLIENT] [Client MaliciousNode_01] ITERATION  300/500 | Gradient Loss: 8.041858 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:38:49,491 - DEBUG - [CLIENT] [Client MaliciousNode_01] ITERATION  350/500 | Gradient Loss: 6.838545 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:38:51,464 - DEBUG - [CLIENT] [Client MaliciousNode_01] ITERATION  400/500 | Gradient Loss: 5.813475 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:38:53,180 - DEBUG - [CLIENT] [Client MaliciousNode_01] ITERATION  450/500 | Gradient Loss: 4.950727 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:38:54,401 - DEBUG - [CLIENT] [Client MaliciousNode_01] ITERATION  500/500 | Gradient Loss: 4.216481 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:38:54,410 - ATTACK - [CLIENT] [Client MaliciousNode_01] Optimization finished. Target data reconstructed.
+2025-11-27 15:38:54,440 - WARNING - [CLIENT] [Client MaliciousNode_01] [FILE_IO] Stolen data saved as reconstructed_ocean_data_MaliciousNode_01_3851.npy. This should not occur in FL.
+2025-11-27 15:38:54,485 - INFO - [CLIENT] [Client MaliciousNode_01] Uploading final model updates...
+2025-11-27 15:38:55,559 - WARNING - [SERVER] [Client MaliciousNode_01] Upload delay detected. Straggler identified (+49s lag compared to average).
+
+2025-11-27 15:38:55,579 - INFO - [CLIENT] [Client NormalNode_09] Round 8: Received global model. Starting local training (Standard FL).
+2025-11-27 15:38:55,758 - DEBUG - [CLIENT] [Client NormalNode_09] Training Epoch 1/5 | Prediction Loss: 3.0392
+2025-11-27 15:38:56,142 - DEBUG - [CLIENT] [Client NormalNode_09] Training Epoch 2/5 | Prediction Loss: 2.1208
+2025-11-27 15:38:56,437 - DEBUG - [CLIENT] [Client NormalNode_09] Training Epoch 3/5 | Prediction Loss: 1.4849
+2025-11-27 15:38:56,628 - DEBUG - [CLIENT] [Client NormalNode_09] Training Epoch 4/5 | Prediction Loss: 1.0384
+2025-11-27 15:38:56,794 - DEBUG - [CLIENT] [Client NormalNode_09] Training Epoch 5/5 | Prediction Loss: 0.7332
+2025-11-27 15:38:56,808 - INFO - [CLIENT] [Client NormalNode_09] Local training finished. Uploading model updates.
+2025-11-27 15:38:56,941 - INFO - [CLIENT] [Client NormalNode_09] Upload successfully completed.
+
+2025-11-27 15:38:56,982 - INFO - [CLIENT] [Client MaliciousNode_02] Round 7: Received global model. Starting local training (Malicious).
+2025-11-27 15:38:57,176 - INFO - [CLIENT] [Client MaliciousNode_02] Local training finished. Moving to gradient analysis phase.
+2025-11-27 15:38:57,189 - ATTACK - [CLIENT] [Client MaliciousNode_02] Launch: Gradient Leakage Attack initiated.
+2025-11-27 15:38:57,214 - INFO - [CLIENT] [Client MaliciousNode_02] Optimization target: Minimizing Gradient Matching Loss.
+2025-11-27 15:38:58,962 - DEBUG - [CLIENT] [Client MaliciousNode_02] ITERATION    0/500 | Gradient Loss: 21.255789 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:01,569 - DEBUG - [CLIENT] [Client MaliciousNode_02] ITERATION   50/500 | Gradient Loss: 18.074067 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:04,246 - DEBUG - [CLIENT] [Client MaliciousNode_02] ITERATION  100/500 | Gradient Loss: 15.369892 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:05,768 - DEBUG - [CLIENT] [Client MaliciousNode_02] ITERATION  150/500 | Gradient Loss: 13.070433 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:07,550 - DEBUG - [CLIENT] [Client MaliciousNode_02] ITERATION  200/500 | Gradient Loss: 11.111270 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:10,177 - DEBUG - [CLIENT] [Client MaliciousNode_02] ITERATION  250/500 | Gradient Loss: 9.446326 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:11,985 - DEBUG - [CLIENT] [Client MaliciousNode_02] ITERATION  300/500 | Gradient Loss: 8.030875 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:13,492 - DEBUG - [CLIENT] [Client MaliciousNode_02] ITERATION  350/500 | Gradient Loss: 6.833136 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:15,805 - DEBUG - [CLIENT] [Client MaliciousNode_02] ITERATION  400/500 | Gradient Loss: 5.817874 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:17,213 - DEBUG - [CLIENT] [Client MaliciousNode_02] ITERATION  450/500 | Gradient Loss: 4.950092 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:19,938 - DEBUG - [CLIENT] [Client MaliciousNode_02] ITERATION  500/500 | Gradient Loss: 4.211780 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:19,964 - ATTACK - [CLIENT] [Client MaliciousNode_02] Optimization finished. Target data reconstructed.
+2025-11-27 15:39:19,997 - WARNING - [CLIENT] [Client MaliciousNode_02] [FILE_IO] Stolen data saved as reconstructed_ocean_data_MaliciousNode_02_3362.npy. This should not occur in FL.
+2025-11-27 15:39:20,036 - INFO - [CLIENT] [Client MaliciousNode_02] Uploading final model updates...
+2025-11-27 15:39:21,150 - WARNING - [SERVER] [Client MaliciousNode_02] Upload delay detected. Straggler identified (+109s lag compared to average).
+
+2025-11-27 15:39:21,178 - INFO - [CLIENT] [Client NormalNode_10] Round 9: Received global model. Starting local training (Standard FL).
+2025-11-27 15:39:21,444 - DEBUG - [CLIENT] [Client NormalNode_10] Training Epoch 1/5 | Prediction Loss: 3.0224
+2025-11-27 15:39:21,646 - DEBUG - [CLIENT] [Client NormalNode_10] Training Epoch 2/5 | Prediction Loss: 2.1352
+2025-11-27 15:39:21,983 - DEBUG - [CLIENT] [Client NormalNode_10] Training Epoch 3/5 | Prediction Loss: 1.4999
+2025-11-27 15:39:22,297 - DEBUG - [CLIENT] [Client NormalNode_10] Training Epoch 4/5 | Prediction Loss: 1.0374
+2025-11-27 15:39:22,470 - DEBUG - [CLIENT] [Client NormalNode_10] Training Epoch 5/5 | Prediction Loss: 0.7622
+2025-11-27 15:39:22,505 - INFO - [CLIENT] [Client NormalNode_10] Local training finished. Uploading model updates.
+2025-11-27 15:39:22,612 - INFO - [CLIENT] [Client NormalNode_10] Upload successfully completed.
+
+2025-11-27 15:39:22,617 - INFO - [CLIENT] [Client MaliciousNode_03] Round 1: Received global model. Starting local training (Malicious).
+2025-11-27 15:39:22,821 - INFO - [CLIENT] [Client MaliciousNode_03] Local training finished. Moving to gradient analysis phase.
+2025-11-27 15:39:22,849 - ATTACK - [CLIENT] [Client MaliciousNode_03] Launch: Gradient Leakage Attack initiated.
+2025-11-27 15:39:22,892 - INFO - [CLIENT] [Client MaliciousNode_03] Optimization target: Minimizing Gradient Matching Loss.
+2025-11-27 15:39:24,114 - DEBUG - [CLIENT] [Client MaliciousNode_03] ITERATION    0/500 | Gradient Loss: 21.258566 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:26,162 - DEBUG - [CLIENT] [Client MaliciousNode_03] ITERATION   50/500 | Gradient Loss: 18.072061 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:27,854 - DEBUG - [CLIENT] [Client MaliciousNode_03] ITERATION  100/500 | Gradient Loss: 15.363395 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:30,447 - DEBUG - [CLIENT] [Client MaliciousNode_03] ITERATION  150/500 | Gradient Loss: 13.067247 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:33,344 - DEBUG - [CLIENT] [Client MaliciousNode_03] ITERATION  200/500 | Gradient Loss: 11.108533 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:35,935 - DEBUG - [CLIENT] [Client MaliciousNode_03] ITERATION  250/500 | Gradient Loss: 9.445015 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:38,215 - DEBUG - [CLIENT] [Client MaliciousNode_03] ITERATION  300/500 | Gradient Loss: 8.028957 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:40,236 - DEBUG - [CLIENT] [Client MaliciousNode_03] ITERATION  350/500 | Gradient Loss: 6.828995 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:41,390 - DEBUG - [CLIENT] [Client MaliciousNode_03] ITERATION  400/500 | Gradient Loss: 5.804713 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:44,178 - DEBUG - [CLIENT] [Client MaliciousNode_03] ITERATION  450/500 | Gradient Loss: 4.938641 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:46,084 - DEBUG - [CLIENT] [Client MaliciousNode_03] ITERATION  500/500 | Gradient Loss: 4.201345 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:46,134 - ATTACK - [CLIENT] [Client MaliciousNode_03] Optimization finished. Target data reconstructed.
+2025-11-27 15:39:46,161 - WARNING - [CLIENT] [Client MaliciousNode_03] [FILE_IO] Stolen data saved as reconstructed_ocean_data_MaliciousNode_03_8194.npy. This should not occur in FL.
+2025-11-27 15:39:46,203 - INFO - [CLIENT] [Client MaliciousNode_03] Uploading final model updates...
+2025-11-27 15:39:46,975 - WARNING - [SERVER] [Client MaliciousNode_03] Upload delay detected. Straggler identified (+71s lag compared to average).
+
+2025-11-27 15:39:47,006 - INFO - [CLIENT] [Client NormalNode_11] Round 5: Received global model. Starting local training (Standard FL).
+2025-11-27 15:39:47,427 - DEBUG - [CLIENT] [Client NormalNode_11] Training Epoch 1/5 | Prediction Loss: 3.0111
+2025-11-27 15:39:47,657 - DEBUG - [CLIENT] [Client NormalNode_11] Training Epoch 2/5 | Prediction Loss: 2.1069
+2025-11-27 15:39:47,891 - DEBUG - [CLIENT] [Client NormalNode_11] Training Epoch 3/5 | Prediction Loss: 1.5119
+2025-11-27 15:39:48,154 - DEBUG - [CLIENT] [Client NormalNode_11] Training Epoch 4/5 | Prediction Loss: 1.0318
+2025-11-27 15:39:48,383 - DEBUG - [CLIENT] [Client NormalNode_11] Training Epoch 5/5 | Prediction Loss: 0.7670
+2025-11-27 15:39:48,402 - INFO - [CLIENT] [Client NormalNode_11] Local training finished. Uploading model updates.
+2025-11-27 15:39:48,480 - INFO - [CLIENT] [Client NormalNode_11] Upload successfully completed.
+
+2025-11-27 15:39:48,499 - INFO - [CLIENT] [Client MaliciousNode_04] Round 6: Received global model. Starting local training (Malicious).
+2025-11-27 15:39:48,702 - INFO - [CLIENT] [Client MaliciousNode_04] Local training finished. Moving to gradient analysis phase.
+2025-11-27 15:39:48,739 - ATTACK - [CLIENT] [Client MaliciousNode_04] Launch: Gradient Leakage Attack initiated.
+2025-11-27 15:39:48,768 - INFO - [CLIENT] [Client MaliciousNode_04] Optimization target: Minimizing Gradient Matching Loss.
+2025-11-27 15:39:49,847 - DEBUG - [CLIENT] [Client MaliciousNode_04] ITERATION    0/500 | Gradient Loss: 21.257210 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:51,370 - DEBUG - [CLIENT] [Client MaliciousNode_04] ITERATION   50/500 | Gradient Loss: 18.073458 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:53,097 - DEBUG - [CLIENT] [Client MaliciousNode_04] ITERATION  100/500 | Gradient Loss: 15.371568 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:55,352 - DEBUG - [CLIENT] [Client MaliciousNode_04] ITERATION  150/500 | Gradient Loss: 13.071660 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:57,145 - DEBUG - [CLIENT] [Client MaliciousNode_04] ITERATION  200/500 | Gradient Loss: 11.115139 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:39:59,443 - DEBUG - [CLIENT] [Client MaliciousNode_04] ITERATION  250/500 | Gradient Loss: 9.448403 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:40:01,577 - DEBUG - [CLIENT] [Client MaliciousNode_04] ITERATION  300/500 | Gradient Loss: 8.038109 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:40:03,498 - DEBUG - [CLIENT] [Client MaliciousNode_04] ITERATION  350/500 | Gradient Loss: 6.840157 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:40:05,497 - DEBUG - [CLIENT] [Client MaliciousNode_04] ITERATION  400/500 | Gradient Loss: 5.818351 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:40:08,432 - DEBUG - [CLIENT] [Client MaliciousNode_04] ITERATION  450/500 | Gradient Loss: 4.950745 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:40:10,563 - DEBUG - [CLIENT] [Client MaliciousNode_04] ITERATION  500/500 | Gradient Loss: 4.217358 | Data Regularization (TV) Loss: 0.00123
+2025-11-27 15:40:10,602 - ATTACK - [CLIENT] [Client MaliciousNode_04] Optimization finished. Target data reconstructed.
+2025-11-27 15:40:10,620 - WARNING - [CLIENT] [Client MaliciousNode_04] [FILE_IO] Stolen data saved as reconstructed_ocean_data_MaliciousNode_04_7003.npy. This should not occur in FL.
+2025-11-27 15:40:10,633 - INFO - [CLIENT] [Client MaliciousNode_04] Uploading final model updates...
+2025-11-27 15:40:11,327 - WARNING - [SERVER] [Client MaliciousNode_04] Upload delay detected. Straggler identified (+30s lag compared to average).
+
+2025-11-27 15:40:11,368 - INFO - [CLIENT] [Client NormalNode_12] Round 1: Received global model. Starting local training (Standard FL).
+2025-11-27 15:40:11,537 - DEBUG - [CLIENT] [Client NormalNode_12] Training Epoch 1/5 | Prediction Loss: 3.0122
+2025-11-27 15:40:11,781 - DEBUG - [CLIENT] [Client NormalNode_12] Training Epoch 2/5 | Prediction Loss: 2.1483
+2025-11-27 15:40:12,211 - DEBUG - [CLIENT] [Client NormalNode_12] Training Epoch 3/5 | Prediction Loss: 1.4836
+2025-11-27 15:40:12,547 - DEBUG - [CLIENT] [Client NormalNode_12] Training Epoch 4/5 | Prediction Loss: 1.0308
+2025-11-27 15:40:12,950 - DEBUG - [CLIENT] [Client NormalNode_12] Training Epoch 5/5 | Prediction Loss: 0.7249
+2025-11-27 15:40:12,987 - INFO - [CLIENT] [Client NormalNode_12] Local training finished. Uploading model updates.
+2025-11-27 15:40:13,078 - INFO - [CLIENT] [Client NormalNode_12] Upload successfully completed.
+

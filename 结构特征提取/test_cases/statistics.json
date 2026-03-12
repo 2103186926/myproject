@@ -1,0 +1,7 @@
+{
+  "total_files": 115,
+  "normal_files": 58,
+  "malicious_files": 57,
+  "scenarios": 20,
+  "output_dir": "./test_cases"
+}

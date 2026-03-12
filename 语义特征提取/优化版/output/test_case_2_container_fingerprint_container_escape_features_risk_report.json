@@ -1,0 +1,87 @@
+{
+  "source_file": "..\\test\\ocean_computing_test_cases\\test_case_2_container_fingerprint.py",
+  "escape_risk": {
+    "risk_level": "CRITICAL",
+    "risk_score": 20.0,
+    "indicators": {
+      "CRITICAL": [
+        {
+          "rule_id": "CE-FILE-01",
+          "pattern": "file_container_fingerprint",
+          "matches": 4,
+          "samples": [
+            "/proc/self/mountinfo",
+            "/proc/1/cgroup",
+            "/proc/self/cgroup"
+          ]
+        }
+      ],
+      "HIGH": [
+        {
+          "rule_id": "CE-CMD-01",
+          "pattern": "cmd_sensitive_binary",
+          "matches": 6,
+          "samples": [
+            "docker"
+          ]
+        },
+        {
+          "rule_id": "CE-NET-02",
+          "pattern": "net_k8s_ports",
+          "matches": 3,
+          "samples": [
+            "KUBERNETES_SERVICE_HOST"
+          ]
+        }
+      ],
+      "MEDIUM": [],
+      "LOW": []
+    },
+    "summary": "发现 1 个CRITICAL风险, 发现 2 个HIGH风险",
+    "total_patterns": 3
+  },
+  "obfuscation": {
+    "obfuscated": false,
+    "obfuscation_score": 1,
+    "entropy": 5.3540089338498555,
+    "avg_line_length": 28.85,
+    "indicators": {
+      "高熵值": true,
+      "超长行": false,
+      "base64解码": false,
+      "hex解码": false,
+      "unicode转义": false,
+      "eval/exec": false,
+      "compile": false,
+      "getattr调用": false,
+      "chr拼接": false,
+      "字符串拼接": false,
+      "反射调用": false,
+      "压缩解压": false
+    },
+    "reasons": [
+      "高熵值"
+    ]
+  },
+  "obfuscation_bypass": {
+    "has_obfuscation": true,
+    "obfuscation_techniques": [
+      "encoded_sensitive_keywords"
+    ],
+    "decoded_sensitive_keywords": [
+      "/.dockerenv",
+      "docker",
+      "/proc/1/cgroup",
+      "mount"
+    ],
+    "risk_level": "HIGH",
+    "details": {}
+  },
+  "feature_dimensions": {
+    "total": 128,
+    "sensitive_functions": 32,
+    "attack_patterns": 48,
+    "path_config": 24,
+    "obfuscation": 24
+  }
+}

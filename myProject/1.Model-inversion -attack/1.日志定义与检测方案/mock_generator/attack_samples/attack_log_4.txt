@@ -1,0 +1,59 @@
+[+] Starting model inversion attack...
+[+] Client initialized for model: ocean_ts_predictor_v2
+[+] Targeting Location: Lat=38.4132, Lon=121.9744
+[+] Scanning Depth from 10m to 1030m
+Querying at Lat: 38.4136, Lon: 121.9741, Depth: 10.0 -> Temp: 10.24, Salinity: 35.06
+Querying at Lat: 38.4141, Lon: 121.9748, Depth: 30.0 -> Temp: 11.66, Salinity: 35.03
+Querying at Lat: 38.4137, Lon: 121.9745, Depth: 50.0 -> Temp: 12.54, Salinity: 34.97
+Querying at Lat: 38.4134, Lon: 121.9761, Depth: 70.0 -> Temp: 12.74, Salinity: 34.93
+Querying at Lat: 38.4144, Lon: 121.9729, Depth: 90.0 -> Temp: 13.88, Salinity: 34.87
+Querying at Lat: 38.4131, Lon: 121.9747, Depth: 110.0 -> Temp: 14.35, Salinity: 34.66
+Querying at Lat: 38.4135, Lon: 121.9732, Depth: 130.0 -> Temp: 14.62, Salinity: 34.62
+Querying at Lat: 38.4129, Lon: 121.9756, Depth: 150.0 -> Temp: 15.05, Salinity: 34.47
+Querying at Lat: 38.4140, Lon: 121.9736, Depth: 170.0 -> Temp: 14.66, Salinity: 34.50
+Querying at Lat: 38.4138, Lon: 121.9737, Depth: 190.0 -> Temp: 15.19, Salinity: 34.25
+Querying at Lat: 38.4115, Lon: 121.9748, Depth: 210.0 -> Temp: 14.60, Salinity: 34.22
+Querying at Lat: 38.4141, Lon: 121.9737, Depth: 230.0 -> Temp: 13.25, Salinity: 34.00
+Querying at Lat: 38.4141, Lon: 121.9747, Depth: 250.0 -> Temp: 13.29, Salinity: 33.81
+Querying at Lat: 38.4135, Lon: 121.9729, Depth: 270.0 -> Temp: 11.75, Salinity: 33.82
+Querying at Lat: 38.4118, Lon: 121.9754, Depth: 290.0 -> Temp: 11.27, Salinity: 33.59
+Querying at Lat: 38.4117, Lon: 121.9728, Depth: 310.0 -> Temp: 10.01, Salinity: 33.50
+Querying at Lat: 38.4130, Lon: 121.9740, Depth: 330.0 -> Temp: 8.76, Salinity: 33.45
+Querying at Lat: 38.4118, Lon: 121.9727, Depth: 350.0 -> Temp: 8.66, Salinity: 33.30
+Querying at Lat: 38.4120, Lon: 121.9738, Depth: 370.0 -> Temp: 6.91, Salinity: 33.28
+Querying at Lat: 38.4122, Lon: 121.9754, Depth: 390.0 -> Temp: 6.50, Salinity: 33.07
+Querying at Lat: 38.4149, Lon: 121.9729, Depth: 410.0 -> Temp: 6.10, Salinity: 33.00
+Querying at Lat: 38.4131, Lon: 121.9729, Depth: 430.0 -> Temp: 5.67, Salinity: 33.02
+Querying at Lat: 38.4146, Lon: 121.9748, Depth: 450.0 -> Temp: 4.78, Salinity: 33.10
+Querying at Lat: 38.4149, Lon: 121.9759, Depth: 470.0 -> Temp: 5.47, Salinity: 32.94
+Querying at Lat: 38.4122, Lon: 121.9727, Depth: 490.0 -> Temp: 5.53, Salinity: 32.99
+Querying at Lat: 38.4132, Lon: 121.9733, Depth: 510.0 -> Temp: 5.00, Salinity: 32.99
+Querying at Lat: 38.4132, Lon: 121.9732, Depth: 530.0 -> Temp: 6.26, Salinity: 33.00
+Querying at Lat: 38.4146, Lon: 121.9733, Depth: 550.0 -> Temp: 6.00, Salinity: 33.16
+Querying at Lat: 38.4125, Lon: 121.9758, Depth: 570.0 -> Temp: 7.29, Salinity: 33.15
+Querying at Lat: 38.4143, Lon: 121.9734, Depth: 590.0 -> Temp: 7.76, Salinity: 33.26
+Querying at Lat: 38.4145, Lon: 121.9738, Depth: 610.0 -> Temp: 8.74, Salinity: 33.45
+Querying at Lat: 38.4124, Lon: 121.9752, Depth: 630.0 -> Temp: 10.44, Salinity: 33.44
+Querying at Lat: 38.4118, Lon: 121.9746, Depth: 650.0 -> Temp: 11.33, Salinity: 33.70
+Querying at Lat: 38.4129, Lon: 121.9741, Depth: 670.0 -> Temp: 11.91, Salinity: 33.70
+Querying at Lat: 38.4143, Lon: 121.9748, Depth: 690.0 -> Temp: 12.85, Salinity: 33.85
+Querying at Lat: 38.4116, Lon: 121.9729, Depth: 710.0 -> Temp: 13.16, Salinity: 33.95
+Querying at Lat: 38.4143, Lon: 121.9730, Depth: 730.0 -> Temp: 13.90, Salinity: 34.18
+Querying at Lat: 38.4142, Lon: 121.9731, Depth: 750.0 -> Temp: 14.83, Salinity: 34.26
+Querying at Lat: 38.4121, Lon: 121.9751, Depth: 770.0 -> Temp: 14.73, Salinity: 34.49
+Querying at Lat: 38.4131, Lon: 121.9748, Depth: 790.0 -> Temp: 15.41, Salinity: 34.50
+Querying at Lat: 38.4119, Lon: 121.9760, Depth: 810.0 -> Temp: 15.22, Salinity: 34.59
+Querying at Lat: 38.4148, Lon: 121.9738, Depth: 830.0 -> Temp: 14.50, Salinity: 34.81
+Querying at Lat: 38.4119, Lon: 121.9731, Depth: 850.0 -> Temp: 14.21, Salinity: 34.80
+Querying at Lat: 38.4143, Lon: 121.9736, Depth: 870.0 -> Temp: 13.17, Salinity: 34.84
+Querying at Lat: 38.4117, Lon: 121.9735, Depth: 890.0 -> Temp: 12.12, Salinity: 34.86
+Querying at Lat: 38.4148, Lon: 121.9742, Depth: 910.0 -> Temp: 11.49, Salinity: 34.91
+Querying at Lat: 38.4137, Lon: 121.9745, Depth: 930.0 -> Temp: 11.12, Salinity: 34.99
+Querying at Lat: 38.4133, Lon: 121.9749, Depth: 950.0 -> Temp: 10.05, Salinity: 34.97
+Querying at Lat: 38.4117, Lon: 121.9757, Depth: 970.0 -> Temp: 8.15, Salinity: 35.02
+Querying at Lat: 38.4149, Lon: 121.9747, Depth: 990.0 -> Temp: 8.21, Salinity: 34.87
+Querying at Lat: 38.4147, Lon: 121.9728, Depth: 1010.0 -> Temp: 7.16, Salinity: 34.97
+Querying at Lat: 38.4123, Lon: 121.9745, Depth: 1030.0 -> Temp: 5.72, Salinity: 34.86
+
+[+] Attack finished.
+[+] Collected 52 data points. Total time: 18.14s

@@ -1,0 +1,77 @@
+{
+  "source_file": "..\\test\\ocean_computing_test_cases\\test_case_3_cloud_metadata_exfiltration.py",
+  "escape_risk": {
+    "risk_level": "HIGH",
+    "risk_score": 10.0,
+    "indicators": {
+      "CRITICAL": [],
+      "HIGH": [
+        {
+          "rule_id": "CE-FILE-06",
+          "pattern": "file_cloud_creds",
+          "matches": 2,
+          "samples": [
+            ".config/gcloud",
+            ".aws/credentials"
+          ]
+        },
+        {
+          "rule_id": "CE-NET-01",
+          "pattern": "net_cloud_metadata",
+          "matches": 8,
+          "samples": [
+            "metadata.google.internal",
+            "100.100.100.200",
+            "169.254.169.254"
+          ]
+        }
+      ],
+      "MEDIUM": [],
+      "LOW": []
+    },
+    "summary": "发现 2 个HIGH风险",
+    "total_patterns": 2
+  },
+  "obfuscation": {
+    "obfuscated": false,
+    "obfuscation_score": 1,
+    "entropy": 5.192528274550984,
+    "avg_line_length": 32.72549019607843,
+    "indicators": {
+      "高熵值": true,
+      "超长行": false,
+      "base64解码": false,
+      "hex解码": false,
+      "unicode转义": false,
+      "eval/exec": false,
+      "compile": false,
+      "getattr调用": false,
+      "chr拼接": false,
+      "字符串拼接": false,
+      "反射调用": false,
+      "压缩解压": false
+    },
+    "reasons": [
+      "高熵值"
+    ]
+  },
+  "obfuscation_bypass": {
+    "has_obfuscation": true,
+    "obfuscation_techniques": [
+      "encoded_sensitive_keywords"
+    ],
+    "decoded_sensitive_keywords": [
+      "169.254.169.254",
+      "metadata.google.internal"
+    ],
+    "risk_level": "HIGH",
+    "details": {}
+  },
+  "feature_dimensions": {
+    "total": 128,
+    "sensitive_functions": 32,
+    "attack_patterns": 48,
+    "path_config": 24,
+    "obfuscation": 24
+  }
+}

@@ -1,0 +1,519 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+优化的GNN训练模块
+增加早停、学习率调度、注意力机制等
+"""
+
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torch_geometric.nn import GCNConv, GATConv, global_mean_pool, global_add_pool
+from torch_geometric.data import Data, DataLoader
+from typing import List, Dict, Tuple, Optional
+import numpy as np
+from config import Config, get_default_config
+
+
+class AttentionPooling(nn.Module):
+    """注意力池化层"""
+    
+    def __init__(self, in_channels: int):
+        super(AttentionPooling, self).__init__()
+        self.attention = nn.Linear(in_channels, 1)
+    
+    def forward(self, x, batch):
+        """
+        参数:
+            x: 节点特征 [num_nodes, in_channels]
+            batch: 批次索引 [num_nodes]
+        """
+        # 计算注意力权重
+        attn_weights = torch.sigmoid(self.attention(x))  # [num_nodes, 1]
+        
+        # 加权求和
+        x_weighted = x * attn_weights
+        
+        # 按批次聚合
+        return global_add_pool(x_weighted, batch)
+
+
+class CFGGNN_V2(nn.Module):
+    """优化的CFG图神经网络"""
+    
+    def __init__(self, config: Config):
+        super(CFGGNN_V2, self).__init__()
+        
+        self.config = config
+        in_channels = config.model.node_feature_dim  # 输入节点特征的维度 256
+        hidden_channels = config.model.cfg_hidden_channels  # 隐藏层特征维度 256
+        out_channels = config.model.cfg_out_channels  # 输出节点特征的维度 128
+        num_layers = config.model.cfg_num_layers  # GCN总层数（包含输入层和输出层） 4
+        dropout = config.model.cfg_dropout  # Dropout比率 0.3
+        
+        # 输入层
+        self.conv_in = GCNConv(in_channels, hidden_channels)
+        self.bn_in = nn.BatchNorm1d(hidden_channels)
+        
+        # 中间层
+        self.convs = nn.ModuleList()
+        self.bns = nn.ModuleList()
+        for _ in range(num_layers - 2):
+            self.convs.append(GCNConv(hidden_channels, hidden_channels))
+            self.bns.append(nn.BatchNorm1d(hidden_channels))
+        
+        # 输出层
+        self.conv_out = GCNConv(hidden_channels, out_channels)
+        self.bn_out = nn.BatchNorm1d(out_channels)
+        
+        # 池化层
+        if config.model.cfg_pooling == 'attention':
+            self.pool = AttentionPooling(out_channels)
+        else:
+            self.pool = global_mean_pool
+        
+        self.dropout = dropout
+        
+        # 分类器（用于监督学习）
+        self.classifier = nn.Sequential(
+            nn.Linear(out_channels, out_channels // 2),
+            nn.ReLU(),
+            nn.Dropout(dropout),
+            nn.Linear(out_channels // 2, 2)
+        )
+    
+    def forward(self, x, edge_index, batch=None):
+        """
+        前向传播
+        
+        返回:
+            node_embeddings: 节点嵌入
+            graph_embedding: 图嵌入
+            logits: 分类logits
+        """
+        # 输入层
+        x = self.conv_in(x, edge_index)  # 图卷积
+        x = self.bn_in(x)  # 归一化
+        x = F.relu(x)  # 激活函数
+        x = F.dropout(x, p=self.dropout, training=self.training)  # 丢弃
+        
+        # 中间层（带残差连接）
+        for conv, bn in zip(self.convs, self.bns):
+            identity = x
+            x = conv(x, edge_index)  # 图卷积
+            x = bn(x)  # 归一化
+            x = F.relu(x)  # 激活
+            x = F.dropout(x, p=self.dropout, training=self.training)  # 丢弃
+            x = x + identity  # 残差连接
+        
+        # 输出层
+        x = self.conv_out(x, edge_index)
+        x = self.bn_out(x)
+        
+        node_embeddings = x  # 保存节点级嵌入
+        
+        # 图级池化
+        if batch is not None:
+            if isinstance(self.pool, AttentionPooling):
+                graph_embedding = self.pool(x, batch)
+            else:
+                graph_embedding = self.pool(x, batch)
+            logits = self.classifier(graph_embedding)
+        else:
+            graph_embedding = torch.mean(x, dim=0, keepdim=True)
+            logits = self.classifier(graph_embedding)
+        
+        return node_embeddings, graph_embedding, logits
+
+
+class FCGGNN_V2(nn.Module):
+    """优化的FCG图神经网络"""
+    
+    def __init__(self, config: Config):
+        super(FCGGNN_V2, self).__init__()
+        
+        self.config = config
+        # FCG节点特征 = 原始特征 + CFG嵌入
+        in_channels = config.model.node_feature_dim + config.model.cfg_out_channels
+        hidden_channels = config.model.fcg_hidden_channels
+        out_channels = config.model.fcg_out_channels
+        num_layers = config.model.fcg_num_layers
+        dropout = config.model.fcg_dropout
+        
+        # 使用GAT（图注意力网络）
+        self.conv_in = GATConv(in_channels, hidden_channels, heads=4, concat=True)
+        self.bn_in = nn.BatchNorm1d(hidden_channels * 4)
+        
+        # 中间层
+        self.convs = nn.ModuleList()
+        self.bns = nn.ModuleList()
+        for _ in range(num_layers - 2):
+            self.convs.append(GATConv(hidden_channels * 4, hidden_channels, heads=4, concat=True))
+            self.bns.append(nn.BatchNorm1d(hidden_channels * 4))
+        
+        # 输出层
+        self.conv_out = GATConv(hidden_channels * 4, out_channels, heads=1, concat=False)
+        self.bn_out = nn.BatchNorm1d(out_channels)
+        
+        # 池化层
+        if config.model.fcg_pooling == 'attention':
+            self.pool = AttentionPooling(out_channels)
+        else:
+            self.pool = global_mean_pool
+        
+        self.dropout = dropout
+        
+        # 分类器
+        self.classifier = nn.Sequential(
+            nn.Linear(out_channels, out_channels // 2),
+            nn.ReLU(),
+            nn.Dropout(dropout),
+            nn.Linear(out_channels // 2, 2)
+        )
+    
+    def forward(self, x, edge_index, batch=None):
+        """前向传播"""
+        # 输入层
+        x = self.conv_in(x, edge_index)
+        x = self.bn_in(x)
+        x = F.elu(x)
+        x = F.dropout(x, p=self.dropout, training=self.training)
+        
+        # 中间层
+        for conv, bn in zip(self.convs, self.bns):
+            x = conv(x, edge_index)
+            x = bn(x)
+            x = F.elu(x)
+            x = F.dropout(x, p=self.dropout, training=self.training)
+        
+        # 输出层
+        x = self.conv_out(x, edge_index)
+        x = self.bn_out(x)
+        
+        node_embeddings = x
+        
+        # 图级池化
+        if batch is not None:
+            if isinstance(self.pool, AttentionPooling):
+                graph_embedding = self.pool(x, batch)
+            else:
+                graph_embedding = self.pool(x, batch)
+            logits = self.classifier(graph_embedding)
+        else:
+            graph_embedding = torch.mean(x, dim=0, keepdim=True)
+            logits = self.classifier(graph_embedding)
+        
+        return node_embeddings, graph_embedding, logits
+
+
+class EarlyStopping:
+    """早停机制"""
+    
+    def __init__(self, patience: int = 15, min_delta: float = 0.001):
+        self.patience = patience  # 耐心轮数
+        self.min_delta = min_delta  # 最小误差
+        self.counter = 0
+        self.best_loss = None  # 最佳损失
+        self.early_stop = False
+    
+    def __call__(self, val_loss: float) -> bool:
+        if self.best_loss is None:
+            self.best_loss = val_loss
+        elif val_loss > self.best_loss - self.min_delta:
+            self.counter += 1
+            if self.counter >= self.patience:
+                self.early_stop = True
+        else:
+            self.best_loss = val_loss
+            self.counter = 0
+        
+        return self.early_stop
+
+
+class GNNTrainer:
+    """GNN训练器"""
+    
+    def __init__(self, config: Config):
+        self.config = config
+        self.device = torch.device(
+            f'cuda:{config.training.gpu_id}' 
+            if config.training.use_gpu and torch.cuda.is_available() 
+            else 'cpu'
+        )
+    
+    def train_cfg_gnn(self, model: CFGGNN_V2, train_loader: DataLoader,
+                     val_loader: Optional[DataLoader] = None) -> Tuple[CFGGNN_V2, Dict]:
+        """
+        训练CFG GNN模型
+        
+        返回:
+            (训练好的模型, 训练指标)
+        """
+        model = model.to(self.device)
+        optimizer = torch.optim.Adam(
+            model.parameters(),
+            lr=self.config.training.learning_rate,
+            weight_decay=self.config.training.weight_decay
+        )
+        
+        # 学习率调度器
+        scheduler = None
+        if self.config.training.use_scheduler:
+            if self.config.training.scheduler_type == 'ReduceLROnPlateau':
+                scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+                    optimizer,  # 优化器
+                    mode='min',  # min模式
+                    factor=self.config.training.scheduler_factor,  # 减少因子
+                    patience=self.config.training.scheduler_patience  # 耐心值
+                )
+        
+        # 早停
+        early_stopping = None
+        if self.config.training.early_stopping:
+            early_stopping = EarlyStopping(
+                patience=self.config.training.patience,  # 早停耐心值
+                min_delta=self.config.training.min_delta  # 最小误差
+            )
+        
+        # 损失函数
+        criterion = nn.BCEWithLogitsLoss()  # 二分类交叉熵损失
+        
+        # 训练历史
+        history = {
+            'train_loss': [],
+            'val_loss': [],
+            'train_acc': [],  #! 注意：此代码中并未真正计算准确率，后续虽然将准确率添加到字典，但实际未赋值。这是代码的小缺陷。
+            'val_acc': []  
+        }
+        
+        print(f"开始训练CFG GNN，设备: {self.device}")
+        
+        for epoch in range(self.config.training.cfg_epochs):
+            # 训练阶段
+            model.train()
+            train_loss = 0.0
+            train_correct = 0
+            train_total = 0
+            
+            for batch in train_loader:
+                batch = batch.to(self.device)
+                optimizer.zero_grad()
+                
+                # 前向传播
+                node_emb, graph_emb, logits = model(batch.x, batch.edge_index, batch.batch)
+                
+                # 边预测任务（自监督）
+                pos_edge_index = batch.edge_index
+                
+                # 负采样
+                try:
+                    from torch_geometric.utils import negative_sampling
+                    neg_edge_index = negative_sampling(
+                        edge_index=pos_edge_index,  # 正样本边（图中真实存在的边）
+                        num_nodes=batch.num_nodes  # 当前batch中的总节点数
+                    ).to(self.device)
+                except:
+                    continue
+                
+                # 计算边预测损失           
+                pos_score = (node_emb[pos_edge_index[0]] * node_emb[pos_edge_index[1]]).sum(dim=1)
+                neg_score = (node_emb[neg_edge_index[0]] * node_emb[neg_edge_index[1]]).sum(dim=1)
+                
+                pos_loss = criterion(pos_score, torch.ones_like(pos_score))
+                neg_loss = criterion(neg_score, torch.zeros_like(neg_score))
+                
+                loss = pos_loss + neg_loss
+                
+                # 反向传播
+                loss.backward()
+                torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+                optimizer.step()
+                
+                train_loss += loss.item()
+            
+            avg_train_loss = train_loss / len(train_loader)
+            history['train_loss'].append(avg_train_loss)
+            
+            # 验证阶段
+            if val_loader is not None and len(val_loader) > 0:
+                val_loss = self._validate(model, val_loader, criterion)
+                history['val_loss'].append(val_loss)
+                
+                # 学习率调度
+                if scheduler is not None:
+                    scheduler.step(val_loss)
+                
+                # 早停检查
+                if early_stopping is not None:
+                    if early_stopping(val_loss):
+                        print(f"早停触发，在第 {epoch+1} 轮停止训练")
+                        break
+                
+                if (epoch + 1) % 5 == 0:
+                    print(f"Epoch {epoch+1}/{self.config.training.cfg_epochs}, "
+                          f"Train Loss: {avg_train_loss:.4f}, Val Loss: {val_loss:.4f}")
+            else:
+                if (epoch + 1) % 5 == 0:
+                    print(f"Epoch {epoch+1}/{self.config.training.cfg_epochs}, "
+                          f"Train Loss: {avg_train_loss:.4f}")
+        
+        return model, history
+    
+    def train_fcg_gnn(self, model: FCGGNN_V2, train_loader: DataLoader,
+                     val_loader: Optional[DataLoader] = None) -> Tuple[FCGGNN_V2, Dict]:
+        """训练FCG GNN模型"""
+        model = model.to(self.device)
+        optimizer = torch.optim.Adam(
+            model.parameters(),
+            lr=self.config.training.learning_rate,
+            weight_decay=self.config.training.weight_decay
+        )
+        
+        scheduler = None
+        if self.config.training.use_scheduler:
+            scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+                optimizer, mode='min',
+                factor=self.config.training.scheduler_factor,
+                patience=self.config.training.scheduler_patience
+            )
+        
+        early_stopping = None
+        if self.config.training.early_stopping:
+            early_stopping = EarlyStopping(
+                patience=self.config.training.patience,
+                min_delta=self.config.training.min_delta
+            )
+        
+        criterion = nn.BCEWithLogitsLoss()
+        
+        history = {
+            'train_loss': [],
+            'val_loss': []
+        }
+        
+        print(f"开始训练FCG GNN，设备: {self.device}")
+        
+        for epoch in range(self.config.training.fcg_epochs):
+            model.train()
+            train_loss = 0.0
+            
+            for batch in train_loader:
+                batch = batch.to(self.device)
+                optimizer.zero_grad()
+                
+                node_emb, _, _ = model(batch.x, batch.edge_index, batch.batch)
+                
+                # 边预测
+                pos_edge_index = batch.edge_index
+                
+                try:
+                    from torch_geometric.utils import negative_sampling
+                    neg_edge_index = negative_sampling(
+                        edge_index=pos_edge_index,
+                        num_nodes=batch.num_nodes
+                    ).to(self.device)
+                except:
+                    continue
+                
+                pos_score = (node_emb[pos_edge_index[0]] * node_emb[pos_edge_index[1]]).sum(dim=1)
+                neg_score = (node_emb[neg_edge_index[0]] * node_emb[neg_edge_index[1]]).sum(dim=1)
+                
+                pos_loss = criterion(pos_score, torch.ones_like(pos_score))
+                neg_loss = criterion(neg_score, torch.zeros_like(neg_score))
+                
+                loss = pos_loss + neg_loss
+                
+                loss.backward()
+                torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+                optimizer.step()
+                
+                train_loss += loss.item()
+            
+            avg_train_loss = train_loss / len(train_loader)
+            history['train_loss'].append(avg_train_loss)
+            
+            if val_loader is not None and len(val_loader) > 0:
+                val_loss = self._validate(model, val_loader, criterion)
+                history['val_loss'].append(val_loss)
+                
+                if scheduler is not None:
+                    scheduler.step(val_loss)
+                
+                if early_stopping is not None:
+                    if early_stopping(val_loss):
+                        print(f"早停触发，在第 {epoch+1} 轮停止训练")
+                        break
+                
+                if (epoch + 1) % 5 == 0:
+                    print(f"Epoch {epoch+1}/{self.config.training.fcg_epochs}, "
+                          f"Train Loss: {avg_train_loss:.4f}, Val Loss: {val_loss:.4f}")
+            else:
+                if (epoch + 1) % 5 == 0:
+                    print(f"Epoch {epoch+1}/{self.config.training.fcg_epochs}, "
+                          f"Train Loss: {avg_train_loss:.4f}")
+        
+        return model, history
+    
+    def _validate(self, model, val_loader, criterion):
+        """验证模型"""
+        model.eval()
+        val_loss = 0.0
+        
+        # 如果验证集为空，返回0
+        if len(val_loader) == 0:
+            return 0.0
+        
+        with torch.no_grad():
+            for batch in val_loader:
+                batch = batch.to(self.device)
+                
+                node_emb, _, _ = model(batch.x, batch.edge_index, batch.batch)
+                
+                pos_edge_index = batch.edge_index
+                
+                try:
+                    from torch_geometric.utils import negative_sampling
+                    neg_edge_index = negative_sampling(
+                        edge_index=pos_edge_index,
+                        num_nodes=batch.num_nodes
+                    ).to(self.device)
+                except:
+                    continue
+                
+                pos_score = (node_emb[pos_edge_index[0]] * node_emb[pos_edge_index[1]]).sum(dim=1)
+                neg_score = (node_emb[neg_edge_index[0]] * node_emb[neg_edge_index[1]]).sum(dim=1)
+                
+                pos_loss = criterion(pos_score, torch.ones_like(pos_score))
+                neg_loss = criterion(neg_score, torch.zeros_like(neg_score))
+                
+                loss = pos_loss + neg_loss
+                val_loss += loss.item()
+        
+        return val_loss / len(val_loader)
+
+
+if __name__ == "__main__":
+    print("测试GNN训练器...")
+    
+    config = get_default_config()
+    
+    # 创建模型
+    cfg_model = CFGGNN_V2(config)
+    fcg_model = FCGGNN_V2(config)
+    
+    print(f"CFG模型参数量: {sum(p.numel() for p in cfg_model.parameters())}")
+    print(f"FCG模型参数量: {sum(p.numel() for p in fcg_model.parameters())}")
+    
+    # 创建测试数据
+    x = torch.randn(10, config.model.node_feature_dim)
+    edge_index = torch.tensor([[0, 1, 2, 3], [1, 2, 3, 4]], dtype=torch.long)
+    batch = torch.zeros(10, dtype=torch.long)
+    
+    # 测试前向传播
+    node_emb, graph_emb, logits = cfg_model(x, edge_index, batch)
+    print(f"\nCFG模型输出:")
+    print(f"  节点嵌入: {node_emb.shape}")
+    print(f"  图嵌入: {graph_emb.shape}")
+    print(f"  分类logits: {logits.shape}")
+    
+    print("\n测试完成")

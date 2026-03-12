@@ -1,0 +1,16 @@
+[2025-11-27 16:48:54] [INFO] Task started: Ocean_Current_Analysis_v2
+[2025-11-27 16:48:57] [INFO] Loading dataset from /data/public/pacific_temp_2023.nc
+[2025-11-27 16:49:00] [INFO] Dataset loaded. Shape: (365, 180, 360). Memory usage: 450MB.
+[2025-11-27 16:49:03] [INFO] Preprocessing: removing NaN values and normalizing...
+[2025-11-27 16:49:12] [INFO] Initializing predictive model: high_precision_wave_forecast_v3
+[2025-11-27 16:49:13] [INFO] Running inference on selected ROI (Region of Interest)...
+[2025-11-27 16:49:18] [INFO] Processing time step 1/6... Analysis complete.
+[2025-11-27 16:49:22] [INFO] Processing time step 2/6... Analysis complete.
+[2025-11-27 16:49:26] [INFO] Processing time step 3/6... Analysis complete.
+[2025-11-27 16:49:31] [INFO] Processing time step 4/6... Analysis complete.
+[2025-11-27 16:49:35] [INFO] Processing time step 5/6... Analysis complete.
+[2025-11-27 16:49:40] [INFO] Processing time step 6/6... Analysis complete.
+[2025-11-27 16:49:43] [INFO] Generating visualization plots...
+[2025-11-27 16:49:48] [INFO] Plot saved to: analysis_result_heatmap.png
+[2025-11-27 16:49:48] [INFO] Summary report saved to: ocean_analysis_report.pdf
+[2025-11-27 16:49:49] [INFO] Task completed successfully.

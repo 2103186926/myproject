@@ -1,0 +1,289 @@
+[+] Starting Membership Inference Attack for model 'seabed_terrain_classifier'
+[+] Generating 250 shadow samples...
+[+] Querying the target model for 251 samples...
+Query 1/251 - Features: [0.1, 738.351, 11.352, 0.382, 3.713, 5.255, 2.08, 5.804] - Confidence: 0.9729, Predicted Class: 4
+Query 2/251 - Features: [0.123, 738.304, 11.338, 0.364, 3.692, 5.357, 2.053, 5.782] - Confidence: 0.4091, Predicted Class: 2
+Query 3/251 - Features: [0.111, 738.33, 11.365, 0.391, 3.785, 5.266, 2.037, 5.875] - Confidence: 0.6289, Predicted Class: 0
+Query 4/251 - Features: [0.102, 738.301, 11.357, 0.362, 3.707, 5.188, 2.092, 5.808] - Confidence: 0.5476, Predicted Class: 2
+Query 5/251 - Features: [0.137, 738.32, 11.31, 0.315, 3.806, 5.204, 2.147, 5.801] - Confidence: 0.5205, Predicted Class: 2
+Query 6/251 - Features: [0.077, 738.371, 11.389, 0.384, 3.782, 5.269, 2.027, 5.814] - Confidence: 0.4946, Predicted Class: 0
+Query 7/251 - Features: [0.181, 738.335, 11.419, 0.365, 3.663, 5.266, 2.1, 5.849] - Confidence: 0.5698, Predicted Class: 1
+Query 8/251 - Features: [0.14, 738.365, 11.377, 0.363, 3.715, 5.295, 2.051, 5.765] - Confidence: 0.5196, Predicted Class: 0
+Query 9/251 - Features: [0.198, 738.344, 11.433, 0.411, 3.697, 5.306, 1.973, 5.751] - Confidence: 0.6803, Predicted Class: 0
+Query 10/251 - Features: [0.157, 738.297, 11.317, 0.335, 3.699, 5.275, 2.122, 5.822] - Confidence: 0.5143, Predicted Class: 1
+Query 11/251 - Features: [0.045, 738.351, 11.336, 0.294, 3.738, 5.155, 2.034, 5.775] - Confidence: 0.4062, Predicted Class: 2
+Query 12/251 - Features: [0.098, 738.394, 11.408, 0.371, 3.712, 5.286, 2.063, 5.92] - Confidence: 0.5599, Predicted Class: 1
+Query 13/251 - Features: [0.021, 738.327, 11.361, 0.355, 3.766, 5.33, 2.013, 5.89] - Confidence: 0.671, Predicted Class: 1
+Query 14/251 - Features: [0.013, 738.204, 11.263, 0.354, 3.798, 5.228, 2.086, 5.849] - Confidence: 0.4769, Predicted Class: 0
+Query 15/251 - Features: [0.153, 738.274, 11.376, 0.322, 3.699, 5.312, 2.026, 5.83] - Confidence: 0.6091, Predicted Class: 0
+Query 16/251 - Features: [-0.0, 738.249, 11.343, 0.341, 3.664, 5.095, 2.097, 5.806] - Confidence: 0.5277, Predicted Class: 1
+...
+Query 17/251 - Features: [0.122, 738.282, 11.321, 0.415, 3.774, 5.299, 2.019, 5.776] - Confidence: 0.4995, Predicted Class: 0
+Query 18/251 - Features: [0.09, 738.324, 11.332, 0.296, 3.682, 5.282, 2.11, 5.949] - Confidence: 0.473, Predicted Class: 2
+Query 19/251 - Features: [-0.005, 738.332, 11.342, 0.416, 3.796, 5.267, 2.116, 5.781] - Confidence: 0.5237, Predicted Class: 2
+Query 20/251 - Features: [0.125, 738.35, 11.367, 0.432, 3.691, 5.278, 2.126, 5.769] - Confidence: 0.5486, Predicted Class: 2
+Query 21/251 - Features: [0.104, 738.259, 11.338, 0.348, 3.753, 5.217, 2.113, 5.815] - Confidence: 0.4373, Predicted Class: 0
+Query 22/251 - Features: [0.09, 738.251, 11.339, 0.42, 3.751, 5.293, 2.097, 5.737] - Confidence: 0.6519, Predicted Class: 2
+Query 23/251 - Features: [0.106, 738.293, 11.487, 0.368, 3.652, 5.261, 2.001, 5.802] - Confidence: 0.4479, Predicted Class: 1
+Query 24/251 - Features: [0.023, 738.238, 11.376, 0.407, 3.745, 5.255, 2.103, 5.776] - Confidence: 0.4962, Predicted Class: 2
+Query 25/251 - Features: [0.145, 738.385, 11.462, 0.374, 3.634, 5.213, 2.025, 5.842] - Confidence: 0.4309, Predicted Class: 0
+Query 26/251 - Features: [0.084, 738.303, 11.359, 0.346, 3.727, 5.357, 2.072, 5.867] - Confidence: 0.6682, Predicted Class: 2
+Query 27/251 - Features: [0.119, 738.44, 11.394, 0.387, 3.604, 5.197, 2.073, 5.761] - Confidence: 0.6502, Predicted Class: 0
+...
+Query 28/251 - Features: [0.13, 738.32, 11.307, 0.292, 3.683, 5.268, 2.042, 5.948] - Confidence: 0.4919, Predicted Class: 2
+Query 29/251 - Features: [0.096, 738.391, 11.306, 0.329, 3.703, 5.185, 2.066, 5.816] - Confidence: 0.5117, Predicted Class: 0
+Query 30/251 - Features: [0.078, 738.419, 11.272, 0.3, 3.749, 5.193, 2.128, 5.793] - Confidence: 0.4547, Predicted Class: 0
+Query 31/251 - Features: [0.087, 738.256, 11.301, 0.438, 3.671, 5.243, 2.14, 5.816] - Confidence: 0.5363, Predicted Class: 2
+Query 32/251 - Features: [0.051, 738.293, 11.389, 0.469, 3.715, 5.304, 2.112, 5.822] - Confidence: 0.4245, Predicted Class: 0
+Query 33/251 - Features: [0.156, 738.405, 11.355, 0.369, 3.737, 5.364, 2.127, 5.837] - Confidence: 0.5907, Predicted Class: 1
+Query 34/251 - Features: [0.07, 738.289, 11.374, 0.411, 3.671, 5.339, 2.061, 5.79] - Confidence: 0.5535, Predicted Class: 0
+Query 35/251 - Features: [0.129, 738.423, 11.394, 0.33, 3.63, 5.262, 2.026, 5.664] - Confidence: 0.4324, Predicted Class: 1
+Query 36/251 - Features: [0.123, 738.414, 11.421, 0.381, 3.712, 5.218, 2.051, 5.842] - Confidence: 0.477, Predicted Class: 1
+Query 37/251 - Features: [0.116, 738.306, 11.357, 0.451, 3.699, 5.33, 2.137, 5.801] - Confidence: 0.5195, Predicted Class: 1
+Query 38/251 - Features: [0.101, 738.291, 11.357, 0.397, 3.718, 5.196, 2.081, 5.797] - Confidence: 0.5245, Predicted Class: 0
+Query 39/251 - Features: [0.026, 738.327, 11.373, 0.354, 3.675, 5.323, 2.08, 5.843] - Confidence: 0.5104, Predicted Class: 1
+Query 40/251 - Features: [0.155, 738.27, 11.426, 0.415, 3.821, 5.246, 2.115, 5.806] - Confidence: 0.6082, Predicted Class: 2
+Query 41/251 - Features: [0.097, 738.407, 11.362, 0.387, 3.635, 5.268, 2.052, 5.794] - Confidence: 0.6292, Predicted Class: 1
+...
+Query 42/251 - Features: [0.079, 738.304, 11.361, 0.324, 3.739, 5.208, 2.065, 5.802] - Confidence: 0.5921, Predicted Class: 1
+Query 43/251 - Features: [0.081, 738.364, 11.3, 0.412, 3.747, 5.248, 2.002, 5.787] - Confidence: 0.583, Predicted Class: 2
+Query 44/251 - Features: [0.052, 738.355, 11.355, 0.4, 3.716, 5.27, 2.102, 5.761] - Confidence: 0.5123, Predicted Class: 2
+Query 45/251 - Features: [0.116, 738.326, 11.365, 0.42, 3.692, 5.202, 2.005, 5.811] - Confidence: 0.5284, Predicted Class: 0
+Query 46/251 - Features: [0.127, 738.371, 11.348, 0.319, 3.681, 5.305, 2.088, 5.823] - Confidence: 0.4752, Predicted Class: 0
+Query 47/251 - Features: [0.211, 738.385, 11.279, 0.339, 3.682, 5.231, 2.092, 5.831] - Confidence: 0.5533, Predicted Class: 2
+Query 48/251 - Features: [0.134, 738.336, 11.339, 0.381, 3.664, 5.225, 2.007, 5.788] - Confidence: 0.4836, Predicted Class: 0
+Query 49/251 - Features: [0.088, 738.324, 11.333, 0.458, 3.638, 5.304, 2.156, 5.828] - Confidence: 0.5509, Predicted Class: 2
+Query 50/251 - Features: [0.086, 738.389, 11.373, 0.302, 3.662, 5.24, 2.103, 5.772] - Confidence: 0.5907, Predicted Class: 2
+Query 51/251 - Features: [0.1, 738.304, 11.414, 0.383, 3.751, 5.294, 2.112, 5.805] - Confidence: 0.4817, Predicted Class: 0
+Query 52/251 - Features: [0.072, 738.355, 11.337, 0.353, 3.754, 5.243, 2.113, 5.806] - Confidence: 0.4154, Predicted Class: 0
+Query 53/251 - Features: [0.129, 738.33, 11.336, 0.399, 3.75, 5.182, 2.07, 5.633] - Confidence: 0.4891, Predicted Class: 2
+Query 54/251 - Features: [0.149, 738.352, 11.391, 0.38, 3.774, 5.348, 2.006, 5.791] - Confidence: 0.5752, Predicted Class: 2
+Query 55/251 - Features: [0.144, 738.38, 11.326, 0.312, 3.732, 5.272, 2.099, 5.845] - Confidence: 0.6472, Predicted Class: 0
+Query 56/251 - Features: [0.129, 738.316, 11.418, 0.384, 3.725, 5.211, 2.171, 5.874] - Confidence: 0.5396, Predicted Class: 1
+Query 57/251 - Features: [0.07, 738.273, 11.307, 0.392, 3.697, 5.266, 2.026, 5.779] - Confidence: 0.4998, Predicted Class: 1
+Query 58/251 - Features: [0.03, 738.495, 11.248, 0.419, 3.687, 5.234, 2.129, 5.825] - Confidence: 0.5582, Predicted Class: 0
+Query 59/251 - Features: [0.074, 738.355, 11.354, 0.408, 3.625, 5.216, 2.082, 5.793] - Confidence: 0.5846, Predicted Class: 1
+Query 60/251 - Features: [0.168, 738.347, 11.371, 0.356, 3.694, 5.211, 2.001, 5.772] - Confidence: 0.56, Predicted Class: 1
+Query 61/251 - Features: [0.125, 738.406, 11.327, 0.33, 3.656, 5.273, 2.083, 5.826] - Confidence: 0.4551, Predicted Class: 2
+Query 62/251 - Features: [0.089, 738.433, 11.358, 0.385, 3.71, 5.227, 2.158, 5.799] - Confidence: 0.6785, Predicted Class: 0
+Query 63/251 - Features: [0.052, 738.335, 11.353, 0.31, 3.769, 5.23, 2.102, 5.735] - Confidence: 0.6528, Predicted Class: 2
+Query 64/251 - Features: [0.016, 738.44, 11.362, 0.444, 3.682, 5.324, 2.116, 5.794] - Confidence: 0.6772, Predicted Class: 1
+Query 65/251 - Features: [0.108, 738.351, 11.414, 0.407, 3.612, 5.205, 2.135, 5.806] - Confidence: 0.4419, Predicted Class: 1
+Query 66/251 - Features: [0.01, 738.371, 11.355, 0.448, 3.738, 5.299, 2.1, 5.795] - Confidence: 0.4559, Predicted Class: 1
+Query 67/251 - Features: [0.086, 738.303, 11.316, 0.415, 3.693, 5.157, 1.999, 5.758] - Confidence: 0.6709, Predicted Class: 0
+Query 68/251 - Features: [0.096, 738.443, 11.342, 0.377, 3.686, 5.306, 2.072, 5.762] - Confidence: 0.6224, Predicted Class: 2
+Query 69/251 - Features: [0.169, 738.369, 11.336, 0.363, 3.776, 5.301, 2.091, 5.674] - Confidence: 0.6089, Predicted Class: 2
+Query 70/251 - Features: [0.067, 738.427, 11.303, 0.404, 3.753, 5.222, 2.099, 5.837] - Confidence: 0.524, Predicted Class: 2
+Query 71/251 - Features: [0.042, 738.282, 11.337, 0.39, 3.68, 5.241, 2.109, 5.761] - Confidence: 0.4131, Predicted Class: 1
+Query 72/251 - Features: [0.016, 738.281, 11.339, 0.386, 3.648, 5.203, 2.126, 5.759] - Confidence: 0.4563, Predicted Class: 1
+Query 73/251 - Features: [0.072, 738.438, 11.374, 0.403, 3.708, 5.18, 2.037, 5.83] - Confidence: 0.4845, Predicted Class: 1
+...
+Query 74/251 - Features: [0.086, 738.32, 11.413, 0.374, 3.702, 5.234, 2.032, 5.81] - Confidence: 0.6449, Predicted Class: 2
+Query 75/251 - Features: [0.088, 738.379, 11.293, 0.395, 3.773, 5.27, 2.13, 5.829] - Confidence: 0.4543, Predicted Class: 2
+Query 76/251 - Features: [0.09, 738.246, 11.413, 0.414, 3.706, 5.295, 2.156, 5.78] - Confidence: 0.6921, Predicted Class: 1
+Query 77/251 - Features: [0.116, 738.3, 11.317, 0.375, 3.699, 5.244, 2.028, 5.809] - Confidence: 0.666, Predicted Class: 0
+Query 78/251 - Features: [0.141, 738.342, 11.322, 0.305, 3.761, 5.175, 2.048, 5.879] - Confidence: 0.4392, Predicted Class: 2
+Query 79/251 - Features: [0.103, 738.485, 11.321, 0.411, 3.662, 5.292, 2.158, 5.736] - Confidence: 0.4688, Predicted Class: 0
+Query 80/251 - Features: [0.102, 738.271, 11.282, 0.384, 3.782, 5.242, 2.096, 5.808] - Confidence: 0.4211, Predicted Class: 2
+...
+Query 81/251 - Features: [0.12, 738.373, 11.31, 0.356, 3.782, 5.259, 2.094, 5.788] - Confidence: 0.5309, Predicted Class: 0
+Query 82/251 - Features: [0.077, 738.409, 11.42, 0.38, 3.738, 5.264, 2.111, 5.883] - Confidence: 0.5151, Predicted Class: 1
+Query 83/251 - Features: [0.152, 738.436, 11.341, 0.448, 3.716, 5.27, 2.061, 5.778] - Confidence: 0.5637, Predicted Class: 0
+Query 84/251 - Features: [0.095, 738.301, 11.308, 0.352, 3.714, 5.167, 2.048, 5.7] - Confidence: 0.6421, Predicted Class: 2
+Query 85/251 - Features: [0.156, 738.326, 11.331, 0.369, 3.73, 5.282, 2.137, 5.769] - Confidence: 0.536, Predicted Class: 0
+Query 86/251 - Features: [0.118, 738.328, 11.362, 0.441, 3.688, 5.263, 2.087, 5.828] - Confidence: 0.5111, Predicted Class: 2
+...
+Query 87/251 - Features: [0.067, 738.32, 11.419, 0.35, 3.694, 5.278, 2.058, 5.763] - Confidence: 0.5162, Predicted Class: 1
+Query 88/251 - Features: [0.119, 738.4, 11.325, 0.379, 3.671, 5.334, 2.061, 5.828] - Confidence: 0.6744, Predicted Class: 0
+Query 89/251 - Features: [0.031, 738.404, 11.239, 0.32, 3.687, 5.215, 2.085, 5.814] - Confidence: 0.6506, Predicted Class: 2
+Query 90/251 - Features: [0.136, 738.38, 11.394, 0.274, 3.722, 5.265, 2.039, 5.812] - Confidence: 0.5266, Predicted Class: 1
+...
+Query 91/251 - Features: [0.193, 738.376, 11.415, 0.408, 3.761, 5.223, 2.026, 5.883] - Confidence: 0.4971, Predicted Class: 2
+Query 92/251 - Features: [0.008, 738.397, 11.434, 0.377, 3.717, 5.279, 2.116, 5.775] - Confidence: 0.6429, Predicted Class: 2
+Query 93/251 - Features: [0.205, 738.242, 11.361, 0.289, 3.606, 5.197, 2.124, 5.722] - Confidence: 0.6494, Predicted Class: 2
+Query 94/251 - Features: [0.128, 738.317, 11.368, 0.377, 3.65, 5.291, 2.059, 5.822] - Confidence: 0.4617, Predicted Class: 1
+Query 95/251 - Features: [0.146, 738.275, 11.302, 0.304, 3.712, 5.31, 2.054, 5.766] - Confidence: 0.4356, Predicted Class: 1
+Query 96/251 - Features: [0.164, 738.373, 11.428, 0.355, 3.745, 5.201, 2.145, 5.76] - Confidence: 0.5695, Predicted Class: 2
+Query 97/251 - Features: [0.034, 738.371, 11.279, 0.352, 3.721, 5.26, 2.12, 5.838] - Confidence: 0.6726, Predicted Class: 1
+Query 98/251 - Features: [0.149, 738.365, 11.343, 0.396, 3.728, 5.278, 2.126, 5.877] - Confidence: 0.6202, Predicted Class: 1
+...
+Query 99/251 - Features: [0.079, 738.302, 11.347, 0.426, 3.628, 5.241, 2.085, 5.788] - Confidence: 0.535, Predicted Class: 2
+Query 100/251 - Features: [0.032, 738.276, 11.317, 0.415, 3.749, 5.196, 2.111, 5.841] - Confidence: 0.6479, Predicted Class: 0
+Query 101/251 - Features: [0.129, 738.339, 11.391, 0.421, 3.656, 5.217, 2.031, 5.807] - Confidence: 0.4606, Predicted Class: 2
+Query 102/251 - Features: [0.116, 738.353, 11.336, 0.403, 3.721, 5.156, 2.072, 5.829] - Confidence: 0.4608, Predicted Class: 0
+Query 103/251 - Features: [0.126, 738.426, 11.279, 0.33, 3.771, 5.283, 1.942, 5.813] - Confidence: 0.4009, Predicted Class: 2
+Query 104/251 - Features: [0.158, 738.414, 11.285, 0.31, 3.745, 5.263, 2.085, 5.775] - Confidence: 0.4016, Predicted Class: 1
+Query 105/251 - Features: [0.058, 738.353, 11.323, 0.358, 3.639, 5.281, 2.084, 5.887] - Confidence: 0.5684, Predicted Class: 2
+...
+Query 106/251 - Features: [0.045, 738.344, 11.409, 0.38, 3.67, 5.234, 2.087, 5.719] - Confidence: 0.599, Predicted Class: 1
+Query 107/251 - Features: [0.171, 738.321, 11.355, 0.456, 3.818, 5.235, 2.032, 5.779] - Confidence: 0.6668, Predicted Class: 2
+Query 108/251 - Features: [0.176, 738.288, 11.312, 0.375, 3.691, 5.298, 2.005, 5.809] - Confidence: 0.6665, Predicted Class: 1
+Query 109/251 - Features: [0.136, 738.464, 11.343, 0.349, 3.614, 5.228, 2.273, 5.781] - Confidence: 0.6736, Predicted Class: 1
+Query 110/251 - Features: [0.123, 738.36, 11.335, 0.429, 3.713, 5.14, 2.126, 5.787] - Confidence: 0.4342, Predicted Class: 2
+Query 111/251 - Features: [0.017, 738.325, 11.291, 0.424, 3.737, 5.217, 2.123, 5.828] - Confidence: 0.4537, Predicted Class: 0
+Query 112/251 - Features: [0.14, 738.282, 11.425, 0.388, 3.698, 5.268, 2.158, 5.851] - Confidence: 0.4034, Predicted Class: 0
+Query 113/251 - Features: [0.081, 738.355, 11.31, 0.408, 3.758, 5.352, 2.147, 5.792] - Confidence: 0.5624, Predicted Class: 1
+...
+Query 114/251 - Features: [0.126, 738.424, 11.435, 0.436, 3.693, 5.36, 1.983, 5.806] - Confidence: 0.5001, Predicted Class: 1
+Query 115/251 - Features: [0.137, 738.333, 11.398, 0.406, 3.71, 5.33, 2.096, 5.86] - Confidence: 0.4508, Predicted Class: 2
+Query 116/251 - Features: [0.124, 738.431, 11.35, 0.35, 3.764, 5.167, 2.057, 5.797] - Confidence: 0.5913, Predicted Class: 0
+Query 117/251 - Features: [0.07, 738.399, 11.334, 0.385, 3.655, 5.325, 2.054, 5.824] - Confidence: 0.4132, Predicted Class: 1
+...
+Query 118/251 - Features: [0.105, 738.353, 11.307, 0.351, 3.71, 5.298, 2.024, 5.769] - Confidence: 0.4211, Predicted Class: 1
+Query 119/251 - Features: [0.092, 738.357, 11.355, 0.517, 3.667, 5.169, 2.068, 5.74] - Confidence: 0.5342, Predicted Class: 1
+Query 120/251 - Features: [0.009, 738.352, 11.272, 0.364, 3.695, 5.26, 2.109, 5.837] - Confidence: 0.4146, Predicted Class: 2
+Query 121/251 - Features: [0.063, 738.412, 11.365, 0.429, 3.627, 5.272, 2.12, 5.74] - Confidence: 0.6626, Predicted Class: 2
+Query 122/251 - Features: [0.111, 738.43, 11.307, 0.402, 3.805, 5.296, 2.095, 5.844] - Confidence: 0.5655, Predicted Class: 2
+Query 123/251 - Features: [0.129, 738.29, 11.313, 0.291, 3.737, 5.195, 2.078, 5.877] - Confidence: 0.6911, Predicted Class: 1
+Query 124/251 - Features: [0.21, 738.297, 11.273, 0.428, 3.713, 5.202, 2.115, 5.774] - Confidence: 0.6249, Predicted Class: 2
+Query 125/251 - Features: [0.062, 738.322, 11.298, 0.387, 3.694, 5.19, 2.038, 5.81] - Confidence: 0.6204, Predicted Class: 2
+Query 126/251 - Features: [0.073, 738.265, 11.337, 0.428, 3.668, 5.189, 1.982, 5.876] - Confidence: 0.6965, Predicted Class: 0
+...
+Query 127/251 - Features: [0.082, 738.355, 11.304, 0.301, 3.742, 5.221, 2.089, 5.797] - Confidence: 0.5577, Predicted Class: 0
+Query 128/251 - Features: [0.083, 738.305, 11.402, 0.363, 3.792, 5.348, 2.179, 5.758] - Confidence: 0.4262, Predicted Class: 1
+Query 129/251 - Features: [0.132, 738.389, 11.313, 0.485, 3.692, 5.302, 2.115, 5.892] - Confidence: 0.4435, Predicted Class: 0
+Query 130/251 - Features: [0.15, 738.416, 11.277, 0.329, 3.715, 5.272, 1.999, 5.786] - Confidence: 0.5625, Predicted Class: 0
+Query 131/251 - Features: [0.124, 738.406, 11.351, 0.451, 3.744, 5.236, 2.07, 5.855] - Confidence: 0.5374, Predicted Class: 0
+...
+Query 132/251 - Features: [0.151, 738.314, 11.464, 0.309, 3.753, 5.251, 2.128, 5.935] - Confidence: 0.422, Predicted Class: 0
+Query 133/251 - Features: [0.084, 738.314, 11.376, 0.404, 3.6, 5.229, 2.035, 5.83] - Confidence: 0.6731, Predicted Class: 2
+Query 134/251 - Features: [0.151, 738.368, 11.445, 0.385, 3.724, 5.255, 2.094, 5.786] - Confidence: 0.6188, Predicted Class: 2
+Query 135/251 - Features: [0.065, 738.297, 11.318, 0.396, 3.718, 5.26, 2.137, 5.817] - Confidence: 0.509, Predicted Class: 1
+...
+Query 136/251 - Features: [0.011, 738.376, 11.39, 0.436, 3.658, 5.276, 2.071, 5.78] - Confidence: 0.6689, Predicted Class: 0
+Query 137/251 - Features: [0.11, 738.3, 11.381, 0.415, 3.694, 5.263, 2.09, 5.879] - Confidence: 0.4511, Predicted Class: 1
+...
+Query 138/251 - Features: [0.142, 738.298, 11.381, 0.372, 3.701, 5.216, 2.071, 5.824] - Confidence: 0.4586, Predicted Class: 1
+Query 139/251 - Features: [-0.022, 738.321, 11.382, 0.369, 3.648, 5.288, 2.021, 5.83] - Confidence: 0.4297, Predicted Class: 2
+Query 140/251 - Features: [0.131, 738.349, 11.321, 0.33, 3.81, 5.215, 2.056, 5.805] - Confidence: 0.6459, Predicted Class: 1
+Query 141/251 - Features: [0.116, 738.371, 11.377, 0.379, 3.701, 5.145, 2.258, 5.855] - Confidence: 0.6521, Predicted Class: 0
+Query 142/251 - Features: [0.048, 738.423, 11.33, 0.299, 3.772, 5.3, 2.128, 5.82] - Confidence: 0.6335, Predicted Class: 2
+Query 143/251 - Features: [0.007, 738.415, 11.436, 0.355, 3.752, 5.214, 2.081, 5.737] - Confidence: 0.5388, Predicted Class: 1
+Query 144/251 - Features: [0.094, 738.366, 11.49, 0.359, 3.708, 5.222, 2.061, 5.806] - Confidence: 0.5476, Predicted Class: 0
+Query 145/251 - Features: [0.09, 738.372, 11.371, 0.398, 3.719, 5.233, 2.013, 5.772] - Confidence: 0.6308, Predicted Class: 0
+Query 146/251 - Features: [0.113, 738.357, 11.379, 0.341, 3.717, 5.289, 2.107, 5.783] - Confidence: 0.5749, Predicted Class: 1
+...
+Query 147/251 - Features: [0.008, 738.345, 11.401, 0.362, 3.782, 5.276, 2.124, 5.761] - Confidence: 0.5193, Predicted Class: 2
+Query 148/251 - Features: [0.061, 738.37, 11.327, 0.353, 3.727, 5.218, 2.049, 5.771] - Confidence: 0.6275, Predicted Class: 0
+Query 149/251 - Features: [0.076, 738.37, 11.286, 0.402, 3.644, 5.206, 2.171, 5.778] - Confidence: 0.4955, Predicted Class: 1
+Query 150/251 - Features: [0.107, 738.363, 11.47, 0.409, 3.707, 5.178, 2.017, 5.749] - Confidence: 0.5684, Predicted Class: 2
+Query 151/251 - Features: [0.136, 738.295, 11.381, 0.39, 3.858, 5.248, 2.061, 5.79] - Confidence: 0.5065, Predicted Class: 2
+Query 152/251 - Features: [0.089, 738.316, 11.353, 0.433, 3.812, 5.26, 2.108, 5.868] - Confidence: 0.4888, Predicted Class: 1
+Query 153/251 - Features: [0.119, 738.261, 11.332, 0.345, 3.77, 5.247, 2.001, 5.833] - Confidence: 0.6221, Predicted Class: 0
+Query 154/251 - Features: [0.087, 738.329, 11.326, 0.34, 3.683, 5.3, 2.013, 5.891] - Confidence: 0.6105, Predicted Class: 2
+Query 155/251 - Features: [0.097, 738.29, 11.347, 0.481, 3.701, 5.3, 2.074, 5.768] - Confidence: 0.4394, Predicted Class: 2
+Query 156/251 - Features: [0.021, 738.359, 11.356, 0.388, 3.657, 5.211, 1.999, 5.81] - Confidence: 0.5919, Predicted Class: 2
+Query 157/251 - Features: [-0.019, 738.326, 11.292, 0.432, 3.778, 5.312, 2.093, 5.848] - Confidence: 0.5835, Predicted Class: 2
+Query 158/251 - Features: [0.162, 738.41, 11.445, 0.382, 3.741, 5.272, 2.115, 5.778] - Confidence: 0.4499, Predicted Class: 1
+Query 159/251 - Features: [0.216, 738.293, 11.358, 0.401, 3.83, 5.267, 2.041, 5.919] - Confidence: 0.6432, Predicted Class: 0
+Query 160/251 - Features: [0.149, 738.381, 11.376, 0.428, 3.773, 5.246, 2.146, 5.936] - Confidence: 0.4468, Predicted Class: 0
+Query 161/251 - Features: [0.146, 738.339, 11.264, 0.379, 3.707, 5.277, 2.153, 5.761] - Confidence: 0.6375, Predicted Class: 2
+Query 162/251 - Features: [0.142, 738.313, 11.322, 0.397, 3.755, 5.203, 2.039, 5.785] - Confidence: 0.5544, Predicted Class: 0
+...
+Query 163/251 - Features: [0.068, 738.402, 11.378, 0.316, 3.7, 5.312, 2.048, 5.834] - Confidence: 0.4796, Predicted Class: 0
+Query 164/251 - Features: [0.047, 738.413, 11.383, 0.387, 3.738, 5.286, 2.114, 5.827] - Confidence: 0.4145, Predicted Class: 2
+Query 165/251 - Features: [0.057, 738.411, 11.425, 0.336, 3.602, 5.316, 2.086, 5.702] - Confidence: 0.4911, Predicted Class: 1
+Query 166/251 - Features: [0.072, 738.313, 11.321, 0.416, 3.675, 5.257, 2.103, 5.801] - Confidence: 0.4217, Predicted Class: 0
+...
+Query 167/251 - Features: [0.141, 738.368, 11.393, 0.441, 3.725, 5.291, 2.06, 5.733] - Confidence: 0.4079, Predicted Class: 1
+Query 168/251 - Features: [0.125, 738.276, 11.317, 0.402, 3.719, 5.29, 2.123, 5.754] - Confidence: 0.6748, Predicted Class: 0
+Query 169/251 - Features: [0.015, 738.426, 11.321, 0.328, 3.728, 5.205, 2.077, 5.858] - Confidence: 0.5242, Predicted Class: 2
+...
+Query 170/251 - Features: [-0.01, 738.315, 11.312, 0.341, 3.667, 5.254, 2.094, 5.806] - Confidence: 0.6386, Predicted Class: 0
+Query 171/251 - Features: [0.052, 738.26, 11.431, 0.339, 3.768, 5.264, 2.175, 5.867] - Confidence: 0.6435, Predicted Class: 1
+Query 172/251 - Features: [-0.007, 738.353, 11.44, 0.478, 3.729, 5.199, 2.055, 5.854] - Confidence: 0.5419, Predicted Class: 2
+Query 173/251 - Features: [0.138, 738.403, 11.307, 0.335, 3.741, 5.145, 2.026, 5.865] - Confidence: 0.5914, Predicted Class: 2
+Query 174/251 - Features: [0.096, 738.278, 11.352, 0.325, 3.697, 5.206, 2.079, 5.715] - Confidence: 0.5722, Predicted Class: 1
+Query 175/251 - Features: [0.159, 738.279, 11.438, 0.417, 3.803, 5.358, 2.15, 5.811] - Confidence: 0.5716, Predicted Class: 1
+Query 176/251 - Features: [0.102, 738.382, 11.363, 0.406, 3.717, 5.323, 2.118, 5.85] - Confidence: 0.4409, Predicted Class: 2
+Query 177/251 - Features: [0.111, 738.281, 11.294, 0.379, 3.652, 5.233, 2.074, 5.799] - Confidence: 0.6986, Predicted Class: 0
+Query 178/251 - Features: [0.157, 738.27, 11.341, 0.387, 3.685, 5.232, 2.07, 5.844] - Confidence: 0.614, Predicted Class: 1
+Query 179/251 - Features: [0.148, 738.371, 11.265, 0.369, 3.75, 5.235, 2.029, 5.747] - Confidence: 0.5831, Predicted Class: 2
+Query 180/251 - Features: [0.053, 738.268, 11.368, 0.491, 3.717, 5.28, 2.136, 5.813] - Confidence: 0.6839, Predicted Class: 1
+...
+Query 181/251 - Features: [0.045, 738.388, 11.348, 0.416, 3.705, 5.291, 2.028, 5.691] - Confidence: 0.6844, Predicted Class: 0
+Query 182/251 - Features: [0.079, 738.275, 11.295, 0.455, 3.734, 5.298, 2.107, 5.699] - Confidence: 0.6039, Predicted Class: 2
+Query 183/251 - Features: [0.054, 738.283, 11.401, 0.335, 3.656, 5.269, 2.12, 5.742] - Confidence: 0.4473, Predicted Class: 2
+Query 184/251 - Features: [0.193, 738.42, 11.396, 0.365, 3.795, 5.228, 2.095, 5.837] - Confidence: 0.5817, Predicted Class: 0
+Query 185/251 - Features: [0.057, 738.289, 11.385, 0.367, 3.768, 5.175, 2.112, 5.759] - Confidence: 0.6268, Predicted Class: 1
+Query 186/251 - Features: [0.13, 738.33, 11.424, 0.364, 3.73, 5.251, 2.025, 5.833] - Confidence: 0.5596, Predicted Class: 2
+Query 187/251 - Features: [0.079, 738.254, 11.333, 0.387, 3.766, 5.206, 2.008, 5.786] - Confidence: 0.6575, Predicted Class: 1
+Query 188/251 - Features: [0.058, 738.289, 11.382, 0.383, 3.705, 5.257, 2.058, 5.818] - Confidence: 0.4023, Predicted Class: 0
+Query 189/251 - Features: [0.141, 738.392, 11.397, 0.347, 3.68, 5.221, 2.067, 5.882] - Confidence: 0.4735, Predicted Class: 1
+Query 190/251 - Features: [0.181, 738.286, 11.313, 0.348, 3.756, 5.175, 2.118, 5.797] - Confidence: 0.5071, Predicted Class: 2
+Query 191/251 - Features: [0.103, 738.373, 11.311, 0.379, 3.728, 5.321, 2.159, 5.86] - Confidence: 0.5967, Predicted Class: 1
+Query 192/251 - Features: [0.081, 738.329, 11.382, 0.378, 3.706, 5.326, 2.125, 5.837] - Confidence: 0.4706, Predicted Class: 0
+Query 193/251 - Features: [0.139, 738.352, 11.321, 0.34, 3.727, 5.18, 2.157, 5.691] - Confidence: 0.4892, Predicted Class: 0
+Query 194/251 - Features: [0.107, 738.356, 11.312, 0.348, 3.732, 5.203, 2.011, 5.803] - Confidence: 0.6146, Predicted Class: 0
+...
+Query 195/251 - Features: [0.068, 738.388, 11.361, 0.362, 3.666, 5.201, 2.107, 5.83] - Confidence: 0.6409, Predicted Class: 1
+Query 196/251 - Features: [0.087, 738.316, 11.406, 0.412, 3.689, 5.2, 2.045, 5.809] - Confidence: 0.4917, Predicted Class: 2
+Query 197/251 - Features: [0.094, 738.331, 11.286, 0.36, 3.707, 5.244, 2.056, 5.787] - Confidence: 0.5125, Predicted Class: 1
+Query 198/251 - Features: [0.147, 738.394, 11.381, 0.358, 3.699, 5.279, 2.054, 5.726] - Confidence: 0.5614, Predicted Class: 2
+Query 199/251 - Features: [0.054, 738.286, 11.402, 0.392, 3.74, 5.341, 2.035, 5.786] - Confidence: 0.5781, Predicted Class: 1
+Query 200/251 - Features: [0.111, 738.391, 11.298, 0.339, 3.747, 5.189, 2.081, 5.758] - Confidence: 0.5211, Predicted Class: 2
+Query 201/251 - Features: [0.099, 738.322, 11.311, 0.295, 3.678, 5.232, 2.07, 5.821] - Confidence: 0.5296, Predicted Class: 0
+Query 202/251 - Features: [0.007, 738.409, 11.355, 0.319, 3.649, 5.2, 2.075, 5.749] - Confidence: 0.4081, Predicted Class: 0
+Query 203/251 - Features: [0.047, 738.331, 11.368, 0.334, 3.671, 5.228, 2.099, 5.944] - Confidence: 0.5034, Predicted Class: 1
+Query 204/251 - Features: [0.12, 738.418, 11.32, 0.418, 3.676, 5.187, 2.094, 5.875] - Confidence: 0.5421, Predicted Class: 1
+Query 205/251 - Features: [0.057, 738.428, 11.37, 0.353, 3.719, 5.29, 2.104, 5.788] - Confidence: 0.4511, Predicted Class: 0
+Query 206/251 - Features: [0.147, 738.327, 11.407, 0.356, 3.715, 5.247, 2.055, 5.768] - Confidence: 0.5361, Predicted Class: 1
+Query 207/251 - Features: [0.089, 738.284, 11.407, 0.346, 3.699, 5.312, 2.121, 5.835] - Confidence: 0.5817, Predicted Class: 0
+Query 208/251 - Features: [0.083, 738.325, 11.409, 0.392, 3.743, 5.174, 2.111, 5.846] - Confidence: 0.4701, Predicted Class: 0
+...
+Query 209/251 - Features: [0.204, 738.361, 11.305, 0.313, 3.735, 5.245, 2.026, 5.83] - Confidence: 0.6751, Predicted Class: 1
+Query 210/251 - Features: [0.072, 738.312, 11.25, 0.42, 3.717, 5.216, 2.062, 5.803] - Confidence: 0.4191, Predicted Class: 0
+Query 211/251 - Features: [0.148, 738.364, 11.317, 0.428, 3.749, 5.168, 2.102, 5.783] - Confidence: 0.5917, Predicted Class: 0
+Query 212/251 - Features: [0.101, 738.332, 11.409, 0.434, 3.674, 5.21, 2.114, 5.728] - Confidence: 0.5813, Predicted Class: 1
+Query 213/251 - Features: [0.193, 738.323, 11.355, 0.363, 3.703, 5.244, 2.118, 5.823] - Confidence: 0.6852, Predicted Class: 2
+Query 214/251 - Features: [0.109, 738.329, 11.327, 0.339, 3.648, 5.222, 2.076, 5.721] - Confidence: 0.6909, Predicted Class: 2
+Query 215/251 - Features: [0.083, 738.495, 11.345, 0.398, 3.721, 5.174, 2.028, 5.852] - Confidence: 0.4122, Predicted Class: 0
+Query 216/251 - Features: [0.089, 738.373, 11.366, 0.39, 3.814, 5.234, 2.107, 5.806] - Confidence: 0.5843, Predicted Class: 1
+Query 217/251 - Features: [0.133, 738.296, 11.396, 0.389, 3.766, 5.239, 1.976, 5.79] - Confidence: 0.6854, Predicted Class: 0
+Query 218/251 - Features: [0.186, 738.394, 11.292, 0.393, 3.638, 5.37, 2.056, 5.776] - Confidence: 0.4193, Predicted Class: 2
+Query 219/251 - Features: [0.023, 738.418, 11.331, 0.494, 3.711, 5.178, 2.201, 5.821] - Confidence: 0.414, Predicted Class: 0
+Query 220/251 - Features: [0.066, 738.323, 11.333, 0.464, 3.744, 5.273, 2.099, 5.865] - Confidence: 0.4615, Predicted Class: 2
+Query 221/251 - Features: [0.084, 738.332, 11.334, 0.346, 3.746, 5.233, 2.044, 5.827] - Confidence: 0.6436, Predicted Class: 0
+Query 222/251 - Features: [0.08, 738.399, 11.355, 0.331, 3.657, 5.298, 2.115, 5.832] - Confidence: 0.459, Predicted Class: 1
+Query 223/251 - Features: [0.02, 738.324, 11.357, 0.328, 3.775, 5.293, 2.1, 5.777] - Confidence: 0.5702, Predicted Class: 2
+Query 224/251 - Features: [0.139, 738.41, 11.287, 0.293, 3.691, 5.235, 2.074, 5.731] - Confidence: 0.5114, Predicted Class: 1
+Query 225/251 - Features: [0.052, 738.291, 11.35, 0.377, 3.677, 5.241, 2.081, 5.844] - Confidence: 0.681, Predicted Class: 1
+Query 226/251 - Features: [0.112, 738.42, 11.377, 0.385, 3.826, 5.28, 2.065, 5.821] - Confidence: 0.5577, Predicted Class: 1
+Query 227/251 - Features: [0.071, 738.306, 11.332, 0.467, 3.724, 5.284, 2.03, 5.759] - Confidence: 0.6671, Predicted Class: 2
+Query 228/251 - Features: [0.182, 738.42, 11.392, 0.409, 3.659, 5.181, 2.058, 5.77] - Confidence: 0.654, Predicted Class: 2
+Query 229/251 - Features: [0.135, 738.394, 11.419, 0.398, 3.678, 5.213, 2.107, 5.848] - Confidence: 0.5715, Predicted Class: 1
+Query 230/251 - Features: [0.154, 738.317, 11.356, 0.41, 3.771, 5.273, 2.094, 5.778] - Confidence: 0.6303, Predicted Class: 2
+Query 231/251 - Features: [0.142, 738.331, 11.264, 0.377, 3.758, 5.22, 2.081, 5.736] - Confidence: 0.6833, Predicted Class: 0
+Query 232/251 - Features: [0.099, 738.417, 11.273, 0.286, 3.742, 5.347, 2.018, 5.78] - Confidence: 0.6985, Predicted Class: 1
+...
+Query 233/251 - Features: [0.058, 738.36, 11.427, 0.382, 3.719, 5.231, 2.125, 5.842] - Confidence: 0.5129, Predicted Class: 1
+Query 234/251 - Features: [0.251, 738.298, 11.389, 0.394, 3.795, 5.263, 2.163, 5.823] - Confidence: 0.5223, Predicted Class: 1
+Query 235/251 - Features: [0.118, 738.39, 11.458, 0.373, 3.624, 5.242, 1.985, 5.858] - Confidence: 0.4638, Predicted Class: 2
+Query 236/251 - Features: [0.027, 738.329, 11.35, 0.385, 3.791, 5.316, 2.018, 5.789] - Confidence: 0.4529, Predicted Class: 1
+Query 237/251 - Features: [0.092, 738.426, 11.28, 0.4, 3.71, 5.286, 1.972, 5.851] - Confidence: 0.4987, Predicted Class: 1
+...
+Query 238/251 - Features: [0.174, 738.255, 11.426, 0.376, 3.782, 5.234, 2.016, 5.887] - Confidence: 0.5898, Predicted Class: 1
+Query 239/251 - Features: [0.112, 738.352, 11.255, 0.384, 3.703, 5.288, 2.131, 5.894] - Confidence: 0.5393, Predicted Class: 0
+Query 240/251 - Features: [0.064, 738.34, 11.346, 0.365, 3.751, 5.169, 2.102, 5.9] - Confidence: 0.5459, Predicted Class: 0
+Query 241/251 - Features: [0.073, 738.351, 11.286, 0.367, 3.656, 5.27, 2.06, 5.896] - Confidence: 0.4971, Predicted Class: 0
+Query 242/251 - Features: [0.142, 738.423, 11.414, 0.348, 3.758, 5.236, 2.074, 5.841] - Confidence: 0.5432, Predicted Class: 0
+Query 243/251 - Features: [0.078, 738.394, 11.362, 0.313, 3.619, 5.291, 1.998, 5.808] - Confidence: 0.457, Predicted Class: 1
+Query 244/251 - Features: [0.073, 738.348, 11.367, 0.341, 3.719, 5.265, 2.036, 5.868] - Confidence: 0.5295, Predicted Class: 1
+Query 245/251 - Features: [0.164, 738.3, 11.303, 0.362, 3.662, 5.304, 2.065, 5.76] - Confidence: 0.5444, Predicted Class: 0
+Query 246/251 - Features: [0.13, 738.412, 11.409, 0.338, 3.684, 5.163, 2.071, 5.733] - Confidence: 0.47, Predicted Class: 0
+Query 247/251 - Features: [0.124, 738.364, 11.403, 0.393, 3.67, 5.208, 2.209, 5.752] - Confidence: 0.4278, Predicted Class: 1
+Query 248/251 - Features: [0.016, 738.404, 11.288, 0.432, 3.664, 5.212, 2.099, 5.863] - Confidence: 0.4396, Predicted Class: 1
+Query 249/251 - Features: [0.2, 738.351, 11.392, 0.365, 3.689, 5.264, 2.008, 5.827] - Confidence: 0.6752, Predicted Class: 0
+Query 250/251 - Features: [0.039, 738.396, 11.287, 0.411, 3.555, 5.124, 2.044, 5.819] - Confidence: 0.6749, Predicted Class: 0
+Query 251/251 - Features: [0.041, 738.318, 11.385, 0.349, 3.713, 5.281, 2.162, 5.792] - Confidence: 0.69, Predicted Class: 2
+[+] Collected 251 model responses.
+[+] Training the membership inference attack model (RandomForestClassifier)...
+[+] Attack model training completed.
+==================================================
+ Membership Inference Attack Result
+==================================================
+ Attack Model Membership Score: 0.8815
+ Conclusion: The sample is LIKELY a member.
+==================================================
+[+] Attack results saved to small log file.
+STATUS: Task completed successfully - Execution time: 70.75 seconds

@@ -1,0 +1,30 @@
+[+] Starting model inversion attack on target area (38.5, 122.0)  # 目标海域(维度,经度)
+[+] Probing depth from 0m to 500m with step 10m  # 深度为0m到500m 步长10m
+[+] Progress: Completed depth 0m  # 模型查询过程进度打印
+[+] Progress: Completed depth 50m
+[+] Progress: Completed depth 100m
+[+] Progress: Completed depth 150m
+[+] Progress: Completed depth 200m
+[-] Error on query 3 at depth 210m: Model response timeout (504)  # 查询过程中的报错信息打印
+[+] Progress: Completed depth 250m
+[+] Progress: Completed depth 300m
+[+] Progress: Completed depth 350m
+[+] Progress: Completed depth 400m
+[+] Progress: Completed depth 450m
+[+] Progress: Completed depth 500m
+[+] Attack completed. Collected 255 data points.  # 模型查询进度完成  共完成51*5=255次查询点
+  Depth:   0m | Avg Salinity: 33.4562  # 二次处理：求每个深度对应的平均盐度
+  Depth:  10m | Avg Salinity: 33.5011
+  Depth:  20m | Avg Salinity: 33.4875
+  Depth:  30m | Avg Salinity: 33.5223
+  Depth:  40m | Avg Salinity: 33.5541
+  Depth:  50m | Avg Salinity: 33.5987
+  Depth:  60m | Avg Salinity: 33.6120
+  Depth:  70m | Avg Salinity: 33.6345
+  Depth:  80m | Avg Salinity: 33.6789
+  Depth:  90m | Avg Salinity: 33.7012
+  Depth: 100m | Avg Salinity: 33.7234
+  Depth: 110m | Avg Salinity: 33.7455
+  ... (输出继续) ...
+  Depth: 500m | Avg Salinity: 34.1234
+[+] Reconstructed salinity profile saved to reconstructed_salinity_profile_38.5_122.0.csv  #

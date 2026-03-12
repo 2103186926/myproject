@@ -1,0 +1,374 @@
+{
+  "source_file": "..\\test\\ocean_computing_test_cases\\test_case_4_obfuscated_docker_escape.py",
+  "escape_risk": {
+    "risk_level": "CRITICAL",
+    "risk_score": 55.0,
+    "indicators": {
+      "CRITICAL": [
+        {
+          "rule_id": "CE-FILE-01",
+          "pattern": "file_container_fingerprint",
+          "matches": 1,
+          "samples": [
+            "/proc/1/cgroup"
+          ]
+        },
+        {
+          "rule_id": "CE-FILE-02",
+          "pattern": "file_host_sensitive",
+          "matches": 1,
+          "samples": [
+            "/var/run/docker.sock"
+          ]
+        },
+        {
+          "rule_id": "CE-EXPLOIT-04",
+          "pattern": "exploit_cgroup_release",
+          "matches": 1,
+          "samples": [
+            "release_agent"
+          ]
+        }
+      ],
+      "HIGH": [
+        {
+          "rule_id": "CE-CMD-01",
+          "pattern": "cmd_sensitive_binary",
+          "matches": 6,
+          "samples": [
+            "docker",
+            "nsenter",
+            "Docker"
+          ]
+        },
+        {
+          "rule_id": "CE-FILE-03",
+          "pattern": "file_cgroup_kernel",
+          "matches": 1,
+          "samples": [
+            "release_agent"
+          ]
+        },
+        {
+          "rule_id": "CE-FILE-04",
+          "pattern": "file_proc_self",
+          "matches": 2,
+          "samples": [
+            "/proc/self/exe",
+            "/proc/self/mem"
+          ]
+        },
+        {
+          "rule_id": "CE-NET-04",
+          "pattern": "net_unix_socket",
+          "matches": 2,
+          "samples": [
+            ".socket(socket.AF_UNIX",
+            "/var/run/docker.sock"
+          ]
+        },
+        {
+          "rule_id": "CE-K8S-01",
+          "pattern": "k8s_privileged_pod",
+          "matches": 1,
+          "samples": [
+            "privileged: true"
+          ]
+        }
+      ],
+      "MEDIUM": [],
+      "LOW": []
+    },
+    "summary": "发现 3 个CRITICAL风险, 发现 5 个HIGH风险",
+    "total_patterns": 8
+  },
+  "obfuscation": {
+    "obfuscated": true,
+    "obfuscation_score": 3,
+    "entropy": 5.680274635461287,
+    "avg_line_length": 32.565934065934066,
+    "indicators": {
+      "高熵值": true,
+      "超长行": false,
+      "base64解码": true,
+      "hex解码": false,
+      "unicode转义": false,
+      "eval/exec": false,
+      "compile": false,
+      "getattr调用": false,
+      "chr拼接": true,
+      "字符串拼接": false,
+      "反射调用": false,
+      "压缩解压": false
+    },
+    "reasons": [
+      "高熵值",
+      "base64解码",
+      "chr拼接"
+    ]
+  },
+  "obfuscation_bypass": {
+    "has_obfuscation": true,
+    "obfuscation_techniques": [
+      "encoding_function_calls",
+      "encoded_sensitive_keywords",
+      "string_concatenation"
+    ],
+    "decoded_sensitive_keywords": [
+      "docker",
+      "/var/run/docker.sock",
+      "/proc/1/cgroup",
+      "/proc/self/mem",
+      "nsenter"
+    ],
+    "risk_level": "CRITICAL",
+    "details": {
+      "encoding_calls": [
+        {
+          "function": "decode",
+          "line": 67,
+          "type": "decode"
+        },
+        {
+          "function": "decode",
+          "line": 71,
+          "type": "decode"
+        },
+        {
+          "function": "decode",
+          "line": 151,
+          "type": "decode"
+        },
+        {
+          "function": "decode",
+          "line": 154,
+          "type": "decode"
+        },
+        {
+          "function": "decode",
+          "line": 157,
+          "type": "decode"
+        },
+        {
+          "function": "decode",
+          "line": 178,
+          "type": "decode"
+        },
+        {
+          "function": "decode",
+          "line": 106,
+          "type": "decode"
+        },
+        {
+          "function": "decode",
+          "line": 111,
+          "type": "decode"
+        },
+        {
+          "function": "base64.b64decode",
+          "line": 67,
+          "type": "decode"
+        },
+        {
+          "function": "base64.b64decode",
+          "line": 67,
+          "type": "decode"
+        },
+        {
+          "function": "base64.b64decode",
+          "line": 71,
+          "type": "decode"
+        },
+        {
+          "function": "base64.b64decode",
+          "line": 71,
+          "type": "decode"
+        },
+        {
+          "function": "base64.b64decode",
+          "line": 151,
+          "type": "decode"
+        },
+        {
+          "function": "base64.b64decode",
+          "line": 151,
+          "type": "decode"
+        },
+        {
+          "function": "base64.b64decode",
+          "line": 154,
+          "type": "decode"
+        },
+        {
+          "function": "base64.b64decode",
+          "line": 154,
+          "type": "decode"
+        },
+        {
+          "function": "base64.b64decode",
+          "line": 157,
+          "type": "decode"
+        },
+        {
+          "function": "base64.b64decode",
+          "line": 157,
+          "type": "decode"
+        },
+        {
+          "function": "base64.b64decode",
+          "line": 178,
+          "type": "decode"
+        },
+        {
+          "function": "base64.b64decode",
+          "line": 178,
+          "type": "decode"
+        },
+        {
+          "function": "base64.b64decode",
+          "line": 106,
+          "type": "decode"
+        },
+        {
+          "function": "base64.b64decode",
+          "line": 106,
+          "type": "decode"
+        },
+        {
+          "function": "base64.b64decode",
+          "line": 111,
+          "type": "decode"
+        },
+        {
+          "function": "base64.b64decode",
+          "line": 111,
+          "type": "decode"
+        }
+      ],
+      "string_concatenation": [
+        {
+          "type": "string_addition",
+          "count": 4,
+          "line": 185,
+          "risk": "MEDIUM"
+        },
+        {
+          "type": "string_addition",
+          "count": 10,
+          "line": 189,
+          "risk": "HIGH"
+        },
+        {
+          "type": "string_addition",
+          "count": 3,
+          "line": 185,
+          "risk": "MEDIUM"
+        },
+        {
+          "type": "string_addition",
+          "count": 9,
+          "line": 189,
+          "risk": "HIGH"
+        },
+        {
+          "type": "chr_concatenation",
+          "line": 189,
+          "risk": "MEDIUM"
+        },
+        {
+          "type": "string_addition",
+          "count": 8,
+          "line": 189,
+          "risk": "HIGH"
+        },
+        {
+          "type": "chr_concatenation",
+          "line": 189,
+          "risk": "MEDIUM"
+        },
+        {
+          "type": "string_addition",
+          "count": 7,
+          "line": 189,
+          "risk": "HIGH"
+        },
+        {
+          "type": "chr_concatenation",
+          "line": 189,
+          "risk": "MEDIUM"
+        },
+        {
+          "type": "string_addition",
+          "count": 6,
+          "line": 189,
+          "risk": "HIGH"
+        },
+        {
+          "type": "chr_concatenation",
+          "line": 189,
+          "risk": "MEDIUM"
+        },
+        {
+          "type": "string_addition",
+          "count": 5,
+          "line": 189,
+          "risk": "HIGH"
+        },
+        {
+          "type": "chr_concatenation",
+          "line": 189,
+          "risk": "MEDIUM"
+        },
+        {
+          "type": "string_addition",
+          "count": 4,
+          "line": 189,
+          "risk": "MEDIUM"
+        },
+        {
+          "type": "chr_concatenation",
+          "line": 189,
+          "risk": "MEDIUM"
+        },
+        {
+          "type": "string_addition",
+          "count": 3,
+          "line": 189,
+          "risk": "MEDIUM"
+        },
+        {
+          "type": "chr_concatenation",
+          "line": 189,
+          "risk": "MEDIUM"
+        },
+        {
+          "type": "chr_concatenation",
+          "line": 189,
+          "risk": "MEDIUM"
+        },
+        {
+          "type": "chr_concatenation",
+          "line": 189,
+          "risk": "MEDIUM"
+        },
+        {
+          "type": "chr_concatenation",
+          "line": 189,
+          "risk": "MEDIUM"
+        },
+        {
+          "type": "chr_concatenation",
+          "line": 189,
+          "risk": "MEDIUM"
+        }
+      ]
+    }
+  },
+  "feature_dimensions": {
+    "total": 128,
+    "sensitive_functions": 32,
+    "attack_patterns": 48,
+    "path_config": 24,
+    "obfuscation": 24
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "timestamp": "2025-09-14T19:30:01.123Z",
+  "eventType": "task_start",
+  "logLevel": "INFO",
+  "serviceName": "ComputationPlatform",
+  "context": {
+    "userId": "attacker_01",
+    "jobId": "job_789",
+    "taskId": "task_abc123",
+    "sourceIp": "203.0.113.10"
+  },
+  "details": {
+    "taskName": "malicious_inversion_attack.py",
+    "modelName": "ocean_ts_predictor_v1",
+    "declaredParameters": {
+      "target_lat": 38.5,
+      "target_lon": 122.0,
+      "depth_range": [
+        0,
+        500
+      ]
+    }
+  }
+}
+
+{
+  "timestamp": "2025-09-14T19:30:01.345Z",
+  "eventType": "model_query",
+  "logLevel": "INFO",
+  "serviceName": "ModelPredictionService",
+  "context": {
+    "userId": "attacker_01",
+    "jobId": "job_789",
+    "taskId": "task_abc123",
+    "sourceIp": "203.0.113.10"
+  },
+  "details": {
+    "modelName": "ocean_ts_predictor_v1",
+    "queryInput": {
+      "latitude": 38.5012,
+      "longitude": 121.9987,
+      "depth": 0
+    },
+    "queryStatus": "SUCCESS",
+    "executionTimeMs": 210,
+    "responseId": "resp_001"
+  }
+}
+
+{
+  "timestamp": "2025-09-14T19:30:01.650Z",
+  "eventType": "model_query",
+  "logLevel": "INFO",
+  "serviceName": "ModelPredictionService",
+  "context": {
+    "userId": "attacker_01",
+    "jobId": "job_789",
+    "taskId": "task_abc123",
+    "sourceIp": "203.0.113.10"
+  },
+  "details": {
+    "modelName": "ocean_ts_predictor_v1",
+    "queryInput": {
+      "latitude": 38.4995,
+      "longitude": 122.0003,
+      "depth": 0
+    },
+    "queryStatus": "SUCCESS",
+    "executionTimeMs": 215,
+    "responseId": "resp_002"
+  }
+}
+
+{
+  "timestamp": "2025-09-14T19:30:01.958Z",
+  "eventType": "model_query",
+  "logLevel": "INFO",
+  "serviceName": "ModelPredictionService",
+  "context": {
+    "userId": "attacker_01",
+    "jobId": "job_789",
+    "taskId": "task_abc123",
+    "sourceIp": "203.0.113.10"
+  },
+  "details": {
+    "modelName": "ocean_ts_predictor_v1",
+    "queryInput": {
+      "latitude": 38.5008,
+      "longitude": 122.0011,
+      "depth": 10
+    },
+    "queryStatus": "SUCCESS",
+    "executionTimeMs": 212,
+    "responseId": "resp_003"
+  }
+}
+
+{
+  "timestamp": "2025-09-14T19:30:02.270Z",
+  "eventType": "model_query",
+  "logLevel": "INFO",
+  "serviceName": "ModelPredictionService",
+  "context": {
+    "userId": "attacker_01",
+    "jobId": "job_789",
+    "taskId": "task_abc123",
+    "sourceIp": "203.0.113.10"
+  },
+  "details": {
+    "modelName": "ocean_ts_predictor_v1",
+    "queryInput": {
+      "latitude": 38.4991,
+      "longitude": 121.9994,
+      "depth": 10
+    },
+    "queryStatus": "SUCCESS",
+    "executionTimeMs": 218,
+    "responseId": "resp_004"
+  }
+}
+
+{
+  "timestamp": "2025-09-14T19:30:05.812Z",
+  "eventType": "task_end",
+  "logLevel": "INFO",
+  "serviceName": "ComputationPlatform",
+  "context": {
+    "userId": "attacker_01",
+    "jobId": "job_789",
+    "taskId": "task_abc123",
+    "sourceIp": "203.0.113.10"
+  },
+  "details": {
+    "finalStatus": "COMPLETED",
+    "totalQueries": 500,
+    "successfulQueries": 498,
+    "totalExecutionTimeSec": 58
+  }
+}

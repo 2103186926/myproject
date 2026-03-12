@@ -1,0 +1,15 @@
+[*] taskId: task-547987760f02
+[+] Starting model inversion attack on target area (16.9656, 103.3259)
+[+] Probing depth from 50m to 190m with step 20m
+  Depth:   50m | Avg Salinity: 33.5578
+  Depth:   70m | Avg Salinity: 33.5723
+  Depth:   90m | Avg Salinity: 33.6528
+  Depth:  110m | Avg Salinity: 33.6218
+  Depth:  130m | Avg Salinity: 33.6582
+[+] Progress: Completed depth 150m
+  Depth:  150m | Avg Salinity: 33.7077
+[-] Error on query 1 at depth 170m: Model response timeout (504)
+  Depth:  190m | Avg Salinity: 33.8142
+[+] Attack completed.
+[+] Collected 37 data points.
+[+] Reconstructed salinity profile saved to reconstructed_profile_17.0_103.3.csv

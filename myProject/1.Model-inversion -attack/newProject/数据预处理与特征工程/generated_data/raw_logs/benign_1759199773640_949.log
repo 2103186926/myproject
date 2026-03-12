@@ -1,0 +1,13 @@
+[*] taskId: task-e3638beef2c6
+[+] Starting model inversion attack on target area (40.3608, 147.6027)
+[+] Probing depth from 100m to 248m with step 50m
+  Depth:  100m | Avg Salinity: 33.6205
+[+] Progress: Completed depth 150m
+  Depth:  150m | Avg Salinity: 33.7672
+[+] Progress: Completed depth 200m
+  Depth:  200m | Avg Salinity: 33.8413
+[+] Progress: Completed depth 250m
+  Depth:  250m | Avg Salinity: 33.8905
+[+] Attack completed.
+[+] Collected 20 data points.
+[+] Reconstructed salinity profile saved to reconstructed_profile_40.4_147.6.csv

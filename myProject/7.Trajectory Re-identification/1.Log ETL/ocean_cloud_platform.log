@@ -1,0 +1,365 @@
+[2025-12-06 16:00:53.580] [INFO] [TaskScheduler] [job-norm-9f15ac] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.352] [INFO] [DataClient] [job-norm-9f15ac] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:58.237] [INFO] [DataClient] [job-norm-9f15ac] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:58.737] [DEBUG] [Preprocessor] [job-norm-9f15ac] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:01:00.369] [INFO] [ComputeEngine] [job-norm-9f15ac] Aggregating spatial grids | cpu_usage=61% mem_usage=25%
+[2025-12-06 16:01:00.869] [DEBUG] [Preprocessor] [job-norm-9f15ac] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:03.160] [INFO] [ComputeEngine] [job-norm-9f15ac] Aggregating spatial grids | cpu_usage=65% mem_usage=29%
+[2025-12-06 16:01:03.660] [DEBUG] [Preprocessor] [job-norm-9f15ac] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:05.205] [INFO] [ComputeEngine] [job-norm-9f15ac] Aggregating spatial grids | cpu_usage=71% mem_usage=29%
+[2025-12-06 16:01:05.705] [DEBUG] [Preprocessor] [job-norm-9f15ac] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:07.371] [INFO] [ComputeEngine] [job-norm-9f15ac] Aggregating spatial grids | cpu_usage=74% mem_usage=20%
+[2025-12-06 16:01:07.871] [DEBUG] [Preprocessor] [job-norm-9f15ac] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:09.382] [INFO] [ComputeEngine] [job-norm-9f15ac] Aggregating spatial grids | cpu_usage=62% mem_usage=30%
+[2025-12-06 16:01:09.882] [INFO] [StorageIO] [job-norm-9f15ac] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:09.882] [INFO] [TaskScheduler] [job-norm-9f15ac] Job completed successfully | duration=16.30s
+[2025-12-06 16:00:53.580] [INFO] [TaskScheduler] [job-norm-e96096] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.121] [INFO] [DataClient] [job-norm-e96096] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:56.249] [INFO] [DataClient] [job-norm-e96096] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:56.749] [DEBUG] [Preprocessor] [job-norm-e96096] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:00:59.015] [INFO] [ComputeEngine] [job-norm-e96096] Aggregating spatial grids | cpu_usage=64% mem_usage=20%
+[2025-12-06 16:00:59.515] [DEBUG] [Preprocessor] [job-norm-e96096] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:01.373] [INFO] [ComputeEngine] [job-norm-e96096] Aggregating spatial grids | cpu_usage=73% mem_usage=28%
+[2025-12-06 16:01:01.873] [DEBUG] [Preprocessor] [job-norm-e96096] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:03.683] [INFO] [ComputeEngine] [job-norm-e96096] Aggregating spatial grids | cpu_usage=60% mem_usage=21%
+[2025-12-06 16:01:04.183] [DEBUG] [Preprocessor] [job-norm-e96096] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:06.590] [INFO] [ComputeEngine] [job-norm-e96096] Aggregating spatial grids | cpu_usage=65% mem_usage=21%
+[2025-12-06 16:01:07.090] [DEBUG] [Preprocessor] [job-norm-e96096] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:09.170] [INFO] [ComputeEngine] [job-norm-e96096] Aggregating spatial grids | cpu_usage=68% mem_usage=29%
+[2025-12-06 16:01:09.670] [INFO] [StorageIO] [job-norm-e96096] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:09.670] [INFO] [TaskScheduler] [job-norm-e96096] Job completed successfully | duration=16.09s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-norm-966a00] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.238] [INFO] [DataClient] [job-norm-966a00] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:56.362] [INFO] [DataClient] [job-norm-966a00] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:56.862] [DEBUG] [Preprocessor] [job-norm-966a00] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:00:59.309] [INFO] [ComputeEngine] [job-norm-966a00] Aggregating spatial grids | cpu_usage=74% mem_usage=25%
+[2025-12-06 16:00:59.809] [DEBUG] [Preprocessor] [job-norm-966a00] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:01.955] [INFO] [ComputeEngine] [job-norm-966a00] Aggregating spatial grids | cpu_usage=77% mem_usage=28%
+[2025-12-06 16:01:02.455] [DEBUG] [Preprocessor] [job-norm-966a00] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:04.202] [INFO] [ComputeEngine] [job-norm-966a00] Aggregating spatial grids | cpu_usage=76% mem_usage=28%
+[2025-12-06 16:01:04.702] [DEBUG] [Preprocessor] [job-norm-966a00] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:06.808] [INFO] [ComputeEngine] [job-norm-966a00] Aggregating spatial grids | cpu_usage=66% mem_usage=26%
+[2025-12-06 16:01:07.308] [DEBUG] [Preprocessor] [job-norm-966a00] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:09.082] [INFO] [ComputeEngine] [job-norm-966a00] Aggregating spatial grids | cpu_usage=62% mem_usage=27%
+[2025-12-06 16:01:09.582] [INFO] [StorageIO] [job-norm-966a00] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:09.582] [INFO] [TaskScheduler] [job-norm-966a00] Job completed successfully | duration=16.00s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-norm-5589a3] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.480] [INFO] [DataClient] [job-norm-5589a3] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:58.336] [INFO] [DataClient] [job-norm-5589a3] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:58.836] [DEBUG] [Preprocessor] [job-norm-5589a3] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:01:01.121] [INFO] [ComputeEngine] [job-norm-5589a3] Aggregating spatial grids | cpu_usage=80% mem_usage=25%
+[2025-12-06 16:01:01.621] [DEBUG] [Preprocessor] [job-norm-5589a3] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:03.711] [INFO] [ComputeEngine] [job-norm-5589a3] Aggregating spatial grids | cpu_usage=72% mem_usage=29%
+[2025-12-06 16:01:04.211] [DEBUG] [Preprocessor] [job-norm-5589a3] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:06.026] [INFO] [ComputeEngine] [job-norm-5589a3] Aggregating spatial grids | cpu_usage=63% mem_usage=23%
+[2025-12-06 16:01:06.526] [DEBUG] [Preprocessor] [job-norm-5589a3] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:08.268] [INFO] [ComputeEngine] [job-norm-5589a3] Aggregating spatial grids | cpu_usage=74% mem_usage=22%
+[2025-12-06 16:01:08.768] [DEBUG] [Preprocessor] [job-norm-5589a3] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:11.124] [INFO] [ComputeEngine] [job-norm-5589a3] Aggregating spatial grids | cpu_usage=60% mem_usage=28%
+[2025-12-06 16:01:11.624] [INFO] [StorageIO] [job-norm-5589a3] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:11.624] [INFO] [TaskScheduler] [job-norm-5589a3] Job completed successfully | duration=18.04s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-norm-277934] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.439] [INFO] [DataClient] [job-norm-277934] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:57.173] [INFO] [DataClient] [job-norm-277934] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:57.673] [DEBUG] [Preprocessor] [job-norm-277934] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:01:00.043] [INFO] [ComputeEngine] [job-norm-277934] Aggregating spatial grids | cpu_usage=76% mem_usage=22%
+[2025-12-06 16:01:00.543] [DEBUG] [Preprocessor] [job-norm-277934] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:02.187] [INFO] [ComputeEngine] [job-norm-277934] Aggregating spatial grids | cpu_usage=79% mem_usage=29%
+[2025-12-06 16:01:02.687] [DEBUG] [Preprocessor] [job-norm-277934] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:04.937] [INFO] [ComputeEngine] [job-norm-277934] Aggregating spatial grids | cpu_usage=71% mem_usage=25%
+[2025-12-06 16:01:05.438] [DEBUG] [Preprocessor] [job-norm-277934] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:07.321] [INFO] [ComputeEngine] [job-norm-277934] Aggregating spatial grids | cpu_usage=67% mem_usage=26%
+[2025-12-06 16:01:07.821] [DEBUG] [Preprocessor] [job-norm-277934] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:09.713] [INFO] [ComputeEngine] [job-norm-277934] Aggregating spatial grids | cpu_usage=62% mem_usage=27%
+[2025-12-06 16:01:10.213] [INFO] [StorageIO] [job-norm-277934] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:10.213] [INFO] [TaskScheduler] [job-norm-277934] Job completed successfully | duration=16.63s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-norm-daba36] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.248] [INFO] [DataClient] [job-norm-daba36] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:56.639] [INFO] [DataClient] [job-norm-daba36] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:57.139] [DEBUG] [Preprocessor] [job-norm-daba36] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:00:59.026] [INFO] [ComputeEngine] [job-norm-daba36] Aggregating spatial grids | cpu_usage=67% mem_usage=30%
+[2025-12-06 16:00:59.526] [DEBUG] [Preprocessor] [job-norm-daba36] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:01.033] [INFO] [ComputeEngine] [job-norm-daba36] Aggregating spatial grids | cpu_usage=62% mem_usage=26%
+[2025-12-06 16:01:01.533] [DEBUG] [Preprocessor] [job-norm-daba36] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:03.769] [INFO] [ComputeEngine] [job-norm-daba36] Aggregating spatial grids | cpu_usage=68% mem_usage=23%
+[2025-12-06 16:01:04.269] [DEBUG] [Preprocessor] [job-norm-daba36] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:06.428] [INFO] [ComputeEngine] [job-norm-daba36] Aggregating spatial grids | cpu_usage=77% mem_usage=24%
+[2025-12-06 16:01:06.928] [DEBUG] [Preprocessor] [job-norm-daba36] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:08.914] [INFO] [ComputeEngine] [job-norm-daba36] Aggregating spatial grids | cpu_usage=74% mem_usage=20%
+[2025-12-06 16:01:09.414] [INFO] [StorageIO] [job-norm-daba36] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:09.414] [INFO] [TaskScheduler] [job-norm-daba36] Job completed successfully | duration=15.83s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-norm-24f8ac] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.293] [INFO] [DataClient] [job-norm-24f8ac] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:57.452] [INFO] [DataClient] [job-norm-24f8ac] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:57.952] [DEBUG] [Preprocessor] [job-norm-24f8ac] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:00:59.870] [INFO] [ComputeEngine] [job-norm-24f8ac] Aggregating spatial grids | cpu_usage=74% mem_usage=21%
+[2025-12-06 16:01:00.370] [DEBUG] [Preprocessor] [job-norm-24f8ac] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:02.521] [INFO] [ComputeEngine] [job-norm-24f8ac] Aggregating spatial grids | cpu_usage=69% mem_usage=21%
+[2025-12-06 16:01:03.021] [DEBUG] [Preprocessor] [job-norm-24f8ac] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:04.612] [INFO] [ComputeEngine] [job-norm-24f8ac] Aggregating spatial grids | cpu_usage=69% mem_usage=24%
+[2025-12-06 16:01:05.112] [DEBUG] [Preprocessor] [job-norm-24f8ac] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:07.151] [INFO] [ComputeEngine] [job-norm-24f8ac] Aggregating spatial grids | cpu_usage=79% mem_usage=28%
+[2025-12-06 16:01:07.651] [DEBUG] [Preprocessor] [job-norm-24f8ac] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:09.518] [INFO] [ComputeEngine] [job-norm-24f8ac] Aggregating spatial grids | cpu_usage=63% mem_usage=24%
+[2025-12-06 16:01:10.018] [INFO] [StorageIO] [job-norm-24f8ac] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:10.018] [INFO] [TaskScheduler] [job-norm-24f8ac] Job completed successfully | duration=16.43s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-norm-d5ac21] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.760] [INFO] [DataClient] [job-norm-d5ac21] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:57.284] [INFO] [DataClient] [job-norm-d5ac21] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:57.784] [DEBUG] [Preprocessor] [job-norm-d5ac21] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:00:59.455] [INFO] [ComputeEngine] [job-norm-d5ac21] Aggregating spatial grids | cpu_usage=80% mem_usage=26%
+[2025-12-06 16:00:59.955] [DEBUG] [Preprocessor] [job-norm-d5ac21] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:01.697] [INFO] [ComputeEngine] [job-norm-d5ac21] Aggregating spatial grids | cpu_usage=75% mem_usage=25%
+[2025-12-06 16:01:02.197] [DEBUG] [Preprocessor] [job-norm-d5ac21] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:03.987] [INFO] [ComputeEngine] [job-norm-d5ac21] Aggregating spatial grids | cpu_usage=72% mem_usage=24%
+[2025-12-06 16:01:04.487] [DEBUG] [Preprocessor] [job-norm-d5ac21] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:06.722] [INFO] [ComputeEngine] [job-norm-d5ac21] Aggregating spatial grids | cpu_usage=78% mem_usage=25%
+[2025-12-06 16:01:07.222] [DEBUG] [Preprocessor] [job-norm-d5ac21] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:09.021] [INFO] [ComputeEngine] [job-norm-d5ac21] Aggregating spatial grids | cpu_usage=77% mem_usage=23%
+[2025-12-06 16:01:09.521] [INFO] [StorageIO] [job-norm-d5ac21] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:09.521] [INFO] [TaskScheduler] [job-norm-d5ac21] Job completed successfully | duration=15.94s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-norm-9efd61] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.185] [INFO] [DataClient] [job-norm-9efd61] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:56.269] [INFO] [DataClient] [job-norm-9efd61] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:56.769] [DEBUG] [Preprocessor] [job-norm-9efd61] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:00:59.250] [INFO] [ComputeEngine] [job-norm-9efd61] Aggregating spatial grids | cpu_usage=77% mem_usage=23%
+[2025-12-06 16:00:59.750] [DEBUG] [Preprocessor] [job-norm-9efd61] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:01.836] [INFO] [ComputeEngine] [job-norm-9efd61] Aggregating spatial grids | cpu_usage=70% mem_usage=29%
+[2025-12-06 16:01:02.336] [DEBUG] [Preprocessor] [job-norm-9efd61] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:04.822] [INFO] [ComputeEngine] [job-norm-9efd61] Aggregating spatial grids | cpu_usage=70% mem_usage=24%
+[2025-12-06 16:01:05.322] [DEBUG] [Preprocessor] [job-norm-9efd61] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:07.308] [INFO] [ComputeEngine] [job-norm-9efd61] Aggregating spatial grids | cpu_usage=61% mem_usage=27%
+[2025-12-06 16:01:07.808] [DEBUG] [Preprocessor] [job-norm-9efd61] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:09.360] [INFO] [ComputeEngine] [job-norm-9efd61] Aggregating spatial grids | cpu_usage=60% mem_usage=22%
+[2025-12-06 16:01:09.860] [INFO] [StorageIO] [job-norm-9efd61] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:09.860] [INFO] [TaskScheduler] [job-norm-9efd61] Job completed successfully | duration=16.28s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-norm-d023aa] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.966] [INFO] [DataClient] [job-norm-d023aa] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:57.423] [INFO] [DataClient] [job-norm-d023aa] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:57.923] [DEBUG] [Preprocessor] [job-norm-d023aa] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:00:59.526] [INFO] [ComputeEngine] [job-norm-d023aa] Aggregating spatial grids | cpu_usage=80% mem_usage=29%
+[2025-12-06 16:01:00.026] [DEBUG] [Preprocessor] [job-norm-d023aa] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:02.303] [INFO] [ComputeEngine] [job-norm-d023aa] Aggregating spatial grids | cpu_usage=77% mem_usage=24%
+[2025-12-06 16:01:02.803] [DEBUG] [Preprocessor] [job-norm-d023aa] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:04.505] [INFO] [ComputeEngine] [job-norm-d023aa] Aggregating spatial grids | cpu_usage=77% mem_usage=21%
+[2025-12-06 16:01:05.005] [DEBUG] [Preprocessor] [job-norm-d023aa] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:06.717] [INFO] [ComputeEngine] [job-norm-d023aa] Aggregating spatial grids | cpu_usage=78% mem_usage=23%
+[2025-12-06 16:01:07.217] [DEBUG] [Preprocessor] [job-norm-d023aa] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:08.977] [INFO] [ComputeEngine] [job-norm-d023aa] Aggregating spatial grids | cpu_usage=68% mem_usage=24%
+[2025-12-06 16:01:09.477] [INFO] [StorageIO] [job-norm-d023aa] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:09.477] [INFO] [TaskScheduler] [job-norm-d023aa] Job completed successfully | duration=15.89s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-norm-dcd9aa] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.798] [INFO] [DataClient] [job-norm-dcd9aa] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:58.162] [INFO] [DataClient] [job-norm-dcd9aa] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:58.662] [DEBUG] [Preprocessor] [job-norm-dcd9aa] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:01:00.814] [INFO] [ComputeEngine] [job-norm-dcd9aa] Aggregating spatial grids | cpu_usage=68% mem_usage=28%
+[2025-12-06 16:01:01.314] [DEBUG] [Preprocessor] [job-norm-dcd9aa] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:03.753] [INFO] [ComputeEngine] [job-norm-dcd9aa] Aggregating spatial grids | cpu_usage=76% mem_usage=28%
+[2025-12-06 16:01:04.253] [DEBUG] [Preprocessor] [job-norm-dcd9aa] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:06.463] [INFO] [ComputeEngine] [job-norm-dcd9aa] Aggregating spatial grids | cpu_usage=72% mem_usage=22%
+[2025-12-06 16:01:06.963] [DEBUG] [Preprocessor] [job-norm-dcd9aa] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:08.965] [INFO] [ComputeEngine] [job-norm-dcd9aa] Aggregating spatial grids | cpu_usage=62% mem_usage=23%
+[2025-12-06 16:01:09.465] [DEBUG] [Preprocessor] [job-norm-dcd9aa] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:11.340] [INFO] [ComputeEngine] [job-norm-dcd9aa] Aggregating spatial grids | cpu_usage=68% mem_usage=22%
+[2025-12-06 16:01:11.840] [INFO] [StorageIO] [job-norm-dcd9aa] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:11.840] [INFO] [TaskScheduler] [job-norm-dcd9aa] Job completed successfully | duration=18.26s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-norm-30a8b7] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.674] [INFO] [DataClient] [job-norm-30a8b7] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:57.951] [INFO] [DataClient] [job-norm-30a8b7] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:58.451] [DEBUG] [Preprocessor] [job-norm-30a8b7] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:01:00.450] [INFO] [ComputeEngine] [job-norm-30a8b7] Aggregating spatial grids | cpu_usage=62% mem_usage=23%
+[2025-12-06 16:01:00.950] [DEBUG] [Preprocessor] [job-norm-30a8b7] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:03.300] [INFO] [ComputeEngine] [job-norm-30a8b7] Aggregating spatial grids | cpu_usage=74% mem_usage=29%
+[2025-12-06 16:01:03.800] [DEBUG] [Preprocessor] [job-norm-30a8b7] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:05.795] [INFO] [ComputeEngine] [job-norm-30a8b7] Aggregating spatial grids | cpu_usage=74% mem_usage=25%
+[2025-12-06 16:01:06.295] [DEBUG] [Preprocessor] [job-norm-30a8b7] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:08.485] [INFO] [ComputeEngine] [job-norm-30a8b7] Aggregating spatial grids | cpu_usage=69% mem_usage=24%
+[2025-12-06 16:01:08.985] [DEBUG] [Preprocessor] [job-norm-30a8b7] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:11.098] [INFO] [ComputeEngine] [job-norm-30a8b7] Aggregating spatial grids | cpu_usage=63% mem_usage=28%
+[2025-12-06 16:01:11.598] [INFO] [StorageIO] [job-norm-30a8b7] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:11.598] [INFO] [TaskScheduler] [job-norm-30a8b7] Job completed successfully | duration=18.01s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-norm-af1484] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.271] [INFO] [DataClient] [job-norm-af1484] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:57.073] [INFO] [DataClient] [job-norm-af1484] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:57.573] [DEBUG] [Preprocessor] [job-norm-af1484] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:00:59.861] [INFO] [ComputeEngine] [job-norm-af1484] Aggregating spatial grids | cpu_usage=76% mem_usage=26%
+[2025-12-06 16:01:00.361] [DEBUG] [Preprocessor] [job-norm-af1484] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:02.661] [INFO] [ComputeEngine] [job-norm-af1484] Aggregating spatial grids | cpu_usage=79% mem_usage=25%
+[2025-12-06 16:01:03.161] [DEBUG] [Preprocessor] [job-norm-af1484] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:05.458] [INFO] [ComputeEngine] [job-norm-af1484] Aggregating spatial grids | cpu_usage=67% mem_usage=23%
+[2025-12-06 16:01:05.958] [DEBUG] [Preprocessor] [job-norm-af1484] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:08.335] [INFO] [ComputeEngine] [job-norm-af1484] Aggregating spatial grids | cpu_usage=62% mem_usage=29%
+[2025-12-06 16:01:08.835] [DEBUG] [Preprocessor] [job-norm-af1484] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:11.122] [INFO] [ComputeEngine] [job-norm-af1484] Aggregating spatial grids | cpu_usage=72% mem_usage=28%
+[2025-12-06 16:01:11.622] [INFO] [StorageIO] [job-norm-af1484] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:11.622] [INFO] [TaskScheduler] [job-norm-af1484] Job completed successfully | duration=18.04s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-norm-531607] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.745] [INFO] [DataClient] [job-norm-531607] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:58.286] [INFO] [DataClient] [job-norm-531607] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:58.786] [DEBUG] [Preprocessor] [job-norm-531607] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:01:00.750] [INFO] [ComputeEngine] [job-norm-531607] Aggregating spatial grids | cpu_usage=73% mem_usage=23%
+[2025-12-06 16:01:01.250] [DEBUG] [Preprocessor] [job-norm-531607] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:03.681] [INFO] [ComputeEngine] [job-norm-531607] Aggregating spatial grids | cpu_usage=70% mem_usage=23%
+[2025-12-06 16:01:04.181] [DEBUG] [Preprocessor] [job-norm-531607] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:06.369] [INFO] [ComputeEngine] [job-norm-531607] Aggregating spatial grids | cpu_usage=67% mem_usage=25%
+[2025-12-06 16:01:06.869] [DEBUG] [Preprocessor] [job-norm-531607] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:08.900] [INFO] [ComputeEngine] [job-norm-531607] Aggregating spatial grids | cpu_usage=70% mem_usage=29%
+[2025-12-06 16:01:09.400] [DEBUG] [Preprocessor] [job-norm-531607] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:10.938] [INFO] [ComputeEngine] [job-norm-531607] Aggregating spatial grids | cpu_usage=65% mem_usage=23%
+[2025-12-06 16:01:11.438] [INFO] [StorageIO] [job-norm-531607] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:11.438] [INFO] [TaskScheduler] [job-norm-531607] Job completed successfully | duration=17.85s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-norm-d244d0] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.873] [INFO] [DataClient] [job-norm-d244d0] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:58.326] [INFO] [DataClient] [job-norm-d244d0] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:58.826] [DEBUG] [Preprocessor] [job-norm-d244d0] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:01:01.021] [INFO] [ComputeEngine] [job-norm-d244d0] Aggregating spatial grids | cpu_usage=79% mem_usage=20%
+[2025-12-06 16:01:01.521] [DEBUG] [Preprocessor] [job-norm-d244d0] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:03.430] [INFO] [ComputeEngine] [job-norm-d244d0] Aggregating spatial grids | cpu_usage=68% mem_usage=26%
+[2025-12-06 16:01:03.930] [DEBUG] [Preprocessor] [job-norm-d244d0] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:06.242] [INFO] [ComputeEngine] [job-norm-d244d0] Aggregating spatial grids | cpu_usage=67% mem_usage=29%
+[2025-12-06 16:01:06.742] [DEBUG] [Preprocessor] [job-norm-d244d0] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:08.488] [INFO] [ComputeEngine] [job-norm-d244d0] Aggregating spatial grids | cpu_usage=66% mem_usage=29%
+[2025-12-06 16:01:08.988] [DEBUG] [Preprocessor] [job-norm-d244d0] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:10.790] [INFO] [ComputeEngine] [job-norm-d244d0] Aggregating spatial grids | cpu_usage=62% mem_usage=20%
+[2025-12-06 16:01:11.290] [INFO] [StorageIO] [job-norm-d244d0] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:11.290] [INFO] [TaskScheduler] [job-norm-d244d0] Job completed successfully | duration=17.71s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-norm-5f6bbb] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.653] [INFO] [DataClient] [job-norm-5f6bbb] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:57.536] [INFO] [DataClient] [job-norm-5f6bbb] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:58.036] [DEBUG] [Preprocessor] [job-norm-5f6bbb] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:01:00.059] [INFO] [ComputeEngine] [job-norm-5f6bbb] Aggregating spatial grids | cpu_usage=66% mem_usage=22%
+[2025-12-06 16:01:00.559] [DEBUG] [Preprocessor] [job-norm-5f6bbb] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:02.877] [INFO] [ComputeEngine] [job-norm-5f6bbb] Aggregating spatial grids | cpu_usage=70% mem_usage=29%
+[2025-12-06 16:01:03.377] [DEBUG] [Preprocessor] [job-norm-5f6bbb] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:05.227] [INFO] [ComputeEngine] [job-norm-5f6bbb] Aggregating spatial grids | cpu_usage=77% mem_usage=22%
+[2025-12-06 16:01:05.727] [DEBUG] [Preprocessor] [job-norm-5f6bbb] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:07.787] [INFO] [ComputeEngine] [job-norm-5f6bbb] Aggregating spatial grids | cpu_usage=76% mem_usage=30%
+[2025-12-06 16:01:08.287] [DEBUG] [Preprocessor] [job-norm-5f6bbb] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:10.617] [INFO] [ComputeEngine] [job-norm-5f6bbb] Aggregating spatial grids | cpu_usage=74% mem_usage=24%
+[2025-12-06 16:01:11.117] [INFO] [StorageIO] [job-norm-5f6bbb] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:11.117] [INFO] [TaskScheduler] [job-norm-5f6bbb] Job completed successfully | duration=17.53s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-norm-735189] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.167] [INFO] [DataClient] [job-norm-735189] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:56.412] [INFO] [DataClient] [job-norm-735189] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:56.912] [DEBUG] [Preprocessor] [job-norm-735189] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:00:59.116] [INFO] [ComputeEngine] [job-norm-735189] Aggregating spatial grids | cpu_usage=79% mem_usage=22%
+[2025-12-06 16:00:59.616] [DEBUG] [Preprocessor] [job-norm-735189] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:01.761] [INFO] [ComputeEngine] [job-norm-735189] Aggregating spatial grids | cpu_usage=78% mem_usage=22%
+[2025-12-06 16:01:02.261] [DEBUG] [Preprocessor] [job-norm-735189] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:04.254] [INFO] [ComputeEngine] [job-norm-735189] Aggregating spatial grids | cpu_usage=78% mem_usage=28%
+[2025-12-06 16:01:04.754] [DEBUG] [Preprocessor] [job-norm-735189] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:06.962] [INFO] [ComputeEngine] [job-norm-735189] Aggregating spatial grids | cpu_usage=74% mem_usage=30%
+[2025-12-06 16:01:07.462] [DEBUG] [Preprocessor] [job-norm-735189] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:09.627] [INFO] [ComputeEngine] [job-norm-735189] Aggregating spatial grids | cpu_usage=69% mem_usage=29%
+[2025-12-06 16:01:10.127] [INFO] [StorageIO] [job-norm-735189] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:10.127] [INFO] [TaskScheduler] [job-norm-735189] Job completed successfully | duration=16.54s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-norm-c02a3a] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.440] [INFO] [DataClient] [job-norm-c02a3a] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:56.460] [INFO] [DataClient] [job-norm-c02a3a] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:56.960] [DEBUG] [Preprocessor] [job-norm-c02a3a] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:00:58.765] [INFO] [ComputeEngine] [job-norm-c02a3a] Aggregating spatial grids | cpu_usage=67% mem_usage=25%
+[2025-12-06 16:00:59.265] [DEBUG] [Preprocessor] [job-norm-c02a3a] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:01.338] [INFO] [ComputeEngine] [job-norm-c02a3a] Aggregating spatial grids | cpu_usage=61% mem_usage=20%
+[2025-12-06 16:01:01.838] [DEBUG] [Preprocessor] [job-norm-c02a3a] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:03.675] [INFO] [ComputeEngine] [job-norm-c02a3a] Aggregating spatial grids | cpu_usage=61% mem_usage=24%
+[2025-12-06 16:01:04.175] [DEBUG] [Preprocessor] [job-norm-c02a3a] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:06.317] [INFO] [ComputeEngine] [job-norm-c02a3a] Aggregating spatial grids | cpu_usage=63% mem_usage=30%
+[2025-12-06 16:01:06.817] [DEBUG] [Preprocessor] [job-norm-c02a3a] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:08.879] [INFO] [ComputeEngine] [job-norm-c02a3a] Aggregating spatial grids | cpu_usage=80% mem_usage=20%
+[2025-12-06 16:01:09.379] [INFO] [StorageIO] [job-norm-c02a3a] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:09.379] [INFO] [TaskScheduler] [job-norm-c02a3a] Job completed successfully | duration=15.79s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-norm-584f6a] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.322] [INFO] [DataClient] [job-norm-584f6a] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:56.710] [INFO] [DataClient] [job-norm-584f6a] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:57.210] [DEBUG] [Preprocessor] [job-norm-584f6a] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:00:59.611] [INFO] [ComputeEngine] [job-norm-584f6a] Aggregating spatial grids | cpu_usage=62% mem_usage=28%
+[2025-12-06 16:01:00.111] [DEBUG] [Preprocessor] [job-norm-584f6a] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:01.927] [INFO] [ComputeEngine] [job-norm-584f6a] Aggregating spatial grids | cpu_usage=67% mem_usage=22%
+[2025-12-06 16:01:02.427] [DEBUG] [Preprocessor] [job-norm-584f6a] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:04.682] [INFO] [ComputeEngine] [job-norm-584f6a] Aggregating spatial grids | cpu_usage=61% mem_usage=21%
+[2025-12-06 16:01:05.182] [DEBUG] [Preprocessor] [job-norm-584f6a] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:07.565] [INFO] [ComputeEngine] [job-norm-584f6a] Aggregating spatial grids | cpu_usage=73% mem_usage=23%
+[2025-12-06 16:01:08.065] [DEBUG] [Preprocessor] [job-norm-584f6a] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:10.051] [INFO] [ComputeEngine] [job-norm-584f6a] Aggregating spatial grids | cpu_usage=80% mem_usage=25%
+[2025-12-06 16:01:10.551] [INFO] [StorageIO] [job-norm-584f6a] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:10.551] [INFO] [TaskScheduler] [job-norm-584f6a] Job completed successfully | duration=16.97s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-norm-d916e0] Starting batch analysis job: fishing_effort_heatmap
+[2025-12-06 16:00:54.272] [INFO] [DataClient] [job-norm-d916e0] Querying archival AIS data | time_span=180days area_size=5000sqkm
+[2025-12-06 16:00:57.409] [INFO] [DataClient] [job-norm-d916e0] Data download complete | records=150000 size=45MB
+[2025-12-06 16:00:57.909] [DEBUG] [Preprocessor] [job-norm-d916e0] Processing batch 1/5 | batch_records=30000
+[2025-12-06 16:01:00.383] [INFO] [ComputeEngine] [job-norm-d916e0] Aggregating spatial grids | cpu_usage=80% mem_usage=26%
+[2025-12-06 16:01:00.883] [DEBUG] [Preprocessor] [job-norm-d916e0] Processing batch 2/5 | batch_records=30000
+[2025-12-06 16:01:02.848] [INFO] [ComputeEngine] [job-norm-d916e0] Aggregating spatial grids | cpu_usage=75% mem_usage=26%
+[2025-12-06 16:01:03.348] [DEBUG] [Preprocessor] [job-norm-d916e0] Processing batch 3/5 | batch_records=30000
+[2025-12-06 16:01:05.072] [INFO] [ComputeEngine] [job-norm-d916e0] Aggregating spatial grids | cpu_usage=78% mem_usage=26%
+[2025-12-06 16:01:05.572] [DEBUG] [Preprocessor] [job-norm-d916e0] Processing batch 4/5 | batch_records=30000
+[2025-12-06 16:01:07.227] [INFO] [ComputeEngine] [job-norm-d916e0] Aggregating spatial grids | cpu_usage=77% mem_usage=23%
+[2025-12-06 16:01:07.727] [DEBUG] [Preprocessor] [job-norm-d916e0] Processing batch 5/5 | batch_records=30000
+[2025-12-06 16:01:10.029] [INFO] [ComputeEngine] [job-norm-d916e0] Aggregating spatial grids | cpu_usage=60% mem_usage=25%
+[2025-12-06 16:01:10.529] [INFO] [StorageIO] [job-norm-d916e0] Writing aggregation results | output_type=heatmap_grid output_size=5MB
+[2025-12-06 16:01:10.529] [INFO] [TaskScheduler] [job-norm-d916e0] Job completed successfully | duration=16.94s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-anom-0ab452] Starting analysis job: trajectory_pattern_mining
+[2025-12-06 16:00:54.212] [INFO] [DataClient] [job-anom-0ab452] Querying archival AIS data | time_span=10days area_size=200sqkm
+[2025-12-06 16:00:55.560] [INFO] [DataClient] [job-anom-0ab452] Data download complete | records=20000 size=6MB
+[2025-12-06 16:00:56.060] [INFO] [Preprocessor] [job-anom-0ab452] Applying pre-filters | filter_type=temporal_spatial
+[2025-12-06 16:00:56.260] [DEBUG] [Preprocessor] [job-anom-0ab452] Filter complete | input_records=20000 retained_objects=3
+[2025-12-06 16:00:56.260] [DEBUG] [ComputeEngine] [job-anom-0ab452] Extracting motion features for object obj_d4c7 | algorithm=kinematic_profiling
+[2025-12-06 16:00:59.653] [INFO] [ComputeEngine] [job-anom-0ab452] Calculating similarity metrics | target_id=obj_d4c7 cpu_usage=90%
+[2025-12-06 16:01:00.153] [DEBUG] [ComputeEngine] [job-anom-0ab452] Extracting motion features for object obj_7f3a | algorithm=kinematic_profiling
+[2025-12-06 16:01:02.682] [INFO] [ComputeEngine] [job-anom-0ab452] Calculating similarity metrics | target_id=obj_7f3a cpu_usage=95%
+[2025-12-06 16:01:03.182] [DEBUG] [ComputeEngine] [job-anom-0ab452] Extracting motion features for object obj_b2e1 | algorithm=kinematic_profiling
+[2025-12-06 16:01:06.292] [INFO] [ComputeEngine] [job-anom-0ab452] Calculating similarity metrics | target_id=obj_b2e1 cpu_usage=88%
+[2025-12-06 16:01:06.792] [INFO] [StorageIO] [job-anom-0ab452] Writing result data | output_type=raw_sequence_csv output_size=12KB
+[2025-12-06 16:01:06.792] [INFO] [TaskScheduler] [job-anom-0ab452] Job completed successfully | duration=13.21s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-anom-03ec8d] Starting analysis job: trajectory_pattern_mining
+[2025-12-06 16:00:54.283] [INFO] [DataClient] [job-anom-03ec8d] Querying archival AIS data | time_span=10days area_size=200sqkm
+[2025-12-06 16:00:56.039] [INFO] [DataClient] [job-anom-03ec8d] Data download complete | records=20000 size=6MB
+[2025-12-06 16:00:56.539] [INFO] [Preprocessor] [job-anom-03ec8d] Applying pre-filters | filter_type=temporal_spatial
+[2025-12-06 16:00:56.739] [DEBUG] [Preprocessor] [job-anom-03ec8d] Filter complete | input_records=20000 retained_objects=3
+[2025-12-06 16:00:56.739] [DEBUG] [ComputeEngine] [job-anom-03ec8d] Extracting motion features for object obj_d4c7 | algorithm=kinematic_profiling
+[2025-12-06 16:01:00.517] [INFO] [ComputeEngine] [job-anom-03ec8d] Calculating similarity metrics | target_id=obj_d4c7 cpu_usage=91%
+[2025-12-06 16:01:01.017] [DEBUG] [ComputeEngine] [job-anom-03ec8d] Extracting motion features for object obj_7f3a | algorithm=kinematic_profiling
+[2025-12-06 16:01:03.786] [INFO] [ComputeEngine] [job-anom-03ec8d] Calculating similarity metrics | target_id=obj_7f3a cpu_usage=92%
+[2025-12-06 16:01:04.286] [DEBUG] [ComputeEngine] [job-anom-03ec8d] Extracting motion features for object obj_b2e1 | algorithm=kinematic_profiling
+[2025-12-06 16:01:07.326] [INFO] [ComputeEngine] [job-anom-03ec8d] Calculating similarity metrics | target_id=obj_b2e1 cpu_usage=93%
+[2025-12-06 16:01:07.826] [INFO] [StorageIO] [job-anom-03ec8d] Writing result data | output_type=raw_sequence_csv output_size=12KB
+[2025-12-06 16:01:07.826] [INFO] [TaskScheduler] [job-anom-03ec8d] Job completed successfully | duration=14.24s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-anom-52f82c] Starting analysis job: trajectory_pattern_mining
+[2025-12-06 16:00:54.417] [INFO] [DataClient] [job-anom-52f82c] Querying archival AIS data | time_span=10days area_size=200sqkm
+[2025-12-06 16:00:55.622] [INFO] [DataClient] [job-anom-52f82c] Data download complete | records=20000 size=6MB
+[2025-12-06 16:00:56.122] [INFO] [Preprocessor] [job-anom-52f82c] Applying pre-filters | filter_type=temporal_spatial
+[2025-12-06 16:00:56.322] [DEBUG] [Preprocessor] [job-anom-52f82c] Filter complete | input_records=20000 retained_objects=3
+[2025-12-06 16:00:56.322] [DEBUG] [ComputeEngine] [job-anom-52f82c] Extracting motion features for object obj_d4c7 | algorithm=kinematic_profiling
+[2025-12-06 16:00:58.719] [INFO] [ComputeEngine] [job-anom-52f82c] Calculating similarity metrics | target_id=obj_d4c7 cpu_usage=94%
+[2025-12-06 16:00:59.219] [DEBUG] [ComputeEngine] [job-anom-52f82c] Extracting motion features for object obj_7f3a | algorithm=kinematic_profiling
+[2025-12-06 16:01:01.815] [INFO] [ComputeEngine] [job-anom-52f82c] Calculating similarity metrics | target_id=obj_7f3a cpu_usage=91%
+[2025-12-06 16:01:02.315] [DEBUG] [ComputeEngine] [job-anom-52f82c] Extracting motion features for object obj_b2e1 | algorithm=kinematic_profiling
+[2025-12-06 16:01:05.112] [INFO] [ComputeEngine] [job-anom-52f82c] Calculating similarity metrics | target_id=obj_b2e1 cpu_usage=93%
+[2025-12-06 16:01:05.612] [INFO] [StorageIO] [job-anom-52f82c] Writing result data | output_type=raw_sequence_csv output_size=12KB
+[2025-12-06 16:01:05.612] [INFO] [TaskScheduler] [job-anom-52f82c] Job completed successfully | duration=12.03s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-anom-3b038d] Starting analysis job: trajectory_pattern_mining
+[2025-12-06 16:00:54.229] [INFO] [DataClient] [job-anom-3b038d] Querying archival AIS data | time_span=10days area_size=200sqkm
+[2025-12-06 16:00:55.872] [INFO] [DataClient] [job-anom-3b038d] Data download complete | records=20000 size=6MB
+[2025-12-06 16:00:56.372] [INFO] [Preprocessor] [job-anom-3b038d] Applying pre-filters | filter_type=temporal_spatial
+[2025-12-06 16:00:56.572] [DEBUG] [Preprocessor] [job-anom-3b038d] Filter complete | input_records=20000 retained_objects=3
+[2025-12-06 16:00:56.572] [DEBUG] [ComputeEngine] [job-anom-3b038d] Extracting motion features for object obj_d4c7 | algorithm=kinematic_profiling
+[2025-12-06 16:00:59.973] [INFO] [ComputeEngine] [job-anom-3b038d] Calculating similarity metrics | target_id=obj_d4c7 cpu_usage=93%
+[2025-12-06 16:01:00.473] [DEBUG] [ComputeEngine] [job-anom-3b038d] Extracting motion features for object obj_7f3a | algorithm=kinematic_profiling
+[2025-12-06 16:01:02.855] [INFO] [ComputeEngine] [job-anom-3b038d] Calculating similarity metrics | target_id=obj_7f3a cpu_usage=95%
+[2025-12-06 16:01:03.355] [DEBUG] [ComputeEngine] [job-anom-3b038d] Extracting motion features for object obj_b2e1 | algorithm=kinematic_profiling
+[2025-12-06 16:01:05.398] [INFO] [ComputeEngine] [job-anom-3b038d] Calculating similarity metrics | target_id=obj_b2e1 cpu_usage=92%
+[2025-12-06 16:01:05.898] [INFO] [StorageIO] [job-anom-3b038d] Writing result data | output_type=raw_sequence_csv output_size=12KB
+[2025-12-06 16:01:05.898] [INFO] [TaskScheduler] [job-anom-3b038d] Job completed successfully | duration=12.31s
+[2025-12-06 16:00:53.584] [INFO] [TaskScheduler] [job-anom-057644] Starting analysis job: trajectory_pattern_mining
+[2025-12-06 16:00:54.466] [INFO] [DataClient] [job-anom-057644] Querying archival AIS data | time_span=10days area_size=200sqkm
+[2025-12-06 16:00:56.458] [INFO] [DataClient] [job-anom-057644] Data download complete | records=20000 size=6MB
+[2025-12-06 16:00:56.958] [INFO] [Preprocessor] [job-anom-057644] Applying pre-filters | filter_type=temporal_spatial
+[2025-12-06 16:00:57.158] [DEBUG] [Preprocessor] [job-anom-057644] Filter complete | input_records=20000 retained_objects=3
+[2025-12-06 16:00:57.158] [DEBUG] [ComputeEngine] [job-anom-057644] Extracting motion features for object obj_d4c7 | algorithm=kinematic_profiling
+[2025-12-06 16:01:00.711] [INFO] [ComputeEngine] [job-anom-057644] Calculating similarity metrics | target_id=obj_d4c7 cpu_usage=90%
+[2025-12-06 16:01:01.211] [DEBUG] [ComputeEngine] [job-anom-057644] Extracting motion features for object obj_7f3a | algorithm=kinematic_profiling
+[2025-12-06 16:01:03.980] [INFO] [ComputeEngine] [job-anom-057644] Calculating similarity metrics | target_id=obj_7f3a cpu_usage=93%
+[2025-12-06 16:01:04.480] [DEBUG] [ComputeEngine] [job-anom-057644] Extracting motion features for object obj_b2e1 | algorithm=kinematic_profiling
+[2025-12-06 16:01:07.695] [INFO] [ComputeEngine] [job-anom-057644] Calculating similarity metrics | target_id=obj_b2e1 cpu_usage=90%
+[2025-12-06 16:01:08.195] [INFO] [StorageIO] [job-anom-057644] Writing result data | output_type=raw_sequence_csv output_size=12KB
+[2025-12-06 16:01:08.195] [INFO] [TaskScheduler] [job-anom-057644] Job completed successfully | duration=14.61s

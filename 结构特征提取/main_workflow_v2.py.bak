@@ -1,0 +1,788 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+优化的主工作流程
+集成所有新模块，实现完整的训练流程
+"""
+
+import os
+import sys
+import time
+import argparse
+import torch
+import numpy as np
+import networkx as nx
+from typing import Dict, List, Tuple, Any, Optional
+from pathlib import Path
+import json
+import logging
+from tqdm import tqdm
+import pandas as pd
+
+# 导入配置和新模块
+from config import Config, get_default_config
+from ast_parser import parse_code_to_ast
+from feature_extractor_v2 import FeatureExtractor, get_feature_extractor
+from graph_builder_v2 import GraphBuilderV2, build_program_graphs_v2
+from gnn_trainer_v2 import CFGGNN_V2, FCGGNN_V2, GNNTrainer
+from model_evaluator import ModelEvaluator
+from torch_geometric.data import Data, DataLoader
+from sklearn.model_selection import StratifiedKFold
+
+# 注释掉调试器代码，生产环境不需要
+import debugpy
+try:
+    debugpy.listen(("localhost", 9502))
+    print("Waiting for debugger attach")
+    debugpy.wait_for_client()
+except Exception as e:
+    pass
+
+
+def setup_logger(log_file: Optional[str] = None, level: int = logging.INFO) -> logging.Logger:
+    """设置日志记录器"""
+    logger = logging.getLogger("main_workflow_v2")  # 自定义日志记录器名称
+    logger.setLevel(level)  # 设置logger对象的日志级别为INFO 20
+    logger.handlers.clear()  # 清空现有处理器
+    
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')  # 创建格式化器
+    
+    # 创建控制台处理器
+    console_handler = logging.StreamHandler()  # 创建流处理器，默认输出到标准错误输出（stderr）
+    console_handler.setFormatter(formatter)  # 为处理器设置格式
+    logger.addHandler(console_handler)  
+    
+    if log_file:
+        os.makedirs(os.path.dirname(log_file) or '.', exist_ok=True)
+        file_handler = logging.FileHandler(log_file, encoding='utf-8')
+        file_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
+    
+    return logger
+
+
+def parse_args():
+    """解析命令行参数"""
+    parser = argparse.ArgumentParser(description="优化的Python容器逃逸代码检测工作流")
+    
+    # 数据路径
+    parser.add_argument("--source_dir", type=str, required=True,
+                       help="Python源代码目录")
+    parser.add_argument("--output_dir", type=str, default="./output",
+                       help="输出目录")
+    parser.add_argument("--log_file", type=str, default=None,
+                       help="日志文件路径")
+    parser.add_argument("--label_file", type=str, default=None,
+                       help="标签文件路径(CSV格式)")
+    
+    # 配置文件
+    parser.add_argument("--config", type=str, default=None,
+                       help="配置文件路径(JSON格式)")
+    
+    # 训练控制
+    parser.add_argument("--resume", type=str, default=None,
+                       help="从检查点恢复训练")
+    parser.add_argument("--eval_only", action="store_true",
+                       help="仅评估模式")
+    parser.add_argument("--use_kfold", action="store_true",
+                       help="使用K折交叉验证")
+    parser.add_argument("--n_folds", type=int, default=5,
+                       help="K折交叉验证的折数")
+    
+    # 系统参数
+    parser.add_argument("--seed", type=int, default=42,
+                       help="随机种子")
+    parser.add_argument("--debug", action="store_true",
+                       help="调试模式")
+    
+    return parser.parse_args()
+
+
+def load_labels(label_file: str, logger: logging.Logger) -> Dict[str, int]:
+    """加载标签文件"""
+    logger.info(f"加载标签文件: {label_file}")
+    labels = {}
+    
+    try:
+        df = pd.read_csv(label_file)
+        for _, row in df.iterrows():
+            file_path = str(row['file_path']).strip()
+            label = int(row['label'])
+            labels[file_path] = label
+        
+        logger.info(f"成功加载 {len(labels)} 个文件的标签")
+        logger.info(f"  正常样本: {sum(1 for v in labels.values() if v == 0)}")
+        logger.info(f"  恶意样本: {sum(1 for v in labels.values() if v == 1)}")
+    except Exception as e:
+        logger.error(f"加载标签文件失败: {e}")
+    
+    return labels
+
+
+def collect_python_files(source_dir: str, logger: logging.Logger) -> List[str]:
+    """收集Python文件"""
+    logger.info(f"从 {source_dir} 收集Python文件...")
+    
+    python_files = []
+    for root, dirs, files in os.walk(source_dir):
+        for file in files:
+            if file.endswith('.py'):
+                file_path = os.path.join(root, file)
+                python_files.append(file_path)
+    
+    logger.info(f"找到 {len(python_files)} 个Python文件")
+    return python_files
+
+
+def parse_and_build_graphs(python_files: List[str], 
+                          config: Config,
+                          logger: logging.Logger) -> Tuple[Dict, Dict]:
+    """解析文件并构建图"""
+    logger.info("=" * 60)
+    logger.info("阶段1: 解析文件并构建图")
+    logger.info("=" * 60)
+    
+    all_cfgs = {}
+    all_fcgs = {}
+    
+    for file_path in tqdm(python_files, desc="处理文件"):
+        try:
+            # 读取源代码
+            with open(file_path, 'r', encoding='utf-8') as f:
+                source_code = f.read()
+            
+            # 解析AST
+            ast_tree = parse_code_to_ast(file_path)
+            if ast_tree is None:
+                logger.warning(f"文件 {file_path} 解析失败")
+                continue
+            
+            # 构建图
+            cfgs, fcg = build_program_graphs_v2(ast_tree, source_code, config)
+            
+            # 过滤
+            filtered_cfgs = {
+                name: cfg for name, cfg in cfgs.items()
+                if config.data.min_nodes <= cfg.number_of_nodes() <= config.data.max_nodes
+            }
+            
+            if filtered_cfgs:
+                all_cfgs[file_path] = filtered_cfgs
+                all_fcgs[file_path] = fcg
+                logger.debug(f"文件 {file_path}: {len(filtered_cfgs)} 个CFG")
+        
+        except Exception as e:
+            logger.error(f"处理文件 {file_path} 失败: {e}")
+    
+    logger.info(f"成功处理 {len(all_cfgs)} 个文件")
+    logger.info(f"  总CFG数: {sum(len(cfgs) for cfgs in all_cfgs.values())}")
+    logger.info(f"  总FCG数: {len(all_fcgs)}")
+    
+    return all_cfgs, all_fcgs
+
+
+def convert_to_pyg_data(all_cfgs: Dict, all_fcgs: Dict,
+                       labels: Dict[str, int],
+                       config: Config,
+                       logger: logging.Logger) -> Tuple[List[Data], List[Data]]:
+    """转换为PyG数据格式"""
+    logger.info("=" * 60)
+    logger.info("阶段2: 转换为PyTorch Geometric格式")
+    logger.info("=" * 60)
+    
+    cfg_data_list = []
+    fcg_data_list = []
+    
+    for file_path, cfgs in tqdm(all_cfgs.items(), desc="转换图数据"):
+        try:
+            label = labels.get(file_path, 0)
+            
+            # 转换CFG
+            for func_name, cfg in cfgs.items():
+                if cfg.number_of_nodes() == 0:  # 获取图的节点数
+                    continue  # 跳过空图
+                
+                # 提取节点特征
+                node_features = []
+                for node_id in cfg.nodes():
+                    node_data = cfg.nodes[node_id]
+                    if 'feature_vector' in node_data:
+                        node_features.append(node_data['feature_vector'])
+                    else:
+                        # 如果没有特征向量，创建零向量
+                        node_features.append(np.zeros(config.model.node_feature_dim))
+                
+                if not node_features:
+                    continue
+                
+                # 构建边索引
+                edge_index = []
+                for u, v in cfg.edges():
+                    node_list = list(cfg.nodes())
+                    u_idx = node_list.index(u)
+                    v_idx = node_list.index(v)
+                    edge_index.append([u_idx, v_idx])
+                
+                if not edge_index:
+                    edge_index = [[0, 0]]  # 自环
+                
+                # 创建PyG Data对象
+                x = torch.tensor(np.array(node_features), dtype=torch.float)
+                edge_index = torch.tensor(edge_index, dtype=torch.long).t().contiguous()
+                y = torch.tensor([label], dtype=torch.long)
+                
+                data = Data(x=x, edge_index=edge_index, y=y)
+                data.file_path = file_path  # 文件路径
+                data.function_name = func_name  # 函数名
+                
+                cfg_data_list.append(data)
+            
+            # 转换FCG
+            if file_path in all_fcgs:
+                fcg = all_fcgs[file_path]
+                if fcg.number_of_nodes() > 0:
+                    # 提取节点特征（函数级特征）
+                    node_features = []
+                    for node_id in fcg.nodes():
+                        # 使用简单的特征表示
+                        feature = np.zeros(config.model.node_feature_dim)
+                        node_features.append(feature)
+                    
+                    # 构建边索引
+                    edge_index = []
+                    for u, v in fcg.edges():
+                        node_list = list(fcg.nodes())
+                        u_idx = node_list.index(u)
+                        v_idx = node_list.index(v)
+                        edge_index.append([u_idx, v_idx])
+                    
+                    if not edge_index:
+                        edge_index = [[0, 0]]
+                    
+                    x = torch.tensor(np.array(node_features), dtype=torch.float)
+                    edge_index = torch.tensor(edge_index, dtype=torch.long).t().contiguous()
+                    y = torch.tensor([label], dtype=torch.long)
+                    
+                    data = Data(x=x, edge_index=edge_index, y=y)
+                    data.file_path = file_path  # 文件路径
+                    data.function_names = list(fcg.nodes())  # 该文件中所有函数的名称列表
+                    
+                    fcg_data_list.append(data)
+        
+        except Exception as e:
+            logger.error(f"转换文件 {file_path} 失败: {e}")
+    
+    logger.info(f"转换完成:")
+    logger.info(f"  CFG数据: {len(cfg_data_list)}")
+    logger.info(f"  FCG数据: {len(fcg_data_list)}")
+    
+    return cfg_data_list, fcg_data_list
+
+
+def split_dataset_by_file(cfg_data_list: List[Data],
+                         fcg_data_list: List[Data],
+                         train_ratio: float,
+                         val_ratio: float,
+                         seed: int,
+                         logger: logging.Logger) -> Tuple[List[Data], List[Data], List[Data], 
+                                                          List[Data], List[Data], List[Data]]:
+    """
+    优化的数据集划分（解决数据泄漏和类别不平衡问题）
+    
+    改进：
+    1. 按文件划分，避免同一文件的CFG被分到不同集合
+    2. 分层抽样，保持每个集合中类别比例一致
+    3. CFG和FCG对齐划分
+    
+    返回:
+        cfg_train, cfg_val, cfg_test, fcg_train, fcg_val, fcg_test
+    """
+    np.random.seed(seed)
+    
+    # 1. 按文件组织数据
+    file_to_cfg = {}  # 文件路径 -> CFG数据列表
+    file_to_fcg = {}  # 文件路径 -> FCG数据
+    file_to_label = {}  # 文件路径 -> 标签
+    
+    for data in cfg_data_list:
+        file_path = data.file_path
+        if file_path not in file_to_cfg:
+            file_to_cfg[file_path] = []
+        file_to_cfg[file_path].append(data)
+        file_to_label[file_path] = data.y.item()
+    
+    for data in fcg_data_list:
+        file_path = data.file_path
+        file_to_fcg[file_path] = data
+        file_to_label[file_path] = data.y.item()
+    
+    # 2. 按类别分组文件（为分层抽样做准备，确保每个集合中类别比例一致）
+    files_by_label = {0: [], 1: []}  # 0: 正常, 1: 恶意
+    for file_path, label in file_to_label.items():
+        files_by_label[label].append(file_path)
+    
+    logger.info(f"\n数据集统计:")
+    logger.info(f"  总文件数: {len(file_to_label)}")
+    logger.info(f"  正常文件: {len(files_by_label[0])}")
+    logger.info(f"  恶意文件: {len(files_by_label[1])}")
+    
+    # 3. 对每个类别进行分层划分
+    train_files = []
+    val_files = []
+    test_files = []
+    
+    for label, files in files_by_label.items():
+        np.random.shuffle(files)
+        
+        n = len(files)
+        train_end = int(n * train_ratio)
+        val_end = train_end + int(n * val_ratio)
+        
+        train_files.extend(files[:train_end])
+        val_files.extend(files[train_end:val_end])
+        test_files.extend(files[val_end:])
+        
+        logger.info(f"\n类别 {label} ({'正常' if label == 0 else '恶意'}):")
+        logger.info(f"  训练: {len(files[:train_end])}")
+        logger.info(f"  验证: {len(files[train_end:val_end])}")
+        logger.info(f"  测试: {len(files[val_end:])}")
+    
+    # 4. 根据文件划分提取对应的CFG和FCG数据
+    cfg_train = []
+    cfg_val = []
+    cfg_test = []
+    fcg_train = []
+    fcg_val = []
+    fcg_test = []
+    
+    for file_path in train_files:
+        if file_path in file_to_cfg:
+            cfg_train.extend(file_to_cfg[file_path])
+        if file_path in file_to_fcg:
+            fcg_train.append(file_to_fcg[file_path])
+    
+    for file_path in val_files:
+        if file_path in file_to_cfg:
+            cfg_val.extend(file_to_cfg[file_path])
+        if file_path in file_to_fcg:
+            fcg_val.append(file_to_fcg[file_path])
+    
+    for file_path in test_files:
+        if file_path in file_to_cfg:
+            cfg_test.extend(file_to_cfg[file_path])
+        if file_path in file_to_fcg:
+            fcg_test.append(file_to_fcg[file_path])
+    
+    # 5. 验证划分结果
+    logger.info(f"\n最终数据集划分:")
+    logger.info(f"CFG数据:")
+    logger.info(f"  训练集: {len(cfg_train)} (正常: {sum(1 for d in cfg_train if d.y.item() == 0)}, "
+               f"恶意: {sum(1 for d in cfg_train if d.y.item() == 1)})")
+    logger.info(f"  验证集: {len(cfg_val)} (正常: {sum(1 for d in cfg_val if d.y.item() == 0)}, "
+               f"恶意: {sum(1 for d in cfg_val if d.y.item() == 1)})")
+    logger.info(f"  测试集: {len(cfg_test)} (正常: {sum(1 for d in cfg_test if d.y.item() == 0)}, "
+               f"恶意: {sum(1 for d in cfg_test if d.y.item() == 1)})")
+    
+    logger.info(f"\nFCG数据:")
+    logger.info(f"  训练集: {len(fcg_train)} (正常: {sum(1 for d in fcg_train if d.y.item() == 0)}, "
+               f"恶意: {sum(1 for d in fcg_train if d.y.item() == 1)})")
+    logger.info(f"  验证集: {len(fcg_val)} (正常: {sum(1 for d in fcg_val if d.y.item() == 0)}, "
+               f"恶意: {sum(1 for d in fcg_val if d.y.item() == 1)})")
+    logger.info(f"  测试集: {len(fcg_test)} (正常: {sum(1 for d in fcg_test if d.y.item() == 0)}, "
+               f"恶意: {sum(1 for d in fcg_test if d.y.item() == 1)})")
+    
+    return cfg_train, cfg_val, cfg_test, fcg_train, fcg_val, fcg_test
+
+
+def kfold_split_by_file(cfg_data_list: List[Data],
+                       fcg_data_list: List[Data],
+                       n_folds: int,
+                       seed: int,
+                       logger: logging.Logger):
+    """
+    K折交叉验证数据划分（按文件分层）
+    
+    适用场景：
+    1. 小数据集
+    2. 需要充分利用数据
+    3. 获得更可靠的性能评估
+    
+    返回:
+        生成器，每次yield (fold_idx, cfg_train, cfg_val, fcg_train, fcg_val)
+    """
+    np.random.seed(seed)
+    
+    # 1. 按文件组织数据
+    file_to_cfg = {}
+    file_to_fcg = {}
+    file_to_label = {}
+    
+    for data in cfg_data_list:
+        file_path = data.file_path
+        if file_path not in file_to_cfg:
+            file_to_cfg[file_path] = []
+        file_to_cfg[file_path].append(data)
+        file_to_label[file_path] = data.y.item()
+    
+    for data in fcg_data_list:
+        file_path = data.file_path
+        file_to_fcg[file_path] = data
+        file_to_label[file_path] = data.y.item()
+    
+    # 2. 准备K折交叉验证
+    files = list(file_to_label.keys())
+    labels = [file_to_label[f] for f in files]
+    
+    logger.info(f"\nK折交叉验证设置:")
+    logger.info(f"  折数: {n_folds}")
+    logger.info(f"  总文件数: {len(files)}")
+    logger.info(f"  正常文件: {sum(1 for l in labels if l == 0)}")
+    logger.info(f"  恶意文件: {sum(1 for l in labels if l == 1)}")
+    
+    # 3. 使用分层K折
+    skf = StratifiedKFold(n_splits=n_folds, shuffle=True, random_state=seed)
+    
+    for fold_idx, (train_idx, val_idx) in enumerate(skf.split(files, labels)):
+        logger.info(f"\n{'='*60}")
+        logger.info(f"第 {fold_idx + 1}/{n_folds} 折")
+        logger.info(f"{'='*60}")
+        
+        # 获取训练和验证文件
+        train_files = [files[i] for i in train_idx]
+        val_files = [files[i] for i in val_idx]
+        
+        # 统计类别分布
+        train_labels = [file_to_label[f] for f in train_files]
+        val_labels = [file_to_label[f] for f in val_files]
+        
+        logger.info(f"训练集: {len(train_files)} 文件 "
+                   f"(正常: {sum(1 for l in train_labels if l == 0)}, "
+                   f"恶意: {sum(1 for l in train_labels if l == 1)})")
+        logger.info(f"验证集: {len(val_files)} 文件 "
+                   f"(正常: {sum(1 for l in val_labels if l == 0)}, "
+                   f"恶意: {sum(1 for l in val_labels if l == 1)})")
+        
+        # 提取对应的CFG和FCG数据
+        cfg_train = []
+        cfg_val = []
+        fcg_train = []
+        fcg_val = []
+        
+        for file_path in train_files:
+            if file_path in file_to_cfg:
+                cfg_train.extend(file_to_cfg[file_path])
+            if file_path in file_to_fcg:
+                fcg_train.append(file_to_fcg[file_path])
+        
+        for file_path in val_files:
+            if file_path in file_to_cfg:
+                cfg_val.extend(file_to_cfg[file_path])
+            if file_path in file_to_fcg:
+                fcg_val.append(file_to_fcg[file_path])
+        
+        logger.info(f"CFG: 训练{len(cfg_train)}, 验证{len(cfg_val)}")
+        logger.info(f"FCG: 训练{len(fcg_train)}, 验证{len(fcg_val)}")
+        
+        yield fold_idx, cfg_train, cfg_val, fcg_train, fcg_val
+
+
+def train_models(cfg_train_data: List[Data],
+                cfg_val_data: List[Data],
+                fcg_train_data: List[Data],
+                fcg_val_data: List[Data],
+                config: Config,
+                logger: logging.Logger) -> Tuple[CFGGNN_V2, FCGGNN_V2, Dict]:
+    """训练模型"""
+    logger.info("=" * 60)
+    logger.info("阶段3: 训练GNN模型")
+    logger.info("=" * 60)
+    
+    # 创建数据加载器
+    cfg_train_loader = DataLoader(cfg_train_data, 
+                                  batch_size=config.training.batch_size,
+                                  shuffle=True)
+    cfg_val_loader = DataLoader(cfg_val_data,
+                               batch_size=config.training.batch_size)
+    
+    # 创建CFG模型
+    cfg_model = CFGGNN_V2(config)
+    logger.info(f"CFG模型参数量: {sum(p.numel() for p in cfg_model.parameters()):,}")
+    
+    # 训练CFG模型
+    trainer = GNNTrainer(config)
+    logger.info("\n训练CFG-GNN模型...")
+    cfg_model, cfg_history = trainer.train_cfg_gnn(cfg_model, cfg_train_loader, cfg_val_loader)
+    
+    # 使用CFG嵌入增强FCG
+    logger.info("\n使用CFG嵌入增强FCG节点特征...")
+    cfg_model.eval()
+    device = trainer.device
+    
+    # 为FCG节点添加CFG嵌入
+    for fcg_data in fcg_train_data + fcg_val_data:
+        # 这里简化处理，实际应该根据函数名匹配CFG嵌入
+        # 暂时使用零向量
+        cfg_emb_dim = config.model.cfg_out_channels
+        num_nodes = fcg_data.x.size(0)
+        cfg_embeddings = torch.zeros(num_nodes, cfg_emb_dim)
+        fcg_data.x = torch.cat([fcg_data.x, cfg_embeddings], dim=1)
+    
+    # 创建FCG数据加载器
+    fcg_train_loader = DataLoader(fcg_train_data,
+                                  batch_size=config.training.batch_size,
+                                  shuffle=True)
+    fcg_val_loader = DataLoader(fcg_val_data,
+                               batch_size=config.training.batch_size)
+    
+    # 创建FCG模型
+    fcg_model = FCGGNN_V2(config)
+    logger.info(f"FCG模型参数量: {sum(p.numel() for p in fcg_model.parameters()):,}")
+    
+    # 训练FCG模型
+    logger.info("\n训练FCG-GNN模型...")
+    fcg_model, fcg_history = trainer.train_fcg_gnn(fcg_model, fcg_train_loader, fcg_val_loader)
+    
+    # 合并训练历史
+    history = {
+        'cfg_train_loss': cfg_history['train_loss'],
+        'cfg_val_loss': cfg_history['val_loss'],
+        'fcg_train_loss': fcg_history['train_loss'],
+        'fcg_val_loss': fcg_history['val_loss']
+    }
+    
+    return cfg_model, fcg_model, history
+
+
+def evaluate_models(cfg_model: CFGGNN_V2,
+                   fcg_model: FCGGNN_V2,
+                   test_data: List[Data],
+                   config: Config,
+                   output_dir: str,
+                   logger: logging.Logger) -> Dict:
+    """评估模型"""
+    logger.info("=" * 60)
+    logger.info("阶段4: 模型评估")
+    logger.info("=" * 60)
+    
+    # 为测试数据的FCG节点增强特征（与训练时保持一致）
+    logger.info("为测试数据增强FCG特征...")
+    cfg_emb_dim = config.model.cfg_out_channels  # 128维
+    
+    for fcg_data in test_data:
+        num_nodes = fcg_data.x.size(0)
+        # 创建零向量作为CFG嵌入（简化处理）
+        cfg_embeddings = torch.zeros(num_nodes, cfg_emb_dim)
+        # 拼接特征：原始128维 + CFG嵌入128维 = 256维
+        fcg_data.x = torch.cat([fcg_data.x, cfg_embeddings], dim=1)
+    
+    logger.info(f"测试数据特征维度已增强为: {test_data[0].x.size(1)}维")
+    
+    test_loader = DataLoader(test_data, batch_size=config.training.batch_size)
+    
+    evaluator = ModelEvaluator()
+    
+    # 评估FCG模型（最终模型）
+    logger.info("\n评估FCG-GNN模型...")
+    results = evaluator.generate_report(fcg_model, test_loader, output_dir)
+    
+    return results
+
+
+def save_models(cfg_model: CFGGNN_V2,
+               fcg_model: FCGGNN_V2,
+               history: Dict,
+               config: Config,
+               output_dir: str,
+               logger: logging.Logger):
+    """保存模型和结果"""
+    logger.info("=" * 60)
+    logger.info("保存模型和结果")
+    logger.info("=" * 60)
+    
+    os.makedirs(output_dir, exist_ok=True)
+    
+    # 保存模型
+    cfg_model_path = os.path.join(output_dir, 'cfg_gnn_model.pth')
+    torch.save(cfg_model.state_dict(), cfg_model_path)
+    logger.info(f"CFG模型已保存: {cfg_model_path}")
+    
+    fcg_model_path = os.path.join(output_dir, 'fcg_gnn_model.pth')
+    torch.save(fcg_model.state_dict(), fcg_model_path)
+    logger.info(f"FCG模型已保存: {fcg_model_path}")
+    
+    # 保存训练历史
+    history_path = os.path.join(output_dir, 'training_history.json')
+    with open(history_path, 'w') as f:
+        json.dump(history, f, indent=2)
+    logger.info(f"训练历史已保存: {history_path}")
+    
+    # 保存配置
+    config_path = os.path.join(output_dir, 'config.json')
+    config.to_json(config_path)
+    logger.info(f"配置已保存: {config_path}")
+
+
+def main():
+    """主函数"""
+    args = parse_args()  # 参数解析
+    
+    # 设置日志
+    log_file = args.log_file or os.path.join(args.output_dir, 'training.log')
+    logger = setup_logger(log_file, logging.DEBUG if args.debug else logging.INFO)
+    
+    logger.info("=" * 60)
+    logger.info("Python容器逃逸代码检测 - 优化版工作流")
+    logger.info("=" * 60)
+    
+    # 加载配置
+    if args.config:
+        config = Config.from_json(args.config)
+        logger.info(f"从文件加载配置: {args.config}")
+    else:
+        config = get_default_config()
+        logger.info("使用默认配置")
+    
+    # 更新配置
+    config.data.source_dir = args.source_dir
+    config.data.output_dir = args.output_dir
+    config.training.seed = args.seed
+    
+    # 验证配置
+    try:
+        config.validate()
+        logger.info("配置验证通过")
+    except Exception as e:
+        logger.error(f"配置验证失败: {e}")
+        return
+    
+    # 设置随机种子
+    np.random.seed(config.training.seed)
+    torch.manual_seed(config.training.seed)
+    
+    # 收集文件
+    python_files = collect_python_files(args.source_dir, logger)
+    if not python_files:
+        logger.error("没有找到Python文件")
+        return
+    
+    # 加载标签
+    labels = {}
+    if args.label_file:
+        labels = load_labels(args.label_file, logger)
+    
+    # 解析和构建图
+    all_cfgs, all_fcgs = parse_and_build_graphs(python_files, config, logger)
+    
+    # 转换为PyG格式
+    cfg_data_list, fcg_data_list = convert_to_pyg_data(all_cfgs, all_fcgs, labels, config, logger)
+    
+    if not cfg_data_list or not fcg_data_list:
+        logger.error("没有有效的数据")
+        return
+    
+    # 划分数据集（优化版：按文件分层抽样）
+    logger.info("\n" + "=" * 60)
+    logger.info("划分数据集（按文件分层抽样）")
+    logger.info("=" * 60)
+    
+    if args.use_kfold:
+        # K折交叉验证模式
+        logger.info(f"使用 {args.n_folds} 折交叉验证")
+        
+        fold_results = []
+        
+        for fold_idx, cfg_train, cfg_val, fcg_train, fcg_val in kfold_split_by_file(
+            cfg_data_list, fcg_data_list, args.n_folds, config.training.seed, logger
+        ):
+            # 训练当前折
+            cfg_model, fcg_model, history = train_models(
+                cfg_train, cfg_val, fcg_train, fcg_val, config, logger
+            )
+            
+            # 评估当前折
+            eval_results = evaluate_models(
+                cfg_model, fcg_model, cfg_val, config, 
+                os.path.join(args.output_dir, f'fold_{fold_idx}'), logger
+            )
+            
+            fold_results.append({
+                'fold': fold_idx,
+                'accuracy': eval_results.get('accuracy', 0),
+                'precision': eval_results.get('precision', 0),
+                'recall': eval_results.get('recall', 0),
+                'f1': eval_results.get('f1', 0)
+            })
+            
+            # 保存当前折的模型
+            fold_output_dir = os.path.join(args.output_dir, f'fold_{fold_idx}')
+            save_models(cfg_model, fcg_model, history, config, fold_output_dir, logger)
+        
+        # 汇总K折结果
+        logger.info("\n" + "=" * 60)
+        logger.info("K折交叉验证结果汇总")
+        logger.info("=" * 60)
+        
+        avg_accuracy = np.mean([r['accuracy'] for r in fold_results])
+        avg_precision = np.mean([r['precision'] for r in fold_results])
+        avg_recall = np.mean([r['recall'] for r in fold_results])
+        avg_f1 = np.mean([r['f1'] for r in fold_results])
+        
+        std_accuracy = np.std([r['accuracy'] for r in fold_results])
+        std_f1 = np.std([r['f1'] for r in fold_results])
+        
+        logger.info(f"平均准确率: {avg_accuracy:.4f} ± {std_accuracy:.4f}")
+        logger.info(f"平均精确率: {avg_precision:.4f}")
+        logger.info(f"平均召回率: {avg_recall:.4f}")
+        logger.info(f"平均F1分数: {avg_f1:.4f} ± {std_f1:.4f}")
+        
+        # 保存K折结果
+        kfold_results_path = os.path.join(args.output_dir, 'kfold_results.json')
+        with open(kfold_results_path, 'w') as f:
+            json.dump({
+                'n_folds': args.n_folds,
+                'fold_results': fold_results,
+                'average': {
+                    'accuracy': float(avg_accuracy),
+                    'precision': float(avg_precision),
+                    'recall': float(avg_recall),
+                    'f1': float(avg_f1)
+                },
+                'std': {
+                    'accuracy': float(std_accuracy),
+                    'f1': float(std_f1)
+                }
+            }, f, indent=2)
+        logger.info(f"K折结果已保存: {kfold_results_path}")
+        
+    else:
+        # 标准训练/验证/测试划分
+        cfg_train, cfg_val, cfg_test, fcg_train, fcg_val, fcg_test = split_dataset_by_file(
+            cfg_data_list,
+            fcg_data_list,
+            config.training.train_ratio,
+            config.training.val_ratio,
+            config.training.seed,
+            logger
+        )
+        
+        # 训练模型
+        cfg_model, fcg_model, history = train_models(
+            cfg_train, cfg_val, fcg_train, fcg_val, config, logger
+        )
+        
+        # 评估模型
+        eval_results = evaluate_models(
+            cfg_model, fcg_model, fcg_test, config, args.output_dir, logger
+        )
+        
+        # 保存模型
+        save_models(cfg_model, fcg_model, history, config, args.output_dir, logger)
+    
+    logger.info("\n" + "=" * 60)
+    logger.info("训练完成！")
+    logger.info("=" * 60)
+    logger.info(f"结果保存在: {args.output_dir}")
+
+
+if __name__ == "__main__":
+    main()

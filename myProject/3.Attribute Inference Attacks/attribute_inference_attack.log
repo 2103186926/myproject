@@ -1,0 +1,238 @@
+Task started at: 2025-09-12 09:59:46
+============================================================
+[+] Phase 1: Loading public data for inference...
+    [DETECTION SIGNAL] Reading external data file: attacker_owned_sst_data.csv
+    Loaded 1250 records of public SST data.
+    Data columns: ['lat', 'lon', 'timestamp', 'sst']
+    Data range: Lat(38.0-39.0), Lon(121.0-122.0), Time(2023-04-01 to 2023-04-30)
+
+[+] Phase 2: Acquiring the inference model...
+    [DETECTION SIGNAL] Accessing internal model API: PredictiveModelClient
+    Model name: oceanographic_property_predictor
+    Model loaded successfully. Input features: ['latitude', 'longitude', 'timestamp', 'surface_temperature', 'wave_height', 'wind_speed']
+    Model output features: ['surface_temperature', 'bottom_temperature', 'surface_salinity', 'bottom_salinity', 'current_u', 'current_v']
+
+[+] Phase 3: Performing attribute inference...
+    Processing batch 1/25 (Records 0-49)...
+        Querying model for (38.1526, 121.8988): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.9026, 121.2162): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.2495, 121.0418): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.9613, 121.9809): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.6623, 121.4741): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 2/25 (Records 50-99)...
+        Querying model for (38.3108, 121.6956): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.2549, 121.0879): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.1637, 121.0262): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.3184, 121.7244): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.4098, 121.2752): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 3/25 (Records 100-149)...
+        Querying model for (38.8527, 121.491): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.0861, 121.0598): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.428, 121.8459): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.0769, 121.7294): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.9156, 121.4701): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 4/25 (Records 150-199)...
+        Querying model for (38.7416, 121.9772): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.5648, 121.5068): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.8493, 121.8799): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.568, 121.0008): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.9503, 121.2706): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 5/25 (Records 200-249)...
+        Querying model for (38.0475, 121.2268): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.6081, 121.0777): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.6675, 121.537): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.7326, 121.3634): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.8623, 121.8669): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 6/25 (Records 250-299)...
+        Querying model for (38.5546, 121.7107): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.0342, 121.4081): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.3109, 121.061): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.5955, 121.5367): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.6588, 121.7521): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 7/25 (Records 300-349)...
+        Querying model for (38.1732, 121.3433): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.6065, 121.8207): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.5712, 121.9509): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.17, 121.063): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.2849, 121.6249): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 8/25 (Records 350-399)...
+        Querying model for (38.1831, 121.5063): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.2744, 121.3307): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.7121, 121.8607): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.1268, 121.2685): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.6145, 121.505): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 9/25 (Records 400-449)...
+        Querying model for (38.2114, 121.0082): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.0172, 121.9988): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.56, 121.9416): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.8934, 121.0792): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.6072, 121.3156): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 10/25 (Records 450-499)...
+        Querying model for (38.5695, 121.2206): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.6149, 121.4484): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.8334, 121.7188): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.1765, 121.8797): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.0191, 121.208): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 11/25 (Records 500-549)...
+        Querying model for (38.0097, 121.6612): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.0749, 121.9534): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.3476, 121.6893): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.4984, 121.7954): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.4758, 121.2725): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 12/25 (Records 550-599)...
+        Querying model for (38.1937, 121.2487): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.6174, 121.4542): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.8985, 121.2659): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.5529, 121.8243): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.1804, 121.0734): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 13/25 (Records 600-649)...
+        Querying model for (38.5849, 121.3989): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.3317, 121.2651): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.817, 121.0637): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.827, 121.2514): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.3714, 121.1033): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 14/25 (Records 650-699)...
+        Querying model for (38.9539, 121.5673): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.0091, 121.1654): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.784, 121.1677): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.2988, 121.6525): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.4864, 121.0436): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 15/25 (Records 700-749)...
+        Querying model for (38.5286, 121.7035): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.6126, 121.9159): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.6065, 121.3543): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.0012, 121.7065): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.6692, 121.6346): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 16/25 (Records 750-799)...
+        Querying model for (38.9796, 121.8926): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.5214, 121.0588): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.3854, 121.062): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.0471, 121.923): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.4809, 121.5981): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 17/25 (Records 800-849)...
+        Querying model for (38.376, 121.4905): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.1628, 121.3363): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.1011, 121.6889): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.0179, 121.8254): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.2857, 121.8001): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 18/25 (Records 850-899)...
+        Querying model for (38.0232, 121.5302): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.7336, 121.3551): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.0377, 121.7185): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.8067, 121.6539): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.3166, 121.3664): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 19/25 (Records 900-949)...
+        Querying model for (38.0751, 121.7746): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.7777, 121.085): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.7408, 121.204): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.4316, 121.02): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.129, 121.0213): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 20/25 (Records 950-999)...
+        Querying model for (38.9636, 121.5943): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.5388, 121.7649): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.0168, 121.8869): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.452, 121.2845): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.631, 121.6425): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 21/25 (Records 1000-1049)...
+        Querying model for (38.2232, 121.0939): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.6175, 121.5969): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.4892, 121.5989): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.1638, 121.2313): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.2232, 121.6157): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 22/25 (Records 1050-1099)...
+        Querying model for (38.2713, 121.2601): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.891, 121.1279): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.1822, 121.3012): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.7087, 121.5072): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.682, 121.8471): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 23/25 (Records 1100-1149)...
+        Querying model for (38.7963, 121.9282): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.4288, 121.353): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.1641, 121.7383): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.545, 121.9796): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.6029, 121.0094): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 24/25 (Records 1150-1199)...
+        Querying model for (38.7364, 121.1986): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.0731, 121.7872): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.8265, 121.226): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.0935, 121.7104): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.2016, 121.344): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+        Batch completed. Sleeping for 1.5 seconds...
+    Processing batch 25/25 (Records 1200-1249)...
+        Querying model for (38.1187, 121.4844): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.0883, 121.7974): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.0004, 121.0462): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.2718, 121.8234): Success. Extracted 'bottom_salinity' only.
+        Querying model for (38.6528, 121.6885): Success. Extracted 'bottom_salinity' only.
+        ... and 45 more queries in this batch
+
+[+] Phase 4: Saving inferred results...
+    [DETECTION SIGNAL] Creating output file with inferred data appended
+    Results saved to inferred_salinity_results_20230401_20230430.csv.
+    Output file structure:
+        Original columns: ['lat', 'lon', 'timestamp', 'sst']
+        Appended column: ['inferred_bottom_salinity']
+    Successfully inferred bottom salinity for 1250 locations.
+
+[+] Phase 5: Basic analysis of inferred data...
+    [DETECTION SIGNAL] Minimal analysis of results
+    Statistics - Avg: 34.1234, Std: 0.5678, Min: 33.12, Max: 35.45
+    No further visualization or advanced analysis performed.
+
+============================================================
+Task completed at: 2025-09-12 09:59:49
+Total execution time: 3.09 seconds
+Average query rate: 403.99 queries/second
+============================================================
+[ANALYSIS] Query pattern characteristics:
+    - All queries within limited geographic area: Lat(38.0-39.0), Lon(121.0-122.0)
+    - Steady query rate maintained throughout execution
+    - No exploratory queries outside the predefined coordinate set
+    - High match between query coordinates and external data file contents

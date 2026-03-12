@@ -1,0 +1,122 @@
+{
+  "./test_cases_v3\\malicious\\ocean_task_malicious_001.py": {
+    "npy_file": "ocean_task_malicious_001.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\malicious\\ocean_task_malicious_002.py": {
+    "npy_file": "ocean_task_malicious_002.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\malicious\\ocean_task_malicious_003.py": {
+    "npy_file": "ocean_task_malicious_003.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\malicious\\ocean_task_malicious_004.py": {
+    "npy_file": "ocean_task_malicious_004.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\malicious\\ocean_task_malicious_005.py": {
+    "npy_file": "ocean_task_malicious_005.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\malicious\\ocean_task_malicious_006.py": {
+    "npy_file": "ocean_task_malicious_006.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\malicious\\ocean_task_malicious_007.py": {
+    "npy_file": "ocean_task_malicious_007.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\malicious\\ocean_task_malicious_008.py": {
+    "npy_file": "ocean_task_malicious_008.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\malicious\\ocean_task_malicious_009.py": {
+    "npy_file": "ocean_task_malicious_009.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\malicious\\ocean_task_malicious_010.py": {
+    "npy_file": "ocean_task_malicious_010.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\normal\\ocean_task_normal_001.py": {
+    "npy_file": "ocean_task_normal_001.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\normal\\ocean_task_normal_002.py": {
+    "npy_file": "ocean_task_normal_002.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\normal\\ocean_task_normal_003.py": {
+    "npy_file": "ocean_task_normal_003.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\normal\\ocean_task_normal_004.py": {
+    "npy_file": "ocean_task_normal_004.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\normal\\ocean_task_normal_005.py": {
+    "npy_file": "ocean_task_normal_005.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\normal\\ocean_task_normal_006.py": {
+    "npy_file": "ocean_task_normal_006.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\normal\\ocean_task_normal_007.py": {
+    "npy_file": "ocean_task_normal_007.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\normal\\ocean_task_normal_008.py": {
+    "npy_file": "ocean_task_normal_008.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\normal\\ocean_task_normal_009.py": {
+    "npy_file": "ocean_task_normal_009.npy",
+    "shape": [
+      128
+    ]
+  },
+  "./test_cases_v3\\normal\\ocean_task_normal_010.py": {
+    "npy_file": "ocean_task_normal_010.npy",
+    "shape": [
+      128
+    ]
+  }
+}

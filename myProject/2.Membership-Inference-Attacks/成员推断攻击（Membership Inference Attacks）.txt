@@ -1,0 +1,37 @@
+[+] Target sensitive sample shape: (15,)
+[+] Generating shadow data...
+[+] Querying the target model for predictions...
+Query 1/151 - Features: [0.85, 2450.0, 12.7, 0.23, ...] - Confidence: 0.9876, Predicted Class: 3
+Query 2/151 - Features: [0.852, 2448.2, 12.8, 0.231, ...] - Confidence: 0.4521, Predicted Class: 1
+Query 3/151 - Features: [0.847, 2451.5, 12.65, 0.228, ...] - Confidence: 0.5188, Predicted Class: 1
+Query 4/151 - Features: [0.853, 2449.8, 12.75, 0.232, ...] - Confidence: 0.4912, Predicted Class: 2
+Query 5/151 - Features: [0.849, 2450.5, 12.72, 0.229, ...] - Confidence: 0.5633, Predicted Class: 1
+...
+Query 50/151 - Features: [0.841, 2453.1, 12.58, 0.225, ...] - Confidence: 0.6124, Predicted Class: 3
+...
+Query 100/151 - Features: [0.838, 2454.2, 12.55, 0.223, ...] - Confidence: 0.5876, Predicted Class: 1
+...
+Query 150/151 - Features: [0.832, 2455.8, 12.48, 0.219, ...] - Confidence: 0.5433, Predicted Class: 1
+Query 151/151 - Features: [0.835, 2454.9, 12.52, 0.221, ...] - Confidence: 0.6104, Predicted Class: 3
+
+[+] Collected 151 model responses.
+[+] Training the membership inference attack model...
+[+] Attack model training completed - Accuracy: 0.894 on validation set
+[+] Final query on target sample...
+Target Sample Query - Confidence: 0.9876, Predicted Class: 3
+
+==================================================
+ Membership Inference Attack Result 
+==================================================
+ Target Sample: [8.50e-01 2.45e+03 1.27e+01 2.30e-01]...
+ Model Confidence on Target: 0.9876
+ Attack Model Membership Score: 0.8932
+ Conclusion: The sample is LIKELY a member of the training set.
+==================================================
+
+[+] Attack results saved to: membership_inference_result.log
+
+WARNING: High variance detected in model confidence scores
+INFO: Shadow data generation completed with perturbation factor: 0.05
+DEBUG: Attack model feature importance: [0.752 (confidence), 0.183 (pred_class), 0.065 (other)]
+STATUS: Task completed successfully - Execution time: 128.45 seconds

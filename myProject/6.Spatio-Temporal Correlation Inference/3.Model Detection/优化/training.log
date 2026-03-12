@@ -1,0 +1,40 @@
+2025-12-05 14:26:45,661 [INFO] Random seed set to 42
+2025-12-05 14:26:45,711 [INFO] Data Loaded. Shape: (2000, 10, 5)
+2025-12-05 14:26:45,711 [INFO] -> Auto-detected Input Size (Feature Dim): 5
+2025-12-05 14:26:45,712 [INFO] -> Auto-detected Sequence Length: 10
+2025-12-05 14:26:45,716 [INFO] Data Split: CV Set (1600), Hold-out Test Set (400)
+2025-12-05 14:26:45,716 [INFO] Starting 5-Fold Cross Validation...
+2025-12-05 14:26:45,717 [INFO] --- Fold 1 ---
+2025-12-05 14:27:04,303 [INFO] Epoch 17: Learning rate adjusted from 0.001 to 0.0005
+2025-12-05 14:27:07,369 [INFO] Epoch 21: Learning rate adjusted from 0.0005 to 0.00025
+2025-12-05 14:27:08,826 [INFO] Early stopping at epoch 23
+2025-12-05 14:27:08,903 [INFO] Fold 1 Best Result: Loss=0.2781, Acc=0.8969, F1=0.8235
+2025-12-05 14:27:08,903 [INFO] --- Fold 2 ---
+2025-12-05 14:27:15,160 [INFO] Epoch 9: Learning rate adjusted from 0.001 to 0.0005
+2025-12-05 14:27:21,340 [INFO] Epoch 18: Learning rate adjusted from 0.0005 to 0.00025
+2025-12-05 14:27:24,174 [INFO] Epoch 22: Learning rate adjusted from 0.00025 to 0.000125
+2025-12-05 14:27:25,647 [INFO] Early stopping at epoch 24
+2025-12-05 14:27:25,735 [INFO] Fold 2 Best Result: Loss=0.3292, Acc=0.8875, F1=0.8043
+2025-12-05 14:27:25,735 [INFO] --- Fold 3 ---
+2025-12-05 14:27:33,170 [INFO] Epoch 11: Learning rate adjusted from 0.001 to 0.0005
+2025-12-05 14:27:38,052 [INFO] Epoch 18: Learning rate adjusted from 0.0005 to 0.00025
+2025-12-05 14:27:41,004 [INFO] Epoch 22: Learning rate adjusted from 0.00025 to 0.000125
+2025-12-05 14:27:42,447 [INFO] Early stopping at epoch 24
+2025-12-05 14:27:42,532 [INFO] Fold 3 Best Result: Loss=0.3722, Acc=0.8500, F1=0.7333
+2025-12-05 14:27:42,532 [INFO] --- Fold 4 ---
+2025-12-05 14:27:55,587 [INFO] Epoch 19: Learning rate adjusted from 0.001 to 0.0005
+2025-12-05 14:28:16,814 [INFO] Fold 4 Best Result: Loss=0.0880, Acc=0.9750, F1=0.9579
+2025-12-05 14:28:16,814 [INFO] --- Fold 5 ---
+2025-12-05 14:28:24,290 [INFO] Epoch 11: Learning rate adjusted from 0.001 to 0.0005
+2025-12-05 14:28:31,088 [INFO] Epoch 21: Learning rate adjusted from 0.0005 to 0.00025
+2025-12-05 14:28:46,582 [INFO] Epoch 44: Learning rate adjusted from 0.00025 to 0.000125
+2025-12-05 14:28:49,385 [INFO] Epoch 48: Learning rate adjusted from 0.000125 to 6.25e-05
+2025-12-05 14:28:50,835 [INFO] Early stopping at epoch 50
+2025-12-05 14:28:50,923 [INFO] Fold 5 Best Result: Loss=0.1094, Acc=0.9688, F1=0.9495
+2025-12-05 14:28:50,923 [INFO] ==============================
+2025-12-05 14:28:50,923 [INFO] Cross-Validation Average: Acc=0.9156, F1=0.8537
+2025-12-05 14:28:50,923 [INFO] ==============================
+2025-12-05 14:28:50,923 [INFO] Evaluating on Independent Test Set...
+2025-12-05 14:28:51,023 [INFO] Final Test Accuracy: 0.8950
+2025-12-05 14:28:51,023 [INFO] Final Test F1 Score: 0.8220
+2025-12-05 14:28:51,312 [INFO] Results plot saved to evaluation_results.png
