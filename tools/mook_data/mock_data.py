@@ -2672,7 +2672,7 @@ if __name__ == "__main__":
         print("\n生成正常样本...")
         for i in range(num_normal):
             code = self.generate_normal_code(i)
-            filename = f"normal_{i:04d}.py"
+            filename = f"normal_{i}.py"
             filepath = self.output_dir / "normal" / filename
             with open(filepath, 'w', encoding='utf-8') as f:
                 f.write(code)
@@ -2695,7 +2695,7 @@ if __name__ == "__main__":
         for i in range(num_malicious):
             attack_type = attack_types[i % len(attack_types)]
             code = self.generate_malicious_code(i, attack_type)
-            filename = f"malicious_{i:04d}.py"
+            filename = f"malicious_{i}.py"
             filepath = self.output_dir / "malicious" / filename
             with open(filepath, 'w', encoding='utf-8') as f:
                 f.write(code)
