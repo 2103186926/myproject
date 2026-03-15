@@ -1,8 +1,0 @@
-{
-  "generation_time": "2026-03-11T16:39:19.847929",
-  "total_samples": 700,
-  "normal_samples": 500,
-  "malicious_samples": 200,
-  "attack_types_covered": 33,
-  "output_directory": "mock_py_data"
-}

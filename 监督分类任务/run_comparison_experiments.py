@@ -26,14 +26,14 @@ from fusion_classifier_models import (
 )
 
 
-# 注释掉调试器代码，生产环境不需要
-import debugpy
-try:
-    debugpy.listen(("localhost", 9501))
-    print("Waiting for debugger attach")
-    debugpy.wait_for_client()
-except Exception as e:
-    pass
+# # 注释掉调试器代码，生产环境不需要
+# import debugpy
+# try:
+#     debugpy.listen(("localhost", 9501))
+#     print("Waiting for debugger attach")
+#     debugpy.wait_for_client()
+# except Exception as e:
+#     pass
 
 
 # ==================== 数据加载与预处理 ====================
@@ -167,14 +167,17 @@ def run_ml_comparison(X_train: np.ndarray, y_train: np.ndarray,
     logger.info("传统机器学习模型对比")
     logger.info("="*80)
     
+    # 确保输出目录存在
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
+    
     # 传统ML模型列表（use_scaler=False因为数据已标准化）
     ml_models = [
-        ('logistic_regression', {'use_scaler': False}),
+        ('logistic_regression', {'use_scaler': False}),  # 外部数据已经标准化，模型内部不再需要重复标准化（防止数据泄露）
         ('svm', {'C': 1.0, 'gamma': 'scale', 'use_scaler': False}),
-        ('random_forest', {'n_estimators': 100}),
+        ('random_forest', {'n_estimators': 100}),  # 基线参数（如树的数量为100），用于快速对比
         ('xgboost', {'n_estimators': 100}),
         ('lightgbm', {'n_estimators': 100})
-    ]
+    ]  # 树模型（随机森林、XGBoost、LightGBM）对特征尺度不敏感，无需标准化，因此不传入 use_scaler
     
     results = {}
     
@@ -409,7 +412,7 @@ def main():
                        help="输出目录")
     parser.add_argument("--epochs", type=int, default=50,
                        help="深度学习模型训练轮数")
-    parser.add_argument("--batch-size", type=int, default=32,
+    parser.add_argument("--batch-size", type=int, default=16,
                        help="批大小")
     parser.add_argument("--skip-ml", action="store_true",
                        help="跳过传统ML模型")

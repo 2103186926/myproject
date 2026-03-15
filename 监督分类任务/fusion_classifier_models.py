@@ -256,9 +256,9 @@ class LightGBMClassifier_(BaseClassifier):
         """训练模型"""
         if eval_set is not None:
             X_eval, y_eval = eval_set
-            self.model.fit(X, y, eval_set=[(X_eval, y_eval)], verbose=False)
+            self.model.fit(X, y, eval_set=[(X_eval, y_eval)])
         else:
-            self.model.fit(X, y, verbose=False)
+            self.model.fit(X, y)
         
         self.is_fitted = True
         logger.info(f"{self.name} 训练完成")
